@@ -1,0 +1,31 @@
+{
+  "loading": {
+    "title": "Sichere Notiz Wird Geladen...",
+    "subtitle": "Ihre Nachricht wird entschlüsselt"
+  },
+  "error": {
+    "title": "Notiz Nicht Verfügbar",
+    "subtitle": "zerotrace-Notizen können zu Ihrer Sicherheit nur einmal gelesen werden.",
+    "whatHappened": "Was ist passiert?",
+    "reason1": "Die Notiz wurde möglicherweise bereits gelesen und gelöscht",
+    "reason2": "Die Notiz ist möglicherweise abgelaufen (30-Tage-Limit)",
+    "reason3": "Der Link ist möglicherweise falsch oder beschädigt",
+    "createNew": "Neue Sichere Notiz Erstellen"
+  },
+  "password": {
+    "title": "Passwort Erforderlich",
+    "subtitle": "Diese Notiz ist mit einem Passwort geschützt",
+    "label": "Notiz-Passwort",
+    "placeholder": "Geben Sie das Passwort für diese Notiz ein",
+    "unlock": "Notiz Entsperren"
+  },
+  "success": {
+    "title": "Notiz Erfolgreich Gelesen",
+    "subtitle": "Diese Notiz wurde zu Ihrer Sicherheit automatisch gelöscht",
+    "messageTitle": "Ihre Sichere Nachricht",
+    "deleted": "Notiz Gelöscht",
+    "deletedText": "Diese Notiz wurde dauerhaft von unseren Servern gelöscht. Sie kann auch mit demselben Link nie wieder aufgerufen werden.",
+    "createNew": "Neue Sichere Notiz Erstellen"
+  }
+}
+

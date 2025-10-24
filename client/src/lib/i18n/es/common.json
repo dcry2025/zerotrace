@@ -1,0 +1,39 @@
+{
+  "app": {
+    "name": "zerotrace",
+    "tagline": "Notas Privadas Seguras"
+  },
+  "nav": {
+    "home": "Inicio",
+    "faq": "Preguntas",
+    "privacy": "Privacidad",
+    "back": "Atrás"
+  },
+  "actions": {
+    "create": "Crear Nota Segura",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "destroy": "Destruir Nota Ahora",
+    "options": "Opciones"
+  },
+  "language": {
+    "select": "Idioma",
+    "en": "English",
+    "ru": "Русский",
+    "uk": "Українська",
+    "es": "Español"
+  },
+  "footer": {
+    "brandTag": "Notas Seguras",
+    "brandDesc": "Envía mensajes encriptados que se autodestruyen después de ser leídos. Tu privacidad es nuestra prioridad.",
+    "support": "Soporte",
+    "connect": "Conectar",
+    "donate": "Donar",
+    "donateInfo": "Este proyecto existe gracias a donaciones y fondos personales. Tu apoyo ayuda a mantener el servicio gratuito y seguro para todos. ¡Por favor, ayúdanos!",
+    "translate": "¡Traduce a tu idioma!",
+    "copyright": "© {year} zerotrace. Todos los derechos reservados. | Tu privacidad es nuestra prioridad."
+  }
+}

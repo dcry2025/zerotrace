@@ -1,0 +1,43 @@
+{
+  "success": {
+    "title": "Not Başarıyla Oluşturuldu!",
+    "subtitle": "Güvenli notunuz paylaşıma hazır. Bağlantı okunduktan sonra kendini yok edecek."
+  },
+  "link": {
+    "title": "Güvenli Not Bağlantınız",
+    "label": "Bu bağlantıyı kopyalayın ve paylaşın",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!"
+  },
+  "security": {
+    "title": "Önemli Güvenlik Uyarısı",
+    "warning1": "Bu bağlantı sadece bir kez kullanılabilir - açıldıktan sonra kalıcı olarak silinir",
+    "warning2": "Bu bağlantıyı sadece güvenli kanallar üzerinden paylaşın (şifreli mesajlaşma, telegram)",
+    "warning3": "Bu bağlantıyı asla halka açık yerlerde veya güvenli olmayan kanallarda paylaşmayın",
+    "warning4": "Belirtilen süre içinde açılmazsa not otomatik olarak süresi dolacak"
+  },
+  "destroy": {
+    "button": "🔥 Notu Hemen Yok Et",
+    "description": "Fikrinizi değiştirdiniz mi? Bu notu kimsenin okuyamaması için hemen yok edin.",
+    "confirm": "Bu notu yok etmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "destroying": "Yok ediliyor...",
+    "success": "Not Başarıyla Yok Edildi",
+    "redirect": "Ana sayfaya yönlendiriliyorsunuz..."
+  },
+  "telegram": {
+    "title": "Telegram Bildirimleri Etkinleştirildi",
+    "subtitle": "Notunuz okunduğunda güncel kalın",
+    "status": "AKTİF",
+    "activate": "Telegram Bildirimlerini Etkinleştir",
+    "description": "Bu notu Telegram hesabınıza bağlamak için aşağıdaki düğmeye tıklayın. Birisi notunuzu okuduğunda anında bildirim alacaksınız!",
+    "bot": "Bot:",
+    "noteId": "Not ID:",
+    "setup": "Hızlı Kurulum (5 saniye):",
+    "step1": "Aşağıdaki \"Telegram Botunu Aç\" düğmesine tıklayın",
+    "step2": "Telegram otomatik olarak açılacak. START'a basın veya /start gönderin",
+    "step3": "İşte bu kadar! Bot bu notu hesabınıza bağlayacak. Birisi okuduğunda bildirim alacaksınız.",
+    "openBot": "Telegram Botunu Aç ve /start Gönder",
+    "privacy": "Gizlilik öncelikli: Sadece siz bildirim alacaksınız. Telegram hesabınız gizli kalır.",
+    "emergency": "Güvenlik: Birisi yanlış şifre girerse veya zaten bağladığınız bir notu tekrar aktifleştirmeye çalışırsa, anında uyarı alacaksınız ve notu uzaktan SİLEBİLİRSİNİZ."
+  }
+}

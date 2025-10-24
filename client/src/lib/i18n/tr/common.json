@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "back": "Geri",
+    "home": "Ana Sayfa",
+    "privacy": "Gizlilik Politikası",
+    "faq": "Sık Sorulan Sorular"
+  },
+  "app": {
+    "tagline": "Güvenli Özel Notlar - Uçtan Uca Şifreli Kendi Kendini Yok Eden Mesajlar"
+  },
+  "buttons": {
+    "create": "Not Oluştur",
+    "copy": "Kopyala",
+    "destroy": "Yok Et",
+    "submit": "Gönder",
+    "cancel": "İptal",
+    "close": "Kapat",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "view": "Görüntüle",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki",
+    "confirm": "Onayla",
+    "yes": "Evet",
+    "no": "Hayır"
+  },
+  "footer": {
+    "brandTag": "Güvenli Özel Notlar",
+    "brandDesc": "Uçtan uca şifreli kendi kendini yok eden mesajlar, gizliliğinizi ve güvenliğinizi sağlar.",
+    "connect": "İletişim",
+    "support": "Destek",
+    "donate": "Bağış",
+    "donateInfo": "Bu proje bağışlar ve kişisel fonlar sayesinde var olmaktadır. Desteğiniz hizmetin herkes için ücretsiz ve güvenli kalmasına yardımcı olur. Lütfen bize yardım edin!",
+    "copyright": "© {year} zerotrace. Tüm hakları saklıdır."
+  },
+  "status": {
+    "loading": "Yükleniyor...",
+    "success": "Başarılı",
+    "error": "Hata",
+    "warning": "Uyarı",
+    "info": "Bilgi"
+  },
+  "validation": {
+    "required": "Bu alan zorunludur",
+    "email": "Geçerli bir e-posta adresi girin",
+    "minLength": "En az {min} karakter gerekli",
+    "maxLength": "En fazla {max} karakter izin verilir",
+    "password": "Şifre en az 8 karakter olmalıdır",
+    "confirmPassword": "Şifreler eşleşmiyor"
+  }
+}

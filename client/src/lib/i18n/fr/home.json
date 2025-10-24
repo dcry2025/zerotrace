@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "title": "Envoyez des Notes <span class='text-blue-600'>Sécurisées</span>",
+    "subtitle": "Créez des messages chiffrés qui s'autodétruisent automatiquement après avoir été lus. Parfait pour partager des informations sensibles en toute sécurité."
+  },
+  "form": {
+    "title": "Créer une Note Sécurisée",
+    "content": {
+      "label": "✍️ Votre Message Privé",
+      "placeholder": "Tapez votre message sécurisé ici...",
+      "counter": "caractères"
+    },
+    "password": {
+      "label": "🔑 Protection par Mot de Passe (Optionnel)",
+      "placeholder": "Entrez un mot de passe pour plus de sécurité",
+      "confirm": "Confirmer le mot de passe",
+      "strength": {
+        "weak": "Faible",
+        "medium": "Moyen",
+        "strong": "Fort"
+      },
+      "requirements": {
+        "title": "Exigences du mot de passe :",
+        "minLength": "Au moins {min} caractères",
+        "special": "Contient un chiffre ou un caractère spécial",
+        "match": "Les mots de passe correspondent"
+      },
+      "errors": {
+        "minLength": "Le mot de passe doit contenir au moins {min} caractères",
+        "maxLength": "Le mot de passe ne doit pas dépasser {max} caractères",
+        "special": "Le mot de passe doit contenir au moins un chiffre ou un caractère spécial",
+        "mismatch": "Les mots de passe ne correspondent pas"
+      }
+    },
+    "expiration": {
+      "label": "⏰ Délai d'Expiration",
+      "1h": "1 heure à partir de maintenant",
+      "24h": "24 heures à partir de maintenant",
+      "7d": "7 jours à partir de maintenant",
+      "30d": "30 jours à partir de maintenant"
+    },
+    "notify": {
+      "title": "📱 Recevoir une Notification Telegram",
+      "description": "Recevez une alerte instantanée lorsque votre note est lue. Vous serez redirigé pour activer le bot après avoir créé la note. Si quelqu'un essaie un mauvais mot de passe ou tente de réactiver votre note déjà liée, vous recevrez un avertissement et pourrez supprimer la note à distance."
+    },
+    "creating": "Création de la Note Sécurisée...",
+    "errors": {
+      "emptyContent": "Veuillez entrer une note à envoyer",
+      "passwordMismatch": "Les mots de passe ne correspondent pas",
+      "createFailed": "Échec de la création de la note. Veuillez réessayer."
+    }
+  },
+  "features": {
+    "encryption": {
+      "title": "Chiffrement de Bout en Bout",
+      "description": "Vos messages sont chiffrés dans votre navigateur avant d'être envoyés à nos serveurs."
+    },
+    "destruct": {
+      "title": "Auto-Destruction Automatique",
+      "description": "Les notes se suppriment automatiquement après avoir été lues ou après expiration."
+    },
+    "notifications": {
+      "title": "Notifications Telegram",
+      "description": "Recevez des notifications instantanées lorsque vos notes sont ouvertes."
+    }
+  },
+  "howItWorks": {
+    "title": "Comment fonctionne zerotrace",
+    "description": "Envoyez des notes chiffrées qui s'autodétruisent après avoir été lues !",
+    "steps": {
+      "1": "Écrivez votre message privé ci-dessus et chiffrez-le",
+      "2": "Obtenez un lien sécurisé à partager avec n'importe qui",
+      "3": "La note se supprime automatiquement après avoir été lue",
+      "4": "Soyez notifié via Telegram lorsqu'elle est ouverte (optionnel)"
+    },
+    "links": "En savoir plus dans nos sections {faq} ou {privacy}."
+  }
+}
+

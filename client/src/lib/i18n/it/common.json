@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "back": "Indietro",
+    "home": "Home",
+    "privacy": "Privacy",
+    "faq": "FAQ"
+  },
+  "app": {
+    "tagline": "Note Sicure Private - Messaggi Crittografati End-to-End che si Autodistruggono"
+  },
+  "buttons": {
+    "create": "Crea Nota",
+    "copy": "Copia",
+    "destroy": "Distruggi",
+    "submit": "Invia",
+    "cancel": "Annulla",
+    "close": "Chiudi",
+    "save": "Salva",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "view": "Visualizza",
+    "back": "Indietro",
+    "next": "Avanti",
+    "previous": "Precedente",
+    "confirm": "Conferma",
+    "yes": "Sì",
+    "no": "No"
+  },
+  "footer": {
+    "brandTag": "Note Sicure Private",
+    "brandDesc": "Messaggi crittografati end-to-end che si autodistruggono, garantendo la tua privacy e sicurezza.",
+    "connect": "Contattaci",
+    "support": "Supporto",
+    "donate": "Donazione",
+    "donateInfo": "Questo progetto esiste grazie alle donazioni e ai fondi personali. Il tuo supporto aiuta a mantenere il servizio gratuito e sicuro per tutti. Per favore, aiutaci!",
+    "copyright": "© {year} zerotrace. Tutti i diritti riservati."
+  },
+  "status": {
+    "loading": "Caricamento...",
+    "success": "Successo",
+    "error": "Errore",
+    "warning": "Avviso",
+    "info": "Informazione"
+  },
+  "validation": {
+    "required": "Questo campo è obbligatorio",
+    "email": "Inserisci un indirizzo email valido",
+    "minLength": "Sono necessari almeno {min} caratteri",
+    "maxLength": "Sono consentiti al massimo {max} caratteri",
+    "password": "La password deve essere di almeno 8 caratteri",
+    "confirmPassword": "Le password non corrispondono"
+  }
+}

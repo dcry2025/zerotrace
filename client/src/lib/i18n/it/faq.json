@@ -1,0 +1,86 @@
+{
+  "title": "Domande Frequenti - zerotrace",
+  "subtitle": "Domande Frequenti",
+  "intro": "Trova le risposte alle domande più frequenti su zerotrace.",
+  "stillQuestions": "Hai ancora domande?",
+  "stillQuestionsText": "Se non hai trovato la risposta che stavi cercando, non esitare a contattarci:",
+  
+  "q1": {
+    "question": "Cos'è zerotrace?",
+    "answer": "zerotrace è un servizio web gratuito che consente agli utenti di creare note crittografate che possono condividere su internet come URL HTTPS unici a uso singolo. Per impostazione predefinita, queste note scadono dopo il loro primo accesso tramite qualsiasi browser web."
+  },
+  "q2": {
+    "question": "Come funziona zerotrace?",
+    "answer1": "zerotrace funziona crittografando il tuo messaggio nel tuo browser prima che venga inviato ai nostri server. La chiave di crittografia è incorporata nell'URL unico che viene generato. Quando qualcuno clicca sul link, la nota viene decrittografata nel loro browser e poi immediatamente eliminata dai nostri server.",
+    "answer2": "Poiché la crittografia e la decrittografia avvengono nel browser, non vediamo mai il contenuto delle tue note in forma non crittografata."
+  },
+  "q3": {
+    "question": "zerotrace è davvero sicuro?",
+    "answer": "Sì, zerotrace è progettato pensando alla sicurezza. Ecco come proteggiamo la tua privacy:",
+    "point1": "Le note vengono crittografate nel tuo browser prima di essere inviate ai nostri server",
+    "point2": "Non memorizziamo mai la chiave di crittografia - è solo nell'URL",
+    "point3": "Le note vengono eliminate automaticamente dopo essere state lette",
+    "point4": "Non registriamo indirizzi IP",
+    "point5": "Anche i nostri amministratori non possono leggere le tue note"
+  },
+  "q4": {
+    "question": "Posso recuperare una nota se perdo il link?",
+    "answer": "No, non c'è modo di recuperare una nota se perdi il link. Il link contiene la chiave di crittografia necessaria per decrittare la nota. Senza il link, i dati crittografati sui nostri server sono inutili e non possono essere decrittati."
+  },
+  "q5": {
+    "question": "Cosa succede se una nota non viene letta?",
+    "answer": "Se una nota non viene recuperata dopo 30 giorni, zerotrace la rimuove automaticamente in modo permanente dai nostri server, proprio come se fosse stata letta."
+  },
+  "q6": {
+    "question": "Posso impostare una password per la mia nota?",
+    "answer": "Sì! Puoi impostare una password opzionale per maggiore sicurezza. Quando clicchi \"Mostra opzioni\" prima di creare la tua nota, puoi specificare una password manuale. Questa password sarà richiesta per leggere la nota, fornendo un ulteriore livello di sicurezza."
+  },
+  "q7": {
+    "question": "Posso impostare una data di scadenza per la mia nota?",
+    "answer": "Sì, puoi impostare un tempo di scadenza personalizzato per la tua nota. Nel menu delle opzioni, puoi specificare per quanti giorni la nota dovrebbe rimanere disponibile prima di essere eliminata automaticamente, indipendentemente dal fatto che sia stata letta o meno."
+  },
+  "q8": {
+    "question": "Come funzionano le notifiche Telegram?",
+    "answer": "zerotrace può inviarti una notifica Telegram quando la tua nota viene letta. Flusso attuale:",
+    "point1": "Nel modulo di creazione, abilita l'opzione 'Ricevi Notifica Telegram'",
+    "point2": "Dopo che la nota è stata creata, premi 'Apri Bot Telegram' nella pagina di successo",
+    "point3": "In Telegram premi START (o invia /start) per collegare la nota al tuo account",
+    "point4": "Riceverai una notifica non appena la nota viene aperta per la prima volta"
+  },
+  "q9": {
+    "question": "Cosa succede se qualcuno intercetta il link?",
+    "answer": "Anche se zerotrace critta le tue note, la sicurezza del link stesso dipende da come lo invii. Se le notifiche Telegram sono abilitate, riceverai anche avvisi su azioni sospette (password sbagliate o tentativi di riattivazione) e potrai eliminare la nota da remoto. Raccomandazioni:",
+    "point1": "Usa canali di comunicazione sicuri (email crittografata, app di messaggistica sicure)",
+    "point2": "Evita di inviare link attraverso canali non sicuri",
+    "point3": "Considera l'uso di una password per protezione aggiuntiva",
+    "point4": "Imposta tempi di scadenza più brevi per informazioni altamente sensibili"
+  },
+  "q10": {
+    "question": "Posso leggere una nota più volte?",
+    "answer": "Per impostazione predefinita, no. Le note sono progettate per essere lette solo una volta e vengono eliminate immediatamente dopo il primo accesso. Tuttavia, se imposti un tempo di scadenza personalizzato nelle opzioni, la nota rimarrà disponibile fino a quando non viene letta o raggiunge il tempo di scadenza."
+  },
+  "q11": {
+    "question": "zerotrace è gratuito?",
+    "answer": "Sì, zerotrace è completamente gratuito. Non ci sono costi nascosti, abbonamenti o funzionalità premium. Tutte le funzionalità sono disponibili gratuitamente per tutti gli utenti."
+  },
+  "q12": {
+    "question": "Quali browser sono supportati?",
+    "answer": "zerotrace funziona con tutti i browser web moderni inclusi Chrome, Firefox, Safari, Edge e Opera. Il servizio utilizza tecnologie web standard e dovrebbe funzionare su qualsiasi dispositivo con un browser moderno."
+  },
+  "q13": {
+    "question": "Posso usare zerotrace su dispositivi mobili?",
+    "answer": "Sì, zerotrace è completamente reattivo e funziona perfettamente su dispositivi mobili, tablet e computer desktop. L'interfaccia si adatta a diverse dimensioni dello schermo per un'esperienza utente ottimale."
+  },
+  "q14": {
+    "question": "Cosa devo fare se ho un problema?",
+    "answer": "Se incontri problemi o hai domande non coperte da questa FAQ:",
+    "point1": "Assicurati di usare un browser moderno e supportato",
+    "point2": "Assicurati di avere una connessione internet stabile",
+    "point3": "Prova a ricaricare la pagina o cancellare la cache del browser",
+    "point4": "Contattaci via Twitter o Telegram per supporto tecnico"
+  },
+  "q15": {
+    "question": "I miei dati sono al sicuro con zerotrace?",
+    "answer": "Sì, i tuoi dati sono protetti da una crittografia forte e dal nostro design incentrato sulla privacy. Non raccogliamo informazioni personali, non memorizziamo indirizzi IP e non possiamo leggere le tue note anche se volessimo. La tua privacy e sicurezza sono le nostre priorità."
+  }
+}

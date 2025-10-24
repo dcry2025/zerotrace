@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "title": "Send <span class='text-blue-600'>Secure</span> Notes",
+    "subtitle": "Create encrypted messages that automatically self-destruct after being read. Perfect for sharing sensitive information safely."
+  },
+  "form": {
+    "title": "Create Secure Note",
+    "content": {
+      "label": "✍️ Your Private Message",
+      "placeholder": "Type your secure message here...",
+      "counter": "characters"
+    },
+    "password": {
+      "label": "🔑 Password Protection (Optional)",
+      "placeholder": "Enter password for extra security",
+      "confirm": "Confirm password",
+      "strength": {
+        "weak": "Weak",
+        "medium": "Medium",
+        "strong": "Strong"
+      },
+      "requirements": {
+        "title": "Password requirements:",
+        "minLength": "At least {min} characters",
+        "special": "Contains number or special character",
+        "match": "Passwords match"
+      },
+      "errors": {
+        "minLength": "Password must be at least {min} characters long",
+        "maxLength": "Password must not exceed {max} characters",
+        "special": "Password should contain at least one number or special character",
+        "mismatch": "Passwords do not match"
+      }
+    },
+    "expiration": {
+      "label": "⏰ Expiration Time",
+      "1h": "1 hour from now",
+      "24h": "24 hours from now",
+      "7d": "7 days from now",
+      "30d": "30 days from now"
+    },
+    "notify": {
+      "title": "📱 Get Telegram Notification",
+      "description": "Receive an instant alert when your note is read. You'll be redirected to activate the bot after creating the note. If someone tries a wrong password or attempts to re-activate your already linked note, you'll get a warning and can remotely delete the note."
+    },
+    "creating": "Creating Secure Note...",
+    "errors": {
+      "emptyContent": "Please enter a note to send",
+      "passwordMismatch": "Passwords do not match",
+      "createFailed": "Failed to create note. Please try again."
+    }
+  },
+  "features": {
+    "encryption": {
+      "title": "End-to-End Encryption",
+      "description": "Your messages are encrypted in your browser before being sent to our servers."
+    },
+    "destruct": {
+      "title": "Auto Self-Destruct",
+      "description": "Notes automatically delete after being read or after expiration."
+    },
+    "notifications": {
+      "title": "Telegram Notifications",
+      "description": "Get instant notifications when your notes are opened."
+    }
+  },
+  "howItWorks": {
+    "title": "How zerotrace Works",
+    "description": "Send encrypted notes that self-destruct after being read!",
+    "steps": {
+      "1": "Write your private message above and encrypt it",
+      "2": "Get a secure link to share with anyone",
+      "3": "The note automatically deletes after being read",
+      "4": "Get notified via Telegram when it's opened (optional)"
+    },
+    "links": "Learn more in our {faq} or {privacy}."
+  }
+}
+

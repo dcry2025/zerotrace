@@ -1,0 +1,36 @@
+# Master private key - NEVER commit!
+# This file is critical for admin decryption
+# Keep it secure and make encrypted backups
+master-private-key.pem
+
+# Encrypted backups of private key (if you create them)
+*.pem.7z
+*.pem.gpg
+*.pem.encrypted
+
+# Database exports (may contain sensitive data)
+notes-export.json
+notes-backup.json
+*.sql
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files with secrets
+.env.local
+.env.*.local
+

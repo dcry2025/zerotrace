@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "title": "Güvenli Not Oluştur",
+    "subtitle": "Uçtan uca şifreli kendi kendini yok eden mesajlar, gizliliğinizi ve güvenliğinizi sağlar.",
+    "description": "Şifreli mesaj gönderin, kendini yok etme süresini ayarlayın, gizliliğinizi koruyun. Sadece şifreyi bilen kişi içeriği görüntüleyebilir."
+  },
+  "form": {
+    "title": "Yeni Not Oluştur",
+    "content": {
+      "label": "Mesaj İçeriği",
+      "placeholder": "Mesajınızı girin...",
+      "counter": "Karakter sayısı: {count}/1000"
+    },
+    "password": {
+      "label": "Şifre",
+      "placeholder": "Şifre girin",
+      "confirm": "Şifreyi Onayla",
+      "confirmPlaceholder": "Şifreyi tekrar girin",
+      "strength": {
+        "weak": "Zayıf",
+        "medium": "Orta",
+        "strong": "Güçlü"
+      },
+      "requirements": {
+        "title": "Şifre Gereksinimleri",
+        "minLength": "En az 8 karakter",
+        "special": "Özel karakter içerir",
+        "match": "Şifreler eşleşiyor"
+      },
+      "errors": {
+        "minLength": "Şifre en az 8 karakter olmalıdır",
+        "maxLength": "Şifre en fazla 128 karakter olabilir",
+        "specialChar": "Şifre en az bir özel karakter içermelidir",
+        "mismatch": "Şifreler eşleşmiyor"
+      }
+    },
+    "expiration": {
+      "label": "Son Kullanma Süresi",
+      "1h": "1 saat sonra",
+      "24h": "24 saat sonra",
+      "7d": "7 gün sonra",
+      "30d": "30 gün sonra"
+    },
+    "telegram": {
+      "label": "Telegram Bildirimi Al",
+      "description": "Birisi notunuzu okumaya çalıştığında Telegram bildirimi alacaksınız. Bu, yanlış şifre denemeleri, tekrar aktivasyon denemeleri veya uzaktan silme işlemlerini içerir.",
+      "placeholder": "Telegram kullanıcı adınızı girin (isteğe bağlı)"
+    },
+    "submit": "Not Oluştur",
+    "creating": "Güvenli Not Oluşturuluyor...",
+    "errors": {
+      "emptyContent": "Gönderilecek bir not girin",
+      "passwordMismatch": "Şifreler eşleşmiyor",
+      "createFailed": "Not oluşturulamadı. Lütfen tekrar deneyin."
+    }
+  },
+  "features": {
+    "encryption": {
+      "title": "Uçtan Uca Şifreleme",
+      "description": "Mesajlarınız sunucularımıza gönderilmeden önce tarayıcınızda şifrelenir, sadece şifreyi bilen kişi şifreyi çözebilir."
+    },
+    "destruct": {
+      "title": "Otomatik Kendini Yok Etme",
+      "description": "Notlar okunduktan veya süresi dolduktan sonra otomatik olarak silinir."
+    },
+    "notifications": {
+      "title": "Telegram Bildirimleri",
+      "description": "Notlarınız açıldığında anında bildirim alın."
+    }
+  },
+  "options": {
+    "title": "Seçenekler",
+    "expiration": "Son Kullanma Süresi",
+    "telegram": "Telegram Bildirimi Al"
+  },
+  "howItWorks": {
+    "title": "zerotrace Nasıl Çalışır",
+    "description": "Okunduktan sonra kendini yok eden şifreli notlar gönderin!",
+    "steps": {
+      "1": "Yukarıda özel mesajınızı yazın ve şifreleyin",
+      "2": "Herkesle paylaşmak için güvenli bir bağlantı alın",
+      "3": "Not okunduktan sonra otomatik olarak silinir",
+      "4": "Açıldığında Telegram ile bildirim alın (isteğe bağlı)"
+    },
+    "links": "Daha fazla bilgi için {faq} veya {privacy} bölümlerimize bakın."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "success": {
+    "title": "笔记创建成功！",
+    "subtitle": "您的安全笔记已准备好分享。链接在读取后将自动销毁。"
+  },
+  "link": {
+    "title": "您的安全笔记链接",
+    "label": "复制并分享此链接",
+    "copy": "复制",
+    "copied": "已复制！"
+  },
+  "security": {
+    "title": "重要安全提醒",
+    "warning1": "此链接只能使用一次 - 打开后将永久删除",
+    "warning2": "仅通过安全渠道分享此链接（加密消息、telegram）",
+    "warning3": "切勿在公共场所或不安全渠道分享此链接",
+    "warning4": "如果未在指定时间内打开，笔记将自动过期"
+  },
+  "destroy": {
+    "button": "🔥 立即销毁笔记",
+    "description": "改变主意了？立即销毁此笔记以防止任何人阅读。",
+    "confirm": "您确定要销毁此笔记吗？此操作无法撤销。",
+    "destroying": "销毁中...",
+    "success": "笔记销毁成功",
+    "redirect": "正在重定向到首页..."
+  },
+  "telegram": {
+    "title": "Telegram通知已启用",
+    "subtitle": "当您的笔记被读取时保持更新",
+    "status": "已激活",
+    "activate": "激活Telegram通知",
+    "description": "点击下面的按钮将此笔记链接到您的Telegram帐户。当有人阅读您的笔记时，您将收到即时通知！",
+    "bot": "机器人：",
+    "noteId": "笔记ID：",
+    "setup": "快速设置（5秒）：",
+    "step1": "点击下面的\"打开Telegram机器人\"按钮",
+    "step2": "Telegram将自动打开。按START或发送/start",
+    "step3": "就是这样！机器人将把此笔记链接到您的帐户。当有人阅读时您会收到通知。",
+    "openBot": "打开Telegram机器人并发送/start",
+    "privacy": "隐私优先：只有您会收到通知。您的Telegram帐户保持私密。",
+    "emergency": "安全：如果有人输入错误密码或尝试重新激活您已链接的笔记，您将收到即时警报，并且可以远程删除笔记。"
+  }
+}

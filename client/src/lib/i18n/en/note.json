@@ -1,0 +1,31 @@
+{
+  "loading": {
+    "title": "Loading Secure Note...",
+    "subtitle": "Decrypting your message"
+  },
+  "error": {
+    "title": "Note Not Available",
+    "subtitle": "zerotrace notes can only be read once for your security.",
+    "whatHappened": "What happened?",
+    "reason1": "The note may have already been read and deleted",
+    "reason2": "The note may have expired (30 day limit)",
+    "reason3": "The link may be incorrect or corrupted",
+    "createNew": "Create New Secure Note"
+  },
+  "password": {
+    "title": "Password Required",
+    "subtitle": "This note is protected with a password",
+    "label": "Note Password",
+    "placeholder": "Enter the password for this note",
+    "unlock": "Unlock Note"
+  },
+  "success": {
+    "title": "Note Read Successfully",
+    "subtitle": "This note has been automatically deleted for your security",
+    "messageTitle": "Your Secure Message",
+    "deleted": "Note Deleted",
+    "deletedText": "This note has been permanently deleted from our servers. It can never be accessed again, even with the same link.",
+    "createNew": "Create New Secure Note"
+  }
+}
+

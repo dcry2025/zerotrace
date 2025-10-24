@@ -1,0 +1,8 @@
+{
+  "title": "Sayfa Bulunamadı",
+  "description": "Üzgünüz, aradığınız sayfa mevcut değil.",
+  "actions": {
+    "home": "Ana Sayfaya Dön",
+    "back": "Geri Dön"
+  }
+}

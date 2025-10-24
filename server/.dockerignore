@@ -1,0 +1,28 @@
+node_modules
+server
+test
+.gitignore
+.git
+.prettierrc
+Dockerfile
+docker-compose*
+.dockerignore
+README.md
+session_db.json
+c.js
+.idea
+LICENSE
+.vscode
+Makefile
+helm-charts
+.env
+.editorconfig
+coverage*
+
+# Bun
+.bun
+bun.lockb
+
+# Logs
+logs
+*.log

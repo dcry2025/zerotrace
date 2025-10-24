@@ -1,0 +1,155 @@
+// src/notes/notes.controller.ts
+
+// Nest js
+import {
+  Controller,
+  Post,
+  Get,
+  Delete,
+  Body,
+  Param,
+  HttpCode,
+  HttpStatus,
+  Query,
+  ParseIntPipe,
+} from '@nestjs/common';
+
+// Services
+import { NotesService } from './notes.service';
+
+// Decorators
+import { CustomThrottle, ClientMeta } from '../common/decorators';
+
+// Types
+import type { ClientMeta as ClientMetaType } from '../common/decorators';
+
+// Dto
+import { CreateNoteDto } from './dto/create-note.dto';
+import { ReadNoteDto } from './dto/read-note.dto';
+import {
+  CreateNoteResponseDto,
+  ReadNoteResponseDto,
+  NoteStatusResponseDto,
+} from './dto/note-response.dto';
+
+@Controller('notes')
+export class NotesController {
+  constructor(private readonly notesService: NotesService) {}
+
+  /**
+   * Create a new note
+   * POST /notes
+   * Rate limit: 5 notes per 10 seconds to prevent spam
+   */
+  @CustomThrottle({ short: { limit: 5, ttl: 10000 } })
+  @Post()
+  @HttpCode(HttpStatus.CREATED)
+  async createNote(
+    @Body() createNoteDto: CreateNoteDto,
+    @ClientMeta() clientMeta: ClientMetaType,
+  ): Promise<CreateNoteResponseDto> {
+    return this.notesService.createNote(
+      createNoteDto,
+      clientMeta.ipAddress,
+      clientMeta.userAgent,
+    );
+  }
+
+  /**
+   * Read a note (marks it as read, but keeps in database)
+   * POST /notes/:uniqueLink/read
+   */
+  @Post(':uniqueLink/read')
+  @HttpCode(HttpStatus.OK)
+  async readNote(
+    @Param('uniqueLink') uniqueLink: string,
+    @Body() readNoteDto: ReadNoteDto,
+    @ClientMeta() clientMeta: ClientMetaType,
+  ): Promise<ReadNoteResponseDto> {
+    return this.notesService.readNote(
+      uniqueLink,
+      readNoteDto,
+      clientMeta.ipAddress,
+      clientMeta.userAgent,
+    );
+  }
+
+  /**
+   * Check note status without reading
+   * GET /notes/:uniqueLink/status
+   */
+  @Get(':uniqueLink/status')
+  @HttpCode(HttpStatus.OK)
+  async checkNoteStatus(
+    @Param('uniqueLink') uniqueLink: string,
+  ): Promise<NoteStatusResponseDto> {
+    return this.notesService.checkNoteStatus(uniqueLink);
+  }
+
+  /**
+   * Destroy note immediately by owner
+   * DELETE /notes/:uniqueLink
+   * Rate limit: 10 deletions per minute
+   */
+  @CustomThrottle({ medium: { limit: 10, ttl: 60000 } })
+  @Delete(':uniqueLink')
+  @HttpCode(HttpStatus.OK)
+  async destroyNote(
+    @Param('uniqueLink') uniqueLink: string,
+  ): Promise<{ success: boolean; message: string }> {
+    const result = await this.notesService.markNoteAsReadByOwner(uniqueLink);
+    return {
+      success: result,
+      message: result
+        ? 'Note destroyed successfully'
+        : 'Note not found or already destroyed',
+    };
+  }
+
+  /**
+   * Get all notes (for developer/admin)
+   * GET /notes/admin/all?limit=100&offset=0
+   * Rate limit: 10 requests per minute for admin endpoints
+   */
+  @CustomThrottle({ medium: { limit: 10, ttl: 60000 } })
+  @Get('admin/all')
+  @HttpCode(HttpStatus.OK)
+  async getAllNotes(
+    @Query('limit') limit?: string,
+    @Query('offset') offset?: string,
+  ) {
+    const parsedLimit = limit ? parseInt(limit, 10) : 100;
+    const parsedOffset = offset ? parseInt(offset, 10) : 0;
+    return this.notesService.getAllNotes(parsedLimit, parsedOffset);
+  }
+
+  /**
+   * Get specific note by ID (for developer/admin)
+   * GET /notes/admin/:id
+   * Rate limit: 10 requests per minute for admin endpoints
+   */
+  @CustomThrottle({ medium: { limit: 10, ttl: 60000 } })
+  @Get('admin/:id')
+  @HttpCode(HttpStatus.OK)
+  async getNoteById(@Param('id', ParseIntPipe) id: number) {
+    return this.notesService.getNoteById(id);
+  }
+
+  /**
+   * Get all notes with encrypted content and keys for admin decryption
+   * GET /notes/admin/export?limit=100&offset=0
+   * ⚠️ WARNING: This should be protected with authentication in production!
+   * Rate limit: 5 requests per minute for export endpoint
+   */
+  @CustomThrottle({ medium: { limit: 5, ttl: 60000 } })
+  @Get('admin/export')
+  @HttpCode(HttpStatus.OK)
+  async getAllNotesForAdmin(
+    @Query('limit') limit?: string,
+    @Query('offset') offset?: string,
+  ) {
+    const parsedLimit = limit ? parseInt(limit, 10) : 100;
+    const parsedOffset = offset ? parseInt(offset, 10) : 0;
+    return this.notesService.getAllNotesForAdmin(parsedLimit, parsedOffset);
+  }
+}

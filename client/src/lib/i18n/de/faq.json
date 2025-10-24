@@ -1,0 +1,87 @@
+{
+  "title": "FAQ - zerotrace",
+  "subtitle": "Häufig Gestellte Fragen",
+  "intro": "Finden Sie Antworten auf die häufigsten Fragen zu zerotrace.",
+  "stillQuestions": "Haben Sie noch Fragen?",
+  "stillQuestionsText": "Wenn Sie die gesuchte Antwort nicht gefunden haben, können Sie sich gerne an uns wenden:",
+  
+  "q1": {
+    "question": "Was ist zerotrace?",
+    "answer": "zerotrace ist ein kostenloser webbasierter Dienst, der es Benutzern ermöglicht, verschlüsselte Notizen zu erstellen, die sie als eindeutige einmalige HTTPS-URLs über das Internet teilen können. Standardmäßig laufen diese Notizen nach dem ersten Zugriff über einen Webbrowser ab."
+  },
+  "q2": {
+    "question": "Wie funktioniert zerotrace?",
+    "answer1": "zerotrace funktioniert, indem Ihre Nachricht in Ihrem Browser verschlüsselt wird, bevor sie an unsere Server gesendet wird. Der Verschlüsselungsschlüssel ist in die eindeutige URL eingebettet, die generiert wird. Wenn jemand auf den Link klickt, wird die Notiz in seinem Browser entschlüsselt und dann sofort von unseren Servern gelöscht.",
+    "answer2": "Da die Verschlüsselung und Entschlüsselung im Browser erfolgen, sehen wir den Inhalt Ihrer Notizen niemals in unverschlüsselter Form."
+  },
+  "q3": {
+    "question": "Ist zerotrace wirklich sicher?",
+    "answer": "Ja, zerotrace wurde mit Blick auf Sicherheit entwickelt. So schützen wir Ihre Privatsphäre:",
+    "point1": "Notizen werden in Ihrem Browser verschlüsselt, bevor sie an unsere Server gesendet werden",
+    "point2": "Wir speichern niemals den Verschlüsselungsschlüssel - er befindet sich nur in der URL",
+    "point3": "Notizen werden nach dem Lesen automatisch gelöscht",
+    "point4": "Wir protokollieren keine IP-Adressen",
+    "point5": "Selbst unsere Administratoren können Ihre Notizen nicht lesen"
+  },
+  "q4": {
+    "question": "Kann ich eine Notiz wiederherstellen, wenn ich den Link verliere?",
+    "answer": "Nein, es gibt keine Möglichkeit, eine Notiz wiederherzustellen, wenn Sie den Link verlieren. Der Link enthält den Verschlüsselungsschlüssel, der zum Entschlüsseln der Notiz benötigt wird. Ohne den Link sind die verschlüsselten Daten auf unseren Servern nutzlos und können nicht entschlüsselt werden."
+  },
+  "q5": {
+    "question": "Was passiert, wenn eine Notiz nicht gelesen wird?",
+    "answer": "Wenn eine Notiz nach 30 Tagen nicht abgerufen wird, entfernt zerotrace sie automatisch dauerhaft von unseren Servern, genauso als wäre sie gelesen worden."
+  },
+  "q6": {
+    "question": "Kann ich ein Passwort für meine Notiz festlegen?",
+    "answer": "Ja! Sie können ein optionales Passwort für zusätzliche Sicherheit festlegen. Wenn Sie vor dem Erstellen Ihrer Notiz auf \"Optionen anzeigen\" klicken, können Sie ein manuelles Passwort angeben. Dieses Passwort ist zum Lesen der Notiz erforderlich und bietet eine zusätzliche Sicherheitsebene."
+  },
+  "q7": {
+    "question": "Kann ich ein Ablaufdatum für meine Notiz festlegen?",
+    "answer": "Ja, Sie können eine benutzerdefinierte Ablaufzeit für Ihre Notiz festlegen. Im Optionsmenü können Sie angeben, wie viele Tage die Notiz verfügbar bleiben soll, bevor sie automatisch gelöscht wird, unabhängig davon, ob sie gelesen wurde oder nicht."
+  },
+  "q8": {
+    "question": "Wie funktionieren Telegram-Benachrichtigungen?",
+    "answer": "zerotrace kann Ihnen eine Telegram-Benachrichtigung senden, wenn Ihre Notiz gelesen wird. Aktueller Ablauf:",
+    "point1": "Aktivieren Sie im Erstellungsformular die Option 'Telegram-Benachrichtigung erhalten'",
+    "point2": "Drücken Sie nach dem Erstellen der Notiz auf der Erfolgsseite 'Telegram Bot öffnen'",
+    "point3": "Drücken Sie in Telegram START (oder senden Sie /start), um die Notiz mit Ihrem Konto zu verknüpfen",
+    "point4": "Sie erhalten eine Benachrichtigung, sobald die Notiz zum ersten Mal geöffnet wird"
+  },
+  "q9": {
+    "question": "Was ist, wenn jemand den Link abfängt?",
+    "answer": "Während zerotrace Ihre Notizen verschlüsselt, hängt die Sicherheit des Links selbst davon ab, wie Sie ihn senden. Wenn Telegram-Benachrichtigungen aktiviert sind, erhalten Sie auch Warnungen bei verdächtigen Aktionen (falsches Passwort oder Reaktivierungsversuche) und können die Notiz remote löschen. Empfehlungen:",
+    "point1": "Verwenden Sie sichere Kommunikationskanäle (verschlüsselte E-Mail, sichere Messaging-Apps)",
+    "point2": "Vermeiden Sie das Senden von Links über unsichere Kanäle",
+    "point3": "Erwägen Sie die Verwendung eines Passworts für zusätzlichen Schutz",
+    "point4": "Legen Sie kürzere Ablaufzeiten für hochsensible Informationen fest"
+  },
+  "q10": {
+    "question": "Kann ich eine Notiz mehrmals lesen?",
+    "answer": "Standardmäßig nein. Notizen sind so konzipiert, dass sie nur einmal gelesen werden können und nach dem ersten Zugriff sofort gelöscht werden. Wenn Sie jedoch eine benutzerdefinierte Ablaufzeit in den Optionen festlegen, bleibt die Notiz verfügbar, bis sie entweder gelesen wird oder die Ablaufzeit erreicht ist."
+  },
+  "q11": {
+    "question": "Ist zerotrace kostenlos?",
+    "answer": "Ja, zerotrace ist völlig kostenlos. Es gibt keine versteckten Gebühren, Abonnements oder Premium-Funktionen. Alle Funktionen stehen allen Benutzern kostenlos zur Verfügung."
+  },
+  "q12": {
+    "question": "Welche Browser werden unterstützt?",
+    "answer": "zerotrace funktioniert mit allen modernen Webbrowsern, einschließlich Chrome, Firefox, Safari, Edge und Opera. Der Dienst verwendet Standard-Webtechnologien und sollte auf jedem Gerät mit einem modernen Browser funktionieren."
+  },
+  "q13": {
+    "question": "Kann ich zerotrace auf mobilen Geräten verwenden?",
+    "answer": "Ja, zerotrace ist vollständig responsiv und funktioniert perfekt auf mobilen Geräten, Tablets und Desktop-Computern. Die Benutzeroberfläche passt sich an verschiedene Bildschirmgrößen an, um eine optimale Benutzererfahrung zu bieten."
+  },
+  "q14": {
+    "question": "Was soll ich tun, wenn ich ein Problem habe?",
+    "answer": "Wenn Sie auf Probleme stoßen oder Fragen haben, die in dieser FAQ nicht behandelt werden:",
+    "point1": "Überprüfen Sie, ob Sie einen modernen, unterstützten Browser verwenden",
+    "point2": "Stellen Sie sicher, dass Sie eine stabile Internetverbindung haben",
+    "point3": "Versuchen Sie, die Seite zu aktualisieren oder Ihren Browser-Cache zu leeren",
+    "point4": "Kontaktieren Sie uns über Twitter oder Telegram für technischen Support"
+  },
+  "q15": {
+    "question": "Sind meine Daten bei zerotrace sicher?",
+    "answer": "Ja, Ihre Daten sind durch starke Verschlüsselung und unser datenschutzorientiertes Design geschützt. Wir sammeln keine persönlichen Informationen, protokollieren keine IP-Adressen und können Ihre Notizen nicht lesen, selbst wenn wir es wollten. Ihre Privatsphäre und Sicherheit haben für uns oberste Priorität."
+  }
+}
+

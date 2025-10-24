@@ -1,0 +1,79 @@
+{
+  "hero": {
+    "title": "Senden Sie <span class='text-blue-600'>Sichere</span> Notizen",
+    "subtitle": "Erstellen Sie verschlüsselte Nachrichten, die sich nach dem Lesen automatisch selbst zerstören. Perfekt zum sicheren Teilen sensibler Informationen."
+  },
+  "form": {
+    "title": "Sichere Notiz Erstellen",
+    "content": {
+      "label": "✍️ Ihre Private Nachricht",
+      "placeholder": "Geben Sie hier Ihre sichere Nachricht ein...",
+      "counter": "Zeichen"
+    },
+    "password": {
+      "label": "🔑 Passwortschutz (Optional)",
+      "placeholder": "Passwort für zusätzliche Sicherheit eingeben",
+      "confirm": "Passwort bestätigen",
+      "strength": {
+        "weak": "Schwach",
+        "medium": "Mittel",
+        "strong": "Stark"
+      },
+      "requirements": {
+        "title": "Passwortanforderungen:",
+        "minLength": "Mindestens {min} Zeichen",
+        "special": "Enthält Zahl oder Sonderzeichen",
+        "match": "Passwörter stimmen überein"
+      },
+      "errors": {
+        "minLength": "Passwort muss mindestens {min} Zeichen lang sein",
+        "maxLength": "Passwort darf {max} Zeichen nicht überschreiten",
+        "special": "Passwort sollte mindestens eine Zahl oder ein Sonderzeichen enthalten",
+        "mismatch": "Passwörter stimmen nicht überein"
+      }
+    },
+    "expiration": {
+      "label": "⏰ Ablaufzeit",
+      "1h": "1 Stunde ab jetzt",
+      "24h": "24 Stunden ab jetzt",
+      "7d": "7 Tage ab jetzt",
+      "30d": "30 Tage ab jetzt"
+    },
+    "notify": {
+      "title": "📱 Telegram-Benachrichtigung Erhalten",
+      "description": "Erhalten Sie eine sofortige Benachrichtigung, wenn Ihre Notiz gelesen wird. Sie werden nach dem Erstellen der Notiz weitergeleitet, um den Bot zu aktivieren. Wenn jemand ein falsches Passwort versucht oder versucht, Ihre bereits verknüpfte Notiz erneut zu aktivieren, erhalten Sie eine Warnung und können die Notiz remote löschen."
+    },
+    "creating": "Sichere Notiz wird erstellt...",
+    "errors": {
+      "emptyContent": "Bitte geben Sie eine Notiz zum Senden ein",
+      "passwordMismatch": "Passwörter stimmen nicht überein",
+      "createFailed": "Notiz konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
+    }
+  },
+  "features": {
+    "encryption": {
+      "title": "Ende-zu-Ende-Verschlüsselung",
+      "description": "Ihre Nachrichten werden in Ihrem Browser verschlüsselt, bevor sie an unsere Server gesendet werden."
+    },
+    "destruct": {
+      "title": "Automatische Selbstzerstörung",
+      "description": "Notizen werden automatisch nach dem Lesen oder nach Ablauf gelöscht."
+    },
+    "notifications": {
+      "title": "Telegram-Benachrichtigungen",
+      "description": "Erhalten Sie sofortige Benachrichtigungen, wenn Ihre Notizen geöffnet werden."
+    }
+  },
+  "howItWorks": {
+    "title": "So funktioniert zerotrace",
+    "description": "Senden Sie verschlüsselte Notizen, die sich nach dem Lesen selbst zerstören!",
+    "steps": {
+      "1": "Schreiben Sie Ihre private Nachricht oben und verschlüsseln Sie sie",
+      "2": "Erhalten Sie einen sicheren Link zum Teilen mit jedem",
+      "3": "Die Notiz wird automatisch nach dem Lesen gelöscht",
+      "4": "Werden Sie über Telegram benachrichtigt, wenn sie geöffnet wird (optional)"
+    },
+    "links": "Erfahren Sie mehr in unseren Bereichen {faq} oder {privacy}."
+  }
+}
+

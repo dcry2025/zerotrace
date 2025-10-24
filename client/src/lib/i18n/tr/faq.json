@@ -1,0 +1,86 @@
+{
+  "title": "Sık Sorulan Sorular - zerotrace",
+  "subtitle": "Sık Sorulan Sorular",
+  "intro": "zerotrace hakkında en sık sorulan soruların cevaplarını bulun.",
+  "stillQuestions": "Hala sorularınız var mı?",
+  "stillQuestionsText": "Aradığınız cevabı bulamadıysanız, bizimle iletişime geçmekten çekinmeyin:",
+  
+  "q1": {
+    "question": "zerotrace nedir?",
+    "answer": "zerotrace, kullanıcıların şifreli notlar oluşturmasına ve bunları benzersiz tek kullanımlık HTTPS URL'leri olarak internet üzerinden paylaşmasına olanak tanıyan ücretsiz bir web tabanlı hizmettir. Varsayılan olarak, bu notlar herhangi bir web tarayıcısı aracılığıyla ilk erişimden sonra süresi dolar."
+  },
+  "q2": {
+    "question": "zerotrace nasıl çalışır?",
+    "answer1": "zerotrace, mesajınızı sunucularımıza gönderilmeden önce tarayıcınızda şifreleyerek çalışır. Şifreleme anahtarı oluşturulan benzersiz URL'de gömülüdür. Birisi bağlantıya tıkladığında, not tarayıcılarında şifresi çözülür ve ardından sunucularımızdan hemen silinir.",
+    "answer2": "Şifreleme ve şifre çözme tarayıcıda gerçekleştiği için, notlarınızın şifrelenmemiş içeriğini asla görmeyiz."
+  },
+  "q3": {
+    "question": "zerotrace gerçekten güvenli mi?",
+    "answer": "Evet, zerotrace güvenlik göz önünde bulundurularak tasarlanmıştır. Gizliliğinizi nasıl koruduğumuz:",
+    "point1": "Notlar sunucularımıza gönderilmeden önce tarayıcınızda şifrelenir",
+    "point2": "Şifreleme anahtarını asla saklamayız - sadece URL'de bulunur",
+    "point3": "Notlar okunduktan sonra otomatik olarak silinir",
+    "point4": "IP adreslerini kaydetmeyiz",
+    "point5": "Yöneticilerimiz bile notlarınızı okuyamaz"
+  },
+  "q4": {
+    "question": "Bağlantıyı kaybedersem notu kurtarabilir miyim?",
+    "answer": "Hayır, bağlantıyı kaybederseniz notu kurtarmanın hiçbir yolu yoktur. Bağlantı, notu şifresini çözmek için gereken şifreleme anahtarını içerir. Bağlantı olmadan, sunucularımızdaki şifreli veri işe yaramaz ve şifresi çözülemez."
+  },
+  "q5": {
+    "question": "Not okunmazsa ne olur?",
+    "answer": "Not 30 gün sonra alınmazsa, zerotrace onu sunucularımızdan kalıcı olarak kaldırır, tıpkı okunmuş gibi."
+  },
+  "q6": {
+    "question": "Notum için şifre belirleyebilir miyim?",
+    "answer": "Evet! Ek güvenlik için isteğe bağlı bir şifre belirleyebilirsiniz. Notunuzu oluşturmadan önce \"Seçenekleri göster\"e tıklayarak manuel bir şifre belirtebilirsiniz. Bu şifre notu okumak için gerekli olacak ve ek bir güvenlik katmanı sağlayacak."
+  },
+  "q7": {
+    "question": "Notum için son kullanma tarihi belirleyebilir miyim?",
+    "answer": "Evet, notunuz için özel bir son kullanma süresi belirleyebilirsiniz. Seçenekler menüsünde, notun otomatik silinmeden önce kaç gün kullanılabilir kalması gerektiğini belirtebilirsiniz, okunup okunmadığına bakılmaksızın."
+  },
+  "q8": {
+    "question": "Telegram bildirimleri nasıl çalışır?",
+    "answer": "zerotrace, notunuz okunduğunda size Telegram bildirimi gönderebilir. Mevcut akış:",
+    "point1": "Oluşturma formunda \"Telegram Bildirimi Al\" seçeneğini etkinleştirin",
+    "point2": "Not oluşturulduktan sonra, başarı sayfasında \"Telegram Botunu Aç\"a basın",
+    "point3": "Telegram'da START'a basın (veya /start gönderin) notu hesabınıza bağlamak için",
+    "point4": "Not ilk kez açıldığında hemen bildirim alacaksınız"
+  },
+  "q9": {
+    "question": "Birisi bağlantıyı yakalarsa ne olur?",
+    "answer": "zerotrace notlarınızı şifrelerken, bağlantının kendisinin güvenliği onu nasıl gönderdiğinize bağlıdır. Telegram bildirimleri etkinse, şüpheli eylemler (yanlış şifre veya yeniden aktivasyon denemeleri) hakkında da uyarı alacaksınız ve notu uzaktan silebileceksiniz. Öneriler:",
+    "point1": "Güvenli iletişim kanalları kullanın (şifreli e-posta, güvenli mesajlaşma uygulamaları)",
+    "point2": "Bağlantıları güvenli olmayan kanallar üzerinden göndermekten kaçının",
+    "point3": "Ek koruma için şifre kullanmayı düşünün",
+    "point4": "Yüksek hassasiyetli bilgiler için daha kısa son kullanma süreleri belirleyin"
+  },
+  "q10": {
+    "question": "Bir notu birden fazla kez okuyabilir miyim?",
+    "answer": "Varsayılan olarak, hayır. Notlar sadece bir kez okunacak şekilde tasarlanmıştır ve ilk erişimden sonra hemen silinir. Ancak, seçeneklerde özel bir son kullanma süresi belirlerseniz, not okunana veya son kullanma süresine ulaşana kadar kullanılabilir kalacaktır."
+  },
+  "q11": {
+    "question": "zerotrace ücretsiz mi?",
+    "answer": "Evet, zerotrace tamamen ücretsizdir. Gizli ücret, abonelik veya premium özellik yoktur. Tüm işlevsellik tüm kullanıcılara ücretsiz olarak sunulur."
+  },
+  "q12": {
+    "question": "Hangi tarayıcılar destekleniyor?",
+    "answer": "zerotrace Chrome, Firefox, Safari, Edge ve Opera dahil olmak üzere tüm modern web tarayıcıları ile çalışır. Hizmet standart web teknolojilerini kullanır ve modern tarayıcısı olan herhangi bir cihazda çalışmalıdır."
+  },
+  "q13": {
+    "question": "zerotrace'i mobil cihazlarda kullanabilir miyim?",
+    "answer": "Evet, zerotrace tamamen duyarlıdır ve mobil cihazlar, tabletler ve masaüstü bilgisayarlarda mükemmel çalışır. Arayüz farklı ekran boyutlarına uyum sağlar."
+  },
+  "q14": {
+    "question": "Sorun yaşarsam ne yapmalıyım?",
+    "answer": "Herhangi bir sorunla karşılaşırsanız veya bu SSS'de kapsanmayan sorularınız varsa:",
+    "point1": "Modern, desteklenen bir tarayıcı kullandığınızdan emin olun",
+    "point2": "Kararlı bir internet bağlantınız olduğundan emin olun",
+    "point3": "Sayfayı yenilemeyi veya tarayıcı önbelleğinizi temizlemeyi deneyin",
+    "point4": "Teknik destek için Twitter veya Telegram üzerinden bizimle iletişime geçin"
+  },
+  "q15": {
+    "question": "Verilerim zerotrace ile güvende mi?",
+    "answer": "Evet, verileriniz güçlü şifreleme ve gizlilik öncelikli tasarımımızla korunmaktadır. Kişisel bilgi toplamayız, IP adreslerini saklamayız ve istesek bile notlarınızı okuyamayız. Gizliliğiniz ve güvenliğiniz önceliğimizdir."
+  }
+}

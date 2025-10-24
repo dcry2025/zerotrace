@@ -1,0 +1,30 @@
+{
+  "loading": {
+    "title": "Caricamento Nota Sicura...",
+    "subtitle": "Decrittazione del tuo messaggio"
+  },
+  "error": {
+    "title": "Nota Non Disponibile",
+    "subtitle": "Le note zerotrace possono essere lette solo una volta per la tua sicurezza.",
+    "whatHappened": "Cosa è successo?",
+    "reason1": "La nota potrebbe essere già stata letta e eliminata",
+    "reason2": "La nota potrebbe essere scaduta (limite di 30 giorni)",
+    "reason3": "Il link potrebbe essere errato o corrotto",
+    "createNew": "Crea Nuova Nota Sicura"
+  },
+  "password": {
+    "title": "Password Richiesta",
+    "subtitle": "Questa nota è protetta con una password",
+    "label": "Password della Nota",
+    "placeholder": "Inserisci la password per questa nota",
+    "unlock": "Sblocca Nota"
+  },
+  "success": {
+    "title": "Nota Letta con Successo",
+    "subtitle": "Questa nota è stata automaticamente eliminata per la tua sicurezza",
+    "messageTitle": "Il Tuo Messaggio Sicuro",
+    "deleted": "Nota Eliminata",
+    "deletedText": "Questa nota è stata permanentemente eliminata dai nostri server. Non può più essere accessibile, nemmeno con lo stesso link.",
+    "createNew": "Crea Nuova Nota Sicura"
+  }
+}

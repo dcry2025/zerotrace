@@ -1,0 +1,87 @@
+{
+  "title": "FAQ - zerotrace",
+  "subtitle": "Frequently Asked Questions",
+  "intro": "Find answers to the most frequently asked questions about zerotrace.",
+  "stillQuestions": "Still have questions?",
+  "stillQuestionsText": "If you didn't find the answer you were looking for, feel free to reach out to us:",
+  
+  "q1": {
+    "question": "What is zerotrace?",
+    "answer": "zerotrace is a free web-based service that allows users to create encrypted notes that they can share over the internet as unique one-time-use HTTPS URLs. By default, these notes expire after their first access via any web browser."
+  },
+  "q2": {
+    "question": "How does zerotrace work?",
+    "answer1": "zerotrace works by encrypting your message in your browser before it's sent to our servers. The encryption key is embedded in the unique URL that's generated. When someone clicks the link, the note is decrypted in their browser and then immediately deleted from our servers.",
+    "answer2": "Since the encryption and decryption happen in the browser, we never see the content of your notes in an unencrypted form."
+  },
+  "q3": {
+    "question": "Is zerotrace really secure?",
+    "answer": "Yes, zerotrace is designed with security in mind. Here's how we protect your privacy:",
+    "point1": "Notes are encrypted in your browser before being sent to our servers",
+    "point2": "We never store the encryption key - it's only in the URL",
+    "point3": "Notes are automatically deleted after being read",
+    "point4": "We don't log IP addresses",
+    "point5": "Even our administrators cannot read your notes"
+  },
+  "q4": {
+    "question": "Can I recover a note if I lose the link?",
+    "answer": "No, there is no way to recover a note if you lose the link. The link contains the encryption key needed to decrypt the note. Without the link, the encrypted data on our servers is useless and cannot be decrypted."
+  },
+  "q5": {
+    "question": "What happens if a note isn't read?",
+    "answer": "If a note is not retrieved after 30 days, zerotrace automatically removes it permanently from our servers, just as if it were read."
+  },
+  "q6": {
+    "question": "Can I set a password for my note?",
+    "answer": "Yes! You can set an optional password for additional security. When you click \"Show options\" before creating your note, you can specify a manual password. This password will be required to read the note, providing an extra layer of security."
+  },
+  "q7": {
+    "question": "Can I set an expiration date for my note?",
+    "answer": "Yes, you can set a custom expiration time for your note. In the options menu, you can specify how many days the note should remain available before being automatically deleted, regardless of whether it has been read or not."
+  },
+  "q8": {
+    "question": "How do Telegram notifications work?",
+    "answer": "zerotrace can send you a Telegram notification when your note is read. Current flow:",
+    "point1": "On the create form, enable the option ‘Get Telegram Notification’",
+    "point2": "After the note is created, press ‘Open Telegram Bot’ on the success page",
+    "point3": "In Telegram press START (or send /start) to link the note to your account",
+    "point4": "You'll get a notification as soon as the note is opened for the first time"
+  },
+  "q9": {
+    "question": "What if someone intercepts the link?",
+    "answer": "While zerotrace encrypts your notes, the security of the link itself depends on how you send it. If Telegram notifications are enabled, you'll also get alerts on suspicious actions (wrong password or re-activation attempts) and you can remotely delete the note. Recommendations:",
+    "point1": "Use secure communication channels (encrypted email, secure messaging apps)",
+    "point2": "Avoid sending links through unsecured channels",
+    "point3": "Consider using a password for additional protection",
+    "point4": "Set shorter expiration times for highly sensitive information"
+  },
+  "q10": {
+    "question": "Can I read a note multiple times?",
+    "answer": "By default, no. Notes are designed to be read only once and are immediately deleted after the first access. However, if you set a custom expiration time in the options, the note will remain available until either it's read or the expiration time is reached."
+  },
+  "q11": {
+    "question": "Is zerotrace free to use?",
+    "answer": "Yes, zerotrace is completely free to use. There are no hidden fees, subscriptions, or premium features. All functionality is available to all users at no cost."
+  },
+  "q12": {
+    "question": "What browsers are supported?",
+    "answer": "zerotrace works with all modern web browsers including Chrome, Firefox, Safari, Edge, and Opera. The service uses standard web technologies and should work on any device with a modern browser."
+  },
+  "q13": {
+    "question": "Can I use zerotrace on mobile devices?",
+    "answer": "Yes, zerotrace is fully responsive and works perfectly on mobile devices, tablets, and desktop computers. The interface adapts to different screen sizes for optimal user experience."
+  },
+  "q14": {
+    "question": "What should I do if I have a problem?",
+    "answer": "If you encounter any issues or have questions not covered in this FAQ:",
+    "point1": "Check that you're using a modern, supported browser",
+    "point2": "Ensure you have a stable internet connection",
+    "point3": "Try refreshing the page or clearing your browser cache",
+    "point4": "Contact us via Twitter or Telegram for technical support"
+  },
+  "q15": {
+    "question": "Is my data safe with zerotrace?",
+    "answer": "Yes, your data is protected by strong encryption and our privacy-first design. We don't collect personal information, don't store IP addresses, and cannot read your notes even if we wanted to. Your privacy and security are our top priorities."
+  }
+}
+

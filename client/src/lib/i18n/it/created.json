@@ -1,0 +1,43 @@
+{
+  "success": {
+    "title": "Nota Creata con Successo!",
+    "subtitle": "La tua nota sicura è pronta per essere condivisa. Il link si autodistruggerà dopo essere stato letto."
+  },
+  "link": {
+    "title": "Il Tuo Link di Nota Sicura",
+    "label": "Copia e condividi questo link",
+    "copy": "Copia",
+    "copied": "Copiato!"
+  },
+  "security": {
+    "title": "Avviso di Sicurezza Importante",
+    "warning1": "Questo link può essere utilizzato solo una volta - dopo essere stato aperto, verrà eliminato permanentemente",
+    "warning2": "Condividi questo link solo attraverso canali sicuri (messaggistica crittografata, telegram)",
+    "warning3": "Non condividere mai questo link in luoghi pubblici o canali non sicuri",
+    "warning4": "La nota scadrà automaticamente se non viene aperta entro il tempo specificato"
+  },
+  "destroy": {
+    "button": "🔥 Distruggi Nota Ora",
+    "description": "Cambiato idea? Distruggi questa nota immediatamente per impedire a chiunque di leggerla.",
+    "confirm": "Sei sicuro di voler distruggere questa nota? Questa azione non può essere annullata.",
+    "destroying": "Distruggendo...",
+    "success": "Nota Distrutta con Successo",
+    "redirect": "Reindirizzamento alla home page..."
+  },
+  "telegram": {
+    "title": "Notifiche Telegram Abilitate",
+    "subtitle": "Rimani aggiornato quando la tua nota viene letta",
+    "status": "ATTIVO",
+    "activate": "Attiva Notifiche Telegram",
+    "description": "Clicca il pulsante qui sotto per collegare questa nota al tuo account Telegram. Riceverai una notifica istantanea quando qualcuno legge la tua nota!",
+    "bot": "Bot:",
+    "noteId": "ID Nota:",
+    "setup": "Configurazione Rapida (5 secondi):",
+    "step1": "Clicca il pulsante \"Apri Bot Telegram\" qui sotto",
+    "step2": "Telegram si aprirà automaticamente. Premi START o invia /start",
+    "step3": "Ecco fatto! Il bot collegherà questa nota al tuo account. Riceverai notifiche quando qualcuno la legge.",
+    "openBot": "Apri Bot Telegram e Invia /start",
+    "privacy": "Privacy prima: Solo tu riceverai notifiche. Il tuo account Telegram rimane privato.",
+    "emergency": "Sicurezza: Se qualcuno inserisce una password sbagliata o tenta di riattivare una nota che hai già collegato, riceverai un avviso istantaneo e potrai ELIMINARE la nota da remoto."
+  }
+}

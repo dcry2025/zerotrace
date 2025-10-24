@@ -1,0 +1,8 @@
+{
+  "title": "Pagina Non Trovata",
+  "description": "Spiacenti, la pagina che stai cercando non esiste.",
+  "actions": {
+    "home": "Torna alla Home",
+    "back": "Torna Indietro"
+  }
+}

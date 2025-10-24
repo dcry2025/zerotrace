@@ -1,0 +1,78 @@
+{
+  "hero": {
+    "title": "Envía Notas <span class='text-blue-600'>Seguras</span>",
+    "subtitle": "Crea mensajes encriptados que se autodestruyen automáticamente después de ser leídos. Perfecto para compartir información sensible de forma segura."
+  },
+  "form": {
+    "title": "Crear Nota Segura",
+    "content": {
+      "label": "✍️ Tu Mensaje Privado",
+      "placeholder": "Escribe tu mensaje seguro aquí...",
+      "counter": "caracteres"
+    },
+    "password": {
+      "label": "🔑 Protección con Contraseña (Opcional)",
+      "placeholder": "Ingresa contraseña para mayor seguridad",
+      "confirm": "Confirmar contraseña",
+      "strength": {
+        "weak": "Débil",
+        "medium": "Medio",
+        "strong": "Fuerte"
+      },
+      "requirements": {
+        "title": "Requisitos de contraseña:",
+        "minLength": "Mínimo {min} caracteres",
+        "special": "Contiene número o carácter especial",
+        "match": "Las contraseñas coinciden"
+      },
+      "errors": {
+        "minLength": "La contraseña debe tener al menos {min} caracteres",
+        "maxLength": "La contraseña no debe exceder {max} caracteres",
+        "special": "La contraseña debe contener al menos un número o carácter especial",
+        "mismatch": "Las contraseñas no coinciden"
+      }
+    },
+    "expiration": {
+      "label": "⏰ Tiempo de Expiración",
+      "1h": "1 hora desde ahora",
+      "24h": "24 horas desde ahora",
+      "7d": "7 días desde ahora",
+      "30d": "30 días desde ahora"
+    },
+    "notify": {
+      "title": "📱 Recibir Notificación de Telegram",
+      "description": "Recibe una alerta instantánea cuando tu nota sea leída. Serás redirigido para activar el bot después de crear la nota. Si alguien intenta una contraseña incorrecta o intenta reactivar una nota que ya has vinculado, recibirás una advertencia y podrás eliminar la nota remotamente."
+    },
+    "creating": "Creando Nota Segura...",
+    "errors": {
+      "emptyContent": "Por favor, ingrese una nota para enviar",
+      "passwordMismatch": "Las contraseñas no coinciden",
+      "createFailed": "No se pudo crear la nota. Por favor, inténtelo de nuevo."
+    }
+  },
+  "features": {
+    "encryption": {
+      "title": "Encriptación de Extremo a Extremo",
+      "description": "Tus mensajes se encriptan en tu navegador antes de ser enviados a nuestros servidores."
+    },
+    "destruct": {
+      "title": "Auto Autodestrucción",
+      "description": "Las notas se eliminan automáticamente después de ser leídas o después de la expiración."
+    },
+    "notifications": {
+      "title": "Notificaciones de Telegram",
+      "description": "Recibe notificaciones instantáneas cuando se abran tus notas."
+    }
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona zerotrace",
+    "description": "¡Envía notas encriptadas que se autodestruyen después de ser leídas!",
+    "steps": {
+      "1": "Escribe tu mensaje privado arriba y encriptalo",
+      "2": "Obtén un enlace seguro para compartir con cualquiera",
+      "3": "La nota se elimina automáticamente después de ser leída",
+      "4": "Recibe notificación vía Telegram cuando se abra (opcional)"
+    },
+    "links": "Aprende más en nuestras secciones {faq} o {privacy}."
+  }
+}

@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: zerotrace_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: zerotrace
+      MYSQL_USER: zerotrace
+      MYSQL_PASSWORD: zerotrace_secure_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: zerotrace_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  app:
+    build: .
+    container_name: zerotrace_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      PORT: 7000
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: zerotrace
+      MYSQL_PASSWORD: zerotrace_secure_password
+      MYSQL_NAME: zerotrace
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ""
+      REDIS_TTL: 3600
+      ENCRYPTION_KEY: change-this-to-a-very-strong-secret-key-min-32-chars
+      FRONTEND_ORIGIN: "http://localhost:3000"
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./logs:/usr/src/app/logs
+    command: sh -c "bun run migrate && bun run start"
+
+volumes:
+  db_data:
+  redis_data:
