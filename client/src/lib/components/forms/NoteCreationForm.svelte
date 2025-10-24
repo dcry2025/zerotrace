@@ -1,10 +1,9 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { toast } from '@zerodevx/svelte-toast';
-  import { notesService } from '$lib/services';
+  import { notesService, PASSWORD_VALIDATION, PUBLIC_URL } from '$lib';
   import { slide, fade } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
-  import { PASSWORD_VALIDATION } from '$lib';
   import { t } from '$lib/i18n/i18n';
   
   let content = $state('');
@@ -138,8 +137,8 @@
       // Service returns: { uniqueLink, noteKey, message }
       if (response.uniqueLink && response.noteKey) {
         // Build full URL with noteKey in fragment
-        // Always use VITE_PUBLIC_URL from environment
-        const publicUrl = import.meta.env.VITE_PUBLIC_URL;
+        // Always use PUBLIC_URL from constants
+        const publicUrl = PUBLIC_URL;
         const fullUrl = `${publicUrl}/note/${response.uniqueLink}#${response.noteKey}`;
         
         const params = new URLSearchParams({

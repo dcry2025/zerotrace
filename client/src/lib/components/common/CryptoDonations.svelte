@@ -3,6 +3,7 @@
    * List of cryptocurrency donations
    */
   import CryptoDonation from './CryptoDonation.svelte';
+  import { CRYPTO_DONATIONS } from '$lib';
   
   interface Props {
     isMobile?: boolean;
@@ -10,12 +11,12 @@
   
   let { isMobile = false }: Props = $props();
   
-  // Donation addresses from environment variables
+  // Donation addresses from constants
   const donationAddresses = {
-    btc: import.meta.env.VITE_DONATE_BTC || '',
-    eth: import.meta.env.VITE_DONATE_ETH || '',
-    // xmr: import.meta.env.VITE_DONATE_XMR || '',
-    // zec: import.meta.env.VITE_DONATE_ZEC || ''
+    btc: CRYPTO_DONATIONS.BTC,
+    eth: CRYPTO_DONATIONS.ETH,
+    // xmr: CRYPTO_DONATIONS.XMR,
+    // zec: CRYPTO_DONATIONS.ZEC
   };
   
   // Cryptocurrency list

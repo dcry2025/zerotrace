@@ -44,3 +44,16 @@ export const PASSWORD_VALIDATION = {
   MAX_LENGTH: 128,
 } as const;
 
+/**
+ * Public URL configuration
+ */
+export const PUBLIC_URL = 'http://zerotrace.work';
+
+/**
+ * Cryptocurrency donation addresses
+ */
+export const CRYPTO_DONATIONS = {
+  BTC: 'bc1qzxvdxp4qpw52pqepvlejquucefjta09kh2nk0v',
+  ETH: '0x977baf7DFf0C1649F579d3DF3BAD83D0D834367E',
+} as const;
+
