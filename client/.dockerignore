@@ -4,11 +4,21 @@ npm-debug.log
 dist
 build
 .svelte-kit
-.env
-.env.*
-!env.example
 *.log
 coverage
 .vscode
 .idea
+
+# Static files (not needed in production)
+static/
+
+# Development files
+README.md
+yarn.lock
+bun.lock
+logs/
+
+# Git
+.git/
+.gitignore
 
