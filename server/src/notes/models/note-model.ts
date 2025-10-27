@@ -39,10 +39,10 @@ export class Note extends Model<Note> {
   @Column({
     type: DataType.TEXT,
     allowNull: true,
-    field: 'encrypted_key_for_admin',
-    comment: 'noteKey encrypted with admin RSA public key for admin decryption',
+    field: 'metadata_hash',
+    comment: 'Additional metadata hash for note integrity verification',
   })
-  encryptedKeyForAdmin: string;
+  metadataHash: string;
 
   @Column({
     type: DataType.STRING(64),

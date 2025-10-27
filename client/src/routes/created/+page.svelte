@@ -32,12 +32,12 @@
   let destroying = $state(false);
   let destroyed = $state(false);
 
-  // Derived values using Svelte 5
+  // Derived values
   const showTelegramCard = $derived(shouldNotify && botInfo);
   const isDestroying = $derived(destroying);
   const isDestroyed = $derived(destroyed);
 
-  // Event handlers using Svelte 5
+  // Event handlers
   function handleCopyToClipboard() {
     navigator.clipboard.writeText(link).then(() => {
       copied = true;

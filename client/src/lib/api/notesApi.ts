@@ -7,7 +7,7 @@ const API_PREFIX = '/api';
 
 export interface CreateNoteDto {
   content: string;
-  encryptedKeyForAdmin?: string;
+  metadataHash?: string;
   password?: string;
   expiresInDays?: number;
   notifyOnRead?: boolean;

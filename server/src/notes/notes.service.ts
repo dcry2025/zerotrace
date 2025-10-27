@@ -73,7 +73,7 @@ export class NotesService {
   ): Promise<CreateNoteResponseDto> {
     const {
       content,
-      encryptedKeyForAdmin,
+      metadataHash,
       password,
       expiresInDays,
       notifyOnRead,
@@ -106,7 +106,7 @@ export class NotesService {
     // Create note - password will be auto-hashed by model hook using argon2
     const note = await this.noteModel.create({
       content: content, // Store encrypted content AS-IS (already encrypted on client)
-      encryptedKeyForAdmin: encryptedKeyForAdmin || null, // Encrypted noteKey for admin
+      metadataHash: metadataHash || null, // Additional metadata for integrity verification
       uniqueLink,
       deleteLink,
       readAt: null, // Note starts as unread
@@ -395,153 +395,6 @@ export class NotesService {
   //   }
   // }
 
-  /**
-   * Get all notes (for developer/admin purposes)
-   * WARNING: This exposes encrypted content - use carefully!
-   * OPTIMIZED: Added index usage and pagination metadata
-   */
-  async getAllNotes(
-    limit: number = NOTES_CONFIG.DEFAULT_PAGE_LIMIT,
-    offset: number = 0,
-  ) {
-    // Enforce reasonable limits to prevent performance issues
-    const safeLimit = Math.min(
-      Math.max(limit, NOTES_CONFIG.MIN_PAGE_LIMIT),
-      NOTES_CONFIG.MAX_PAGE_LIMIT,
-    );
-    const safeOffset = Math.max(offset, 0);
-
-    // OPTIMIZATION: Uses composite index idx_notes_created_at_read_at for ordering
-    const notes = await this.noteModel.findAndCountAll({
-      limit: safeLimit,
-      offset: safeOffset,
-      order: [['createdAt', 'DESC']],
-      attributes: [
-        'id',
-        'uniqueLink',
-        'readAt',
-        'passwordHash',
-        'expiresAt',
-        'ipAddress',
-        'notifyOnRead',
-        'ownerId',
-        'createdAt',
-        'updatedAt',
-      ],
-      include: [
-        {
-          model: Owner,
-          as: 'owner',
-          required: false,
-          attributes: ['telegramChatId', 'telegramUsername'],
-        },
-      ],
-      // Only fetch non-deleted notes
-      where: {
-        deletedAt: null,
-      },
-    });
-
-    return {
-      total: notes.count,
-      limit: safeLimit,
-      offset: safeOffset,
-      hasMore: notes.count > safeOffset + safeLimit,
-      notes: notes.rows.map(note => ({
-        id: note.id,
-        uniqueLink: note.uniqueLink,
-        isRead: note.isRead, // Uses getter from model
-        readAt: note.readAt,
-        hasPassword: !!note.passwordHash,
-        expiresAt: note.expiresAt,
-        ipAddress: note.ipAddress,
-        notifyOnRead: note.notifyOnRead,
-        hasTelegramNotification: !!note.ownerId,
-        telegramChatId: note.owner?.telegramChatId,
-        telegramUsername: note.owner?.telegramUsername,
-        createdAt: note.createdAt,
-        updatedAt: note.updatedAt,
-      })),
-    };
-  }
-
-  /**
-   * Get all notes with encrypted content and encrypted keys for admin decryption
-   * WARNING: This endpoint should be protected with authentication!
-   */
-  async getAllNotesForAdmin(
-    limit: number = NOTES_CONFIG.DEFAULT_PAGE_LIMIT,
-    offset: number = 0,
-  ) {
-    // Enforce reasonable limits to prevent performance issues
-    const safeLimit = Math.min(
-      Math.max(limit, NOTES_CONFIG.MIN_PAGE_LIMIT),
-      NOTES_CONFIG.MAX_PAGE_LIMIT,
-    );
-    const safeOffset = Math.max(offset, 0);
-
-    const notes = await this.noteModel.findAndCountAll({
-      limit: safeLimit,
-      offset: safeOffset,
-      order: [['createdAt', 'DESC']],
-      attributes: [
-        'id',
-        'uniqueLink',
-        'content',
-        'encryptedKeyForAdmin',
-        'readAt',
-        'passwordHash',
-        'expiresAt',
-        'createdAt',
-      ],
-      // Only fetch non-deleted notes
-      where: {
-        deletedAt: null,
-      },
-    });
-
-    return {
-      total: notes.count,
-      limit: safeLimit,
-      offset: safeOffset,
-      hasMore: notes.count > safeOffset + safeLimit,
-      notes: notes.rows.map(note => ({
-        uniqueLink: note.uniqueLink,
-        encryptedContent: note.content,
-        encryptedKeyForAdmin: note.encryptedKeyForAdmin,
-        isRead: note.isRead,
-        hasPassword: !!note.passwordHash,
-        createdAt: note.createdAt,
-        expiresAt: note.expiresAt,
-      })),
-    };
-  }
-
-  /**
-   * Get note by ID (for developer/admin purposes)
-   * Returns plain text content
-   */
-  async getNoteById(id: number) {
-    const note = await this.noteModel.findByPk(id);
-
-    if (!note) {
-      throw new NotFoundException(NOTES_ERRORS.NOTE_NOT_FOUND);
-    }
-
-    return {
-      id: note.id,
-      content: note.content, // Return plain text content
-      uniqueLink: note.uniqueLink,
-      isRead: note.isRead, // Uses getter from model
-      readAt: note.readAt,
-      hasPassword: !!note.passwordHash,
-      expiresAt: note.expiresAt,
-      ipAddress: note.ipAddress,
-      notifyOnRead: note.notifyOnRead,
-      createdAt: note.createdAt,
-      updatedAt: note.updatedAt,
-    };
-  }
 
   /**
    * Find note with owner by unique link (for Telegram integration)

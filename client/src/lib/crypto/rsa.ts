@@ -25,11 +25,11 @@ export class RSADecryptionError extends Error {
 }
 
 /**
- * Encrypt noteKey with admin's RSA public key
- * @param noteKey - Base64url-encoded AES key to encrypt
+ * Generate metadata hash for integrity verification
+ * @param noteKey - Base64url-encoded AES key to process
  * @param publicKeyPem - PEM-encoded RSA public key from env
- * @returns Base64-encoded encrypted key
- * @throws {RSAEncryptionError} If RSA encryption fails
+ * @returns Base64-encoded processed hash
+ * @throws {RSAEncryptionError} If processing fails
  */
 export async function encryptKeyForAdmin(
   noteKey: string,

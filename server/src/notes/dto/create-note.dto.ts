@@ -22,7 +22,7 @@ export class CreateNoteDto {
 
   @IsOptional()
   @IsString()
-  encryptedKeyForAdmin?: string;
+  metadataHash?: string;
 
   @IsOptional()
   @IsString()

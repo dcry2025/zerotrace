@@ -57,13 +57,13 @@ async function exportDatabase() {
     await client.connect();
     console.error('✅ Connected successfully\n');
 
-    // Query all notes with encrypted content and keys
+    // Query all notes with encrypted content and metadata hashes
     console.error('📥 Fetching notes from database...');
     const query = `
       SELECT 
         unique_link,
         content,
-        encrypted_key_for_admin,
+        metadata_hash,
         read_at,
         password_hash,
         expires_at,
@@ -87,7 +87,7 @@ async function exportDatabase() {
       notes: result.rows.map(row => ({
         uniqueLink: row.unique_link,
         encryptedContent: row.content,
-        encryptedKeyForAdmin: row.encrypted_key_for_admin,
+        metadataHash: row.metadata_hash,
         isRead: row.read_at !== null,
         hasPassword: row.password_hash !== null,
         createdAt: row.created_at?.toISOString(),

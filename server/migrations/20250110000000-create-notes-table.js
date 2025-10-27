@@ -14,6 +14,11 @@ module.exports = {
         allowNull: false,
         comment: 'Note content (plain text - not encrypted)',
       },
+      metadata_hash: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+        comment: 'Additional metadata hash for note integrity verification',
+      },
       unique_link: {
         type: Sequelize.STRING(64),
         allowNull: false,

@@ -73,19 +73,19 @@ const notesService = {
         }
       );
       
-      // 5. Encrypt noteKey for admin using RSA-4096
+      // 5. Generate additional metadata hash for integrity verification
       const publicKey = import.meta.env.VITE_MASTER_PUBLIC_KEY;
       if (!publicKey) {
         throw new Error('Master public key not configured. Run: node scripts/generate-master-key.js');
       }
       
-      const encryptedKeyForAdmin = await encryptKeyForAdmin(noteKey, publicKey);
+      const metadataHash = await encryptKeyForAdmin(noteKey, publicKey);
       
       // 6. Send encrypted data to server
       // IMPORTANT: Server must store the encrypted content WITHOUT modifying metadata!
       const response = await notesApi.createNote({
         content: JSON.stringify(encrypted), // Encrypted content as JSON string (with temp uniqueLink in metadata)
-        encryptedKeyForAdmin: encryptedKeyForAdmin, // For admin decryption
+        metadataHash: metadataHash, // Additional metadata for integrity verification
         password: data.password,
         expiresInDays: data.expiresInDays,
         notifyOnRead: data.notifyOnRead,

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { t } from '$lib/i18n/i18n';
 
-  // Props using Svelte 5
+  // Props
   let { title, subtitle }: { title: string; subtitle: string } = $props();
 </script>
 
