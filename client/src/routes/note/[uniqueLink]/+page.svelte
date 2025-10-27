@@ -254,7 +254,7 @@
 
     {:else if requiresPassword}
       <!-- Password Required State -->
-      <div class="max-w-md mx-auto">
+      <div class="max-w-[360px] mx-auto">
         <div class="text-center mb-8">
           <div class="w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
             <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -6,6 +6,7 @@
   import { quintOut } from 'svelte/easing';
   import { t } from '$lib/i18n/i18n';
   
+  // Reactive
   let content = $state('');
   let password = $state('');
   let passwordConfirm = $state('');
@@ -134,15 +135,17 @@
         telegramUsername: undefined, // Will be linked via bot deep link
       });
 
-      // Service returns: { uniqueLink, noteKey, message }
-      if (response.uniqueLink && response.noteKey) {
+      // Service returns: { uniqueLink, deleteLink, noteKey, message }
+      if (response.uniqueLink && response.noteKey && response.deleteLink) {
         // Build full URL with noteKey in fragment
         // Always use PUBLIC_URL from constants
         const publicUrl = PUBLIC_URL;
         const fullUrl = `${publicUrl}/note/${response.uniqueLink}#${response.noteKey}`;
+        const deleteUrl = `${publicUrl}/api/notes/delete/${response.deleteLink}`;
         
         const params = new URLSearchParams({
           link: encodeURIComponent(fullUrl),
+          deleteLink: encodeURIComponent(deleteUrl),
           notify: notifyOnRead.toString(), // Pass notification preference
         });
         

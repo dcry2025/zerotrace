@@ -3,6 +3,7 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url, fetch }) => {
   const link = url.searchParams.get('link');
+  const deleteLink = url.searchParams.get('deleteLink');
   const shouldNotify = url.searchParams.get('notify') === 'true';
 
   // Redirect if no link parameter
@@ -12,6 +13,7 @@ export const load: PageServerLoad = async ({ url, fetch }) => {
 
   // The link parameter is URL-encoded, so we need to decode it first
   const decodedLink = decodeURIComponent(link);
+  const decodedDeleteLink = deleteLink ? decodeURIComponent(deleteLink) : null;
 
   // Extract uniqueLink from the decoded URL
   // URL format: {VITE_PUBLIC_URL}/note/ce386#key (e.g., http://localhost:3000/note/ce386#key or https://yourdomain.com/note/ce386#key)
@@ -43,6 +45,7 @@ export const load: PageServerLoad = async ({ url, fetch }) => {
     // Note exists, return data (will be available in component via data prop)
     return {
       link: decodedLink, // Use decoded link for display
+      deleteLink: decodedDeleteLink, // Delete link for destroying the note
       uniqueLink,
       shouldNotify,
     };

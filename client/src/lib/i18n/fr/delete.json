@@ -1,0 +1,18 @@
+{
+  "title": "Suppression de Note",
+  "deleting": {
+    "title": "Suppression de la Note...",
+    "subtitle": "Veuillez patienter pendant que nous supprimons votre note en toute sécurité."
+  },
+  "success": {
+    "title": "Note Supprimée avec Succès !",
+    "subtitle": "Votre note a été supprimée définitivement et ne peut plus être consultée.",
+    "redirect": "Vous serez redirigé vers la page d'accueil dans quelques secondes.",
+    "button": "Aller à la Page d'Accueil"
+  },
+  "error": {
+    "title": "Échec de la Suppression",
+    "subtitle": "Une erreur s'est produite lors de la tentative de suppression de votre note.",
+    "button": "Aller à la Page d'Accueil"
+  }
+}

@@ -2,6 +2,7 @@
 
 export class CreateNoteResponseDto {
   uniqueLink: string;
+  deleteLink: string;
   message: string;
 }
 

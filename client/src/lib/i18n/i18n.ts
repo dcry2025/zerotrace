@@ -349,6 +349,62 @@ const config: Config = {
       loader: async () => (await import('./de/privacy.json')).default,
     },
 
+    // Delete page translations
+    {
+      locale: 'en',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./en/delete.json')).default,
+    },
+    {
+      locale: 'ru',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./ru/delete.json')).default,
+    },
+    {
+      locale: 'uk',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./uk/delete.json')).default,
+    },
+    {
+      locale: 'es',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./es/delete.json')).default,
+    },
+    {
+      locale: 'zh',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./zh/delete.json')).default,
+    },
+    {
+      locale: 'tr',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./tr/delete.json')).default,
+    },
+    {
+      locale: 'it',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./it/delete.json')).default,
+    },
+    {
+      locale: 'fr',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./fr/delete.json')).default,
+    },
+    {
+      locale: 'de',
+      key: 'delete',
+      routes: [/^\/delete\/.+/],
+      loader: async () => (await import('./de/delete.json')).default,
+    },
+
     // Error page translations (load for all routes)
     {
       locale: 'en',

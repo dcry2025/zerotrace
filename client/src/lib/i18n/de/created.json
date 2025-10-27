@@ -9,6 +9,11 @@
     "copy": "Kopieren",
     "copied": "Kopiert!"
   },
+  "deleteLink": {
+    "label": "Notfall-Löschlink",
+    "copy": "Löschlink Kopieren",
+    "copied": "Löschlink Kopiert!"
+  },
   "security": {
     "title": "Wichtiger Sicherheitshinweis",
     "warning1": "Dieser Link kann nur einmal verwendet werden - nach dem Öffnen wird er dauerhaft gelöscht",

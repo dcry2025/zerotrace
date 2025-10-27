@@ -17,6 +17,7 @@ export interface CreateNoteDto {
 // Backend response structure
 export interface CreateNoteResponseDto {
   uniqueLink: string;
+  deleteLink: string;
   message: string;
 }
 
@@ -103,6 +104,23 @@ const notesApi = {
       return response;
     } catch (error) {
       console.error('Failed to destroy note:', error);
+      throw error;
+    }
+  },
+
+  /**
+   * Destroy note by delete link
+   * DELETE /api/notes/delete/:deleteLink (proxies to backend /api/v1/notes/delete/:deleteLink)
+   */
+  async destroyNoteByDeleteLink(deleteLink: string): Promise<{ success: boolean; message: string }> {
+    try {
+      const response = await ky.delete(`${API_BASE_URL}${API_PREFIX}/notes/delete/${deleteLink}`, {
+        timeout: 30000,
+      }).json<{ success: boolean; message: string }>();
+      
+      return response;
+    } catch (error) {
+      console.error('Failed to destroy note by delete link:', error);
       throw error;
     }
   },

@@ -9,6 +9,11 @@
     "copy": "Copy",
     "copied": "Copied!"
   },
+  "deleteLink": {
+    "label": "Emergency delete link",
+    "copy": "Copy Delete Link",
+    "copied": "Delete Link Copied!"
+  },
   "security": {
     "title": "Important Security Notice",
     "warning1": "This link can only be used once - after being opened, it will be permanently deleted",

@@ -30,6 +30,7 @@ interface CreateNoteInput {
  */
 interface CreateNoteResult {
   uniqueLink: string;
+  deleteLink: string;
   noteKey: string;
   message: string;
 }
@@ -94,6 +95,7 @@ const notesService = {
       // 7. Return response with noteKey (for URL fragment)
       return {
         uniqueLink: response.uniqueLink, // Real server-generated ID for URL path
+        deleteLink: response.deleteLink, // Delete link for destroying the note
         noteKey: noteKey, // Client keeps this for URL fragment (#key)
         message: response.message
       };

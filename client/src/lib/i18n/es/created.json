@@ -9,6 +9,11 @@
     "copy": "Copiar",
     "copied": "¡Copiado!"
   },
+  "deleteLink": {
+    "label": "Enlace de eliminación de emergencia",
+    "copy": "Copiar Enlace de Eliminación",
+    "copied": "¡Enlace de Eliminación Copiado!"
+  },
   "security": {
     "title": "Aviso de Seguridad Importante",
     "warning1": "Este enlace solo puede usarse una vez - después de ser abierto, será eliminado permanentemente",

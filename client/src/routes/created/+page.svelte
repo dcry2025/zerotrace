@@ -20,11 +20,13 @@
   // Get data from load function (verified server-side) using Svelte 5
   let { data }: { data: PageData } = $props();
 
-  // Reactive state using Svelte 5 runes
+  // Reactive
   let link = $state(data.link);
+  let deleteLink = $state(data.deleteLink);
   let uniqueLink = $state(data.uniqueLink);
   let shouldNotify = $state(data.shouldNotify);
   let copied = $state(false);
+  let deleteCopied = $state(false);
   let botInfo = $state<{ username: string | null; link: string | null; ready: boolean } | null>(null);
   let loadingBotInfo = $state(false);
   let destroying = $state(false);
@@ -39,10 +41,63 @@
   function handleCopyToClipboard() {
     navigator.clipboard.writeText(link).then(() => {
       copied = true;
+      // Add haptic feedback if available
+      if (navigator.vibrate) {
+        navigator.vibrate(50);
+      }
       setTimeout(() => {
         copied = false;
       }, 2000);
+    }).catch((error) => {
+      console.error('Failed to copy to clipboard:', error);
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = link;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        copied = true;
+        setTimeout(() => {
+          copied = false;
+        }, 2000);
+      } catch (err) {
+        console.error('Fallback copy failed:', err);
+      }
+      document.body.removeChild(textArea);
     });
+  }
+
+  function handleCopyDeleteLinkToClipboard() {
+    if (deleteLink) {
+      navigator.clipboard.writeText(deleteLink).then(() => {
+        deleteCopied = true;
+        // Add haptic feedback if available
+        if (navigator.vibrate) {
+          navigator.vibrate(50);
+        }
+        setTimeout(() => {
+          deleteCopied = false;
+        }, 2000);
+      }).catch((error) => {
+        console.error('Failed to copy delete link to clipboard:', error);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = deleteLink;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          deleteCopied = true;
+          setTimeout(() => {
+            deleteCopied = false;
+          }, 2000);
+        } catch (err) {
+          console.error('Fallback copy failed:', err);
+        }
+        document.body.removeChild(textArea);
+      });
+    }
   }
 
   function handleOpenTelegramBot() {
@@ -155,7 +210,7 @@
   <Header subtitle={$t('created.success.subtitle')}/>
 
   <!-- Main Content -->
-  <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+  <main class="flex-1 max-w-4xl mx-auto px-4  lg:px-8 pt-6 lg:pt-8">
     <!-- Success Message Component -->
     <SuccessMessage 
       title={$t('created.success.title')} 
@@ -165,8 +220,11 @@
     <!-- Link Display Card Component -->
     <LinkDisplayCard 
       {link} 
+      {deleteLink}
       onCopy={handleCopyToClipboard} 
+      onCopyDelete={handleCopyDeleteLinkToClipboard}
       {copied}
+      {deleteCopied}
     />
 
     <!-- Destroy Note Button Component -->

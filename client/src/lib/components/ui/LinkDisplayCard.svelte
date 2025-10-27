@@ -2,16 +2,19 @@
   import { t } from '$lib/i18n/i18n';
   
   // Props
-  let { link, onCopy, copied }: { 
+  let { link, deleteLink, onCopy, onCopyDelete, copied, deleteCopied }: { 
     link: string; 
+    deleteLink?: string | null;
     onCopy: () => void; 
+    onCopyDelete?: () => void;
     copied: boolean; 
+    deleteCopied?: boolean;
   } = $props();
 </script>
 
 <!-- Link Display Card -->
 <div
-  class="bg-slate-800/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-slate-700/50 overflow-hidden mb-12">
+  class="bg-slate-800/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-slate-700/50 overflow-hidden mb-6">
   <!-- Card Header -->
   <div
     class="bg-gradient-to-r from-green-500/20 to-cyan-500/20 backdrop-blur-sm px-4 sm:px-8 py-4 sm:py-6 border-b border-slate-700/50">
@@ -68,6 +71,49 @@
           </button>
         </div>
       </div>
+
+      <!-- Delete Link Section -->
+      {#if deleteLink}
+        <div>
+          <label for="delete-link" class="block text-sm font-semibold text-slate-300 mb-3">
+            <div class="flex items-center space-x-2">
+              <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+              </svg>
+              <span>{$t('created.deleteLink.label')}</span>
+            </div>
+          </label>
+          <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+            <input
+              id="delete-link"
+              type="text"
+              readonly
+              value={deleteLink}
+              class="flex-1 px-3 sm:px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white font-mono text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-red-500 break-all"
+              onclick={(e: MouseEvent) => (e.target as HTMLInputElement).select()}
+            />
+            <button
+              onclick={onCopyDelete}
+              class="px-4 sm:px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 whitespace-nowrap"
+            >
+              {#if deleteCopied}
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span>{$t('created.deleteLink.copied')}</span>
+              {:else}
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+                <span>{$t('created.deleteLink.copy')}</span>
+              {/if}
+            </button>
+          </div>
+        </div>
+      {/if}
 
       <!-- Security Notice -->
       <div

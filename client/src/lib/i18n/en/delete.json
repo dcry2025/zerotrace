@@ -1,0 +1,18 @@
+{
+  "title": "Note Deletion",
+  "deleting": {
+    "title": "Deleting Note...",
+    "subtitle": "Please wait while we securely delete your note."
+  },
+  "success": {
+    "title": "Note Deleted Successfully!",
+    "subtitle": "Your note has been permanently deleted and can no longer be accessed.",
+    "redirect": "You will be redirected to the home page in a few seconds.",
+    "button": "Go to Home Page"
+  },
+  "error": {
+    "title": "Deletion Failed",
+    "subtitle": "We encountered an error while trying to delete your note.",
+    "button": "Go to Home Page"
+  }
+}

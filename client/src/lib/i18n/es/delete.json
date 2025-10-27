@@ -1,0 +1,18 @@
+{
+  "title": "Eliminación de Nota",
+  "deleting": {
+    "title": "Eliminando Nota...",
+    "subtitle": "Por favor espere mientras eliminamos de forma segura su nota."
+  },
+  "success": {
+    "title": "¡Nota Eliminada Exitosamente!",
+    "subtitle": "Su nota ha sido eliminada permanentemente y ya no puede ser accedida.",
+    "redirect": "Será redirigido a la página principal en unos segundos.",
+    "button": "Ir a la Página Principal"
+  },
+  "error": {
+    "title": "Eliminación Fallida",
+    "subtitle": "Encontramos un error al intentar eliminar su nota.",
+    "button": "Ir a la Página Principal"
+  }
+}

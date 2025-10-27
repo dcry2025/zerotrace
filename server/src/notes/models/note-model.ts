@@ -54,6 +54,15 @@ export class Note extends Model<Note> {
   uniqueLink: string;
 
   @Column({
+    type: DataType.STRING(64),
+    allowNull: false,
+    unique: true,
+    field: 'delete_link',
+    comment: 'Unique delete link identifier for destroying the note',
+  })
+  deleteLink: string;
+
+  @Column({
     type: DataType.STRING(128),
     allowNull: true,
     field: 'password_hash',

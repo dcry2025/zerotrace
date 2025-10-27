@@ -9,6 +9,11 @@
     "copy": "Kopyala",
     "copied": "Kopyalandı!"
   },
+  "deleteLink": {
+    "label": "Acil silme bağlantısı",
+    "copy": "Silme Bağlantısını Kopyala",
+    "copied": "Silme Bağlantısı Kopyalandı!"
+  },
   "security": {
     "title": "Önemli Güvenlik Uyarısı",
     "warning1": "Bu bağlantı sadece bir kez kullanılabilir - açıldıktan sonra kalıcı olarak silinir",

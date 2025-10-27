@@ -9,6 +9,11 @@
     "copy": "Copier",
     "copied": "Copié !"
   },
+  "deleteLink": {
+    "label": "Lien de suppression d'urgence",
+    "copy": "Copier le Lien de Suppression",
+    "copied": "Lien de Suppression Copié !"
+  },
   "security": {
     "title": "Avis de Sécurité Important",
     "warning1": "Ce lien ne peut être utilisé qu'une seule fois - après avoir été ouvert, il sera définitivement supprimé",

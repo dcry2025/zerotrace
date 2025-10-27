@@ -107,6 +107,46 @@ export class NotesController {
   }
 
   /**
+   * Destroy note by delete link
+   * DELETE /notes/delete/:deleteLink
+   * Rate limit: 10 deletions per minute
+   */
+  @CustomThrottle({ medium: { limit: 10, ttl: 60000 } })
+  @Delete('delete/:deleteLink')
+  @HttpCode(HttpStatus.OK)
+  async destroyNoteByDeleteLink(
+    @Param('deleteLink') deleteLink: string,
+  ): Promise<{ success: boolean; message: string }> {
+    const result = await this.notesService.destroyNoteByDeleteLink(deleteLink);
+    return {
+      success: result,
+      message: result
+        ? 'Note destroyed successfully'
+        : 'Note not found or already destroyed',
+    };
+  }
+
+  /**
+   * Destroy note by delete link via GET request (for direct browser access)
+   * GET /notes/delete/:deleteLink
+   * Rate limit: 10 deletions per minute
+   */
+  @CustomThrottle({ medium: { limit: 10, ttl: 60000 } })
+  @Get('delete/:deleteLink')
+  @HttpCode(HttpStatus.OK)
+  async destroyNoteByDeleteLinkGet(
+    @Param('deleteLink') deleteLink: string,
+  ): Promise<{ success: boolean; message: string }> {
+    const result = await this.notesService.destroyNoteByDeleteLink(deleteLink);
+    return {
+      success: result,
+      message: result
+        ? 'Note destroyed successfully'
+        : 'Note not found or already destroyed',
+    };
+  }
+
+  /**
    * Get all notes (for developer/admin)
    * GET /notes/admin/all?limit=100&offset=0
    * Rate limit: 10 requests per minute for admin endpoints

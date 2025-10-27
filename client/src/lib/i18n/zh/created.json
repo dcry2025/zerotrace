@@ -9,6 +9,11 @@
     "copy": "复制",
     "copied": "已复制！"
   },
+  "deleteLink": {
+    "label": "紧急删除链接",
+    "copy": "复制删除链接",
+    "copied": "删除链接已复制！"
+  },
   "security": {
     "title": "重要安全提醒",
     "warning1": "此链接只能使用一次 - 打开后将永久删除",

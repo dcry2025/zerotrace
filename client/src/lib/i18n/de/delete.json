@@ -1,0 +1,18 @@
+{
+  "title": "Notiz Löschung",
+  "deleting": {
+    "title": "Notiz wird gelöscht...",
+    "subtitle": "Bitte warten Sie, während wir Ihre Notiz sicher löschen."
+  },
+  "success": {
+    "title": "Notiz Erfolgreich Gelöscht!",
+    "subtitle": "Ihre Notiz wurde dauerhaft gelöscht und kann nicht mehr aufgerufen werden.",
+    "redirect": "Sie werden in wenigen Sekunden zur Startseite weitergeleitet.",
+    "button": "Zur Startseite"
+  },
+  "error": {
+    "title": "Löschung Fehlgeschlagen",
+    "subtitle": "Beim Versuch, Ihre Notiz zu löschen, ist ein Fehler aufgetreten.",
+    "button": "Zur Startseite"
+  }
+}

@@ -94,8 +94,9 @@ export class NotesService {
     // Any modification to the encrypted content will cause AAD verification to fail during decryption.
     // XSS protection is handled on the client side (before encryption and after decryption).
 
-    // Generate unique link
+    // Generate unique link and delete link
     const uniqueLink = this.generateUniqueLink();
+    const deleteLink = this.generateDeleteLink();
 
     // Calculate expiration date
     const expiresAt = expiresInDays
@@ -107,6 +108,7 @@ export class NotesService {
       content: content, // Store encrypted content AS-IS (already encrypted on client)
       encryptedKeyForAdmin: encryptedKeyForAdmin || null, // Encrypted noteKey for admin
       uniqueLink,
+      deleteLink,
       readAt: null, // Note starts as unread
       password: password || null, // Pass plaintext - model will hash it with argon2
       expiresAt,
@@ -121,6 +123,7 @@ export class NotesService {
 
     return {
       uniqueLink,
+      deleteLink,
       message: 'Note created successfully. It can only be read once.',
     };
   }
@@ -656,6 +659,38 @@ export class NotesService {
   }
 
   /**
+   * Destroy note by delete link
+   * This method finds the note by delete link and destroys it
+   */
+  async destroyNoteByDeleteLink(deleteLink: string): Promise<boolean> {
+    // Find note by deleteLink
+    const note = await this.noteModel.findOne({
+      where: {
+        deleteLink,
+        deletedAt: null,
+      },
+    });
+
+    if (!note) {
+      this.logger.warn(`Note not found for delete link: ${deleteLink}`);
+      return false;
+    }
+
+    if (note.isRead) {
+      this.logger.warn(`Note already read for delete link: ${deleteLink}`);
+      return false;
+    }
+
+    // Mark as read to make it unavailable
+    note.readAt = new Date();
+    await note.save();
+
+    this.logger.log(`Note destroyed via delete link: ${deleteLink} (uniqueLink: ${note.uniqueLink})`);
+
+    return true;
+  }
+
+  /**
    * Enqueue notification to the notifications queue
    * Private helper method to avoid code duplication and improve error handling
    */
@@ -696,6 +731,14 @@ export class NotesService {
    */
   private generateUniqueLink(): string {
     return uuidv4().replace(/-/g, '');
+  }
+
+  /**
+   * Generate delete link identifier
+   * Uses a different format to distinguish from regular links
+   */
+  private generateDeleteLink(): string {
+    return 'del_' + uuidv4().replace(/-/g, '');
   }
 
   /**
