@@ -1,5 +1,11 @@
 {
   "title": "Not Silme",
+  "confirm": {
+    "title": "Silme İşlemini Onayla",
+    "subtitle": "Bu notu silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+    "cancel": "İptal",
+    "delete": "Notu Sil"
+  },
   "deleting": {
     "title": "Not Siliniyor...",
     "subtitle": "Notunuzu güvenli bir şekilde silerken lütfen bekleyin."

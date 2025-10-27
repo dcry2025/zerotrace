@@ -1,5 +1,11 @@
 {
   "title": "Suppression de Note",
+  "confirm": {
+    "title": "Confirmer la Suppression",
+    "subtitle": "Êtes-vous sûr de vouloir supprimer cette note ? Cette action ne peut pas être annulée.",
+    "cancel": "Annuler",
+    "delete": "Supprimer la Note"
+  },
   "deleting": {
     "title": "Suppression de la Note...",
     "subtitle": "Veuillez patienter pendant que nous supprimons votre note en toute sécurité."

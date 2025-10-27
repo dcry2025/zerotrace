@@ -1,5 +1,11 @@
 {
   "title": "Eliminación de Nota",
+  "confirm": {
+    "title": "Confirmar Eliminación",
+    "subtitle": "¿Estás seguro de que quieres eliminar esta nota? Esta acción no se puede deshacer.",
+    "cancel": "Cancelar",
+    "delete": "Eliminar Nota"
+  },
   "deleting": {
     "title": "Eliminando Nota...",
     "subtitle": "Por favor espere mientras eliminamos de forma segura su nota."

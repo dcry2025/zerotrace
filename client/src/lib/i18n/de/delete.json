@@ -1,5 +1,11 @@
 {
   "title": "Notiz Löschung",
+  "confirm": {
+    "title": "Löschung Bestätigen",
+    "subtitle": "Sind Sie sicher, dass Sie diese Notiz löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "cancel": "Abbrechen",
+    "delete": "Notiz Löschen"
+  },
   "deleting": {
     "title": "Notiz wird gelöscht...",
     "subtitle": "Bitte warten Sie, während wir Ihre Notiz sicher löschen."

@@ -38,46 +38,15 @@ export const DELETE: RequestHandler = async ({ params, fetch }) => {
   }
 };
 
-export const GET: RequestHandler = async ({ params, fetch }) => {
-  try {
-    const { deleteLink } = params;
-    
-    const response = await fetch(
-      `${API_BASE_URL}${API_PREFIX}/notes/delete/${deleteLink}`,
-      {
-        method: 'DELETE',
-      }
-    );
-    
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`[GET] Backend error: ${response.status} - ${errorText}`);
-      // Redirect to delete page with error
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: `/delete/${deleteLink}?error=true&message=${encodeURIComponent(`Backend error: ${response.status}`)}`
-        }
-      });
+export const GET: RequestHandler = async ({ params }) => {
+  // For GET requests, just redirect to the confirmation page
+  // Don't delete the note yet - let the user confirm first
+  const { deleteLink } = params;
+  
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: `/delete/${deleteLink}`
     }
-    
-    const data = await response.json();
-    
-    // Redirect to delete page with success
-    return new Response(null, {
-      status: 302,
-      headers: {
-        Location: `/delete/${deleteLink}?success=true`
-      }
-    });
-  } catch (error) {
-    console.error('[GET] Error deleting note by delete link:', error);
-    // Redirect to delete page with error
-    return new Response(null, {
-      status: 302,
-      headers: {
-        Location: `/delete/${params.deleteLink}?error=true&message=${encodeURIComponent('Network error occurred')}`
-      }
-    });
-  }
+  });
 };

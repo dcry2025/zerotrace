@@ -18,7 +18,7 @@
   let confirming = $state(!data.success && !data.error); // Show confirmation if no success/error
   
   async function handleDelete() {
-    if (!confirm('Are you sure you want to delete this note? This action cannot be undone.')) {
+    if (!confirm($t('delete.confirm.subtitle'))) {
       return;
     }
     
@@ -87,20 +87,20 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
             </svg>
           </div>
-          <h1 class="text-2xl font-bold text-white mb-4">{$t('delete.title')}</h1>
-          <p class="text-slate-300 mb-6">Are you sure you want to delete this note? This action cannot be undone.</p>
+          <h1 class="text-2xl font-bold text-white mb-4">{$t('delete.confirm.title')}</h1>
+          <p class="text-slate-300 mb-6">{$t('delete.confirm.subtitle')}</p>
           <div class="flex gap-4 justify-center">
             <button 
               onclick={() => goto('/')}
               class="px-6 py-3 bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
-              {$t('actions.cancel')}
+              {$t('delete.confirm.cancel')}
             </button>
             <button 
               onclick={handleDelete}
               class="px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
-              {$t('actions.destroy')}
+              {$t('delete.confirm.delete')}
             </button>
           </div>
         </div>

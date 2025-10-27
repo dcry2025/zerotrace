@@ -1,5 +1,11 @@
 {
   "title": "Note Deletion",
+  "confirm": {
+    "title": "Confirm Deletion",
+    "subtitle": "Are you sure you want to delete this note? This action cannot be undone.",
+    "cancel": "Cancel",
+    "delete": "Delete Note"
+  },
   "deleting": {
     "title": "Deleting Note...",
     "subtitle": "Please wait while we securely delete your note."
