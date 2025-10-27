@@ -7,10 +7,6 @@
  * These are public contacts and don't need to be in env variables
  */
 export const CONTACTS = {
-  TWITTER: {
-    username: 'zerotrace_work',
-    url: 'https://twitter.com/zerotrace_work',
-  },
   TELEGRAM: {
     username: 'zerotrace_work',
     url: 'https://t.me/zerotrace_work',
