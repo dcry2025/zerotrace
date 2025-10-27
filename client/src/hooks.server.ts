@@ -16,9 +16,9 @@ export const handle: Handle = async ({ event, resolve }) => {
     [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline'", // 'unsafe-inline' needed for Svelte
-      "style-src 'self' 'unsafe-inline'",  // 'unsafe-inline' needed for component styles
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",  // Allow styles from self, inline styles, and Google Fonts
       "img-src 'self' data: https:",       // Allow images from self, data URIs, and HTTPS
-      "font-src 'self' data:",             // Allow fonts from self and data URIs
+      "font-src 'self' data: https://fonts.googleapis.com https://fonts.gstatic.com", // Allow fonts from self, data URIs, and Google Fonts
       "connect-src 'self' http://localhost:7000 https:", // Allow API connections
       "object-src 'none'",                 // Disallow plugins (Flash, etc.)
       "base-uri 'self'",                   // Restrict base tag URLs

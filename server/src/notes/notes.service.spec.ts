@@ -92,7 +92,7 @@ describe('NotesService', () => {
     it('should create a note with all optional fields', async () => {
       const createNoteDto = {
         content: 'Secure note content',
-        encryptedKeyForAdmin: 'encrypted-key',
+        metadataHash: 'metadata-hash-123',
         password: 'secret123',
         expiresInDays: 7,
         notifyOnRead: true,
@@ -119,10 +119,14 @@ describe('NotesService', () => {
       expect(result.uniqueLink).toBeDefined();
       expect(mockNoteModel.create).toHaveBeenCalledWith(
         expect.objectContaining({
-          content: expect.any(String),
-          encryptedKeyForAdmin: 'encrypted-key',
+          content: 'Secure note content',
+          metadataHash: 'metadata-hash-123',
           password: 'secret123',
           notifyOnRead: true,
+          expiresAt: expect.any(Date),
+          ipAddress: '192.168.1.1',
+          ownerId: null,
+          readAt: null,
         }),
       );
     });
