@@ -141,7 +141,7 @@
         // Always use PUBLIC_URL from constants
         const publicUrl = PUBLIC_URL;
         const fullUrl = `${publicUrl}/note/${response.uniqueLink}#${response.noteKey}`;
-        const deleteUrl = `${publicUrl}/api/notes/delete/${response.deleteLink}`;
+        const deleteUrl = `${publicUrl}/delete/${response.deleteLink}`;
         
         const params = new URLSearchParams({
           link: encodeURIComponent(fullUrl),
