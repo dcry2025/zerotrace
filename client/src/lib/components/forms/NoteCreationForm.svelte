@@ -16,6 +16,9 @@
   let loading = $state(false);
   let passwordError = $state('');
   let showPasswordRequirements = $state(false);
+  
+  // Reference to password field for auto-scroll
+  let passwordField: HTMLInputElement | undefined = $state();
 
   function validatePassword(pwd: string): { isValid: boolean; error: string } {
     if (!pwd) {
@@ -83,6 +86,23 @@
     } else {
       showPasswordRequirements = false;
       passwordError = '';
+    }
+  });
+
+  // Auto-scroll to password field when options are opened on mobile
+  $effect(() => {
+    if (showOptions && passwordField) {
+      // Check if mobile device (screen width < 768px)
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        // Wait for animation to complete, then scroll
+        setTimeout(() => {
+          passwordField?.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          });
+        }, 350); // Slightly after slide animation (300ms)
+      }
     }
   });
 
@@ -242,6 +262,7 @@
           </label>
           <div class="space-y-2">
             <input
+              bind:this={passwordField}
               id="password"
               type="password"
               name="password"

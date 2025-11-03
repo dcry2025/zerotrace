@@ -225,12 +225,15 @@ export function extractKeyFromUrl(): string | null {
 
 /**
  * Clear URL fragment (remove key from URL)
- * Uses replaceState to avoid adding history entry
+ * Note: This function can be called from browser context only
+ * For SvelteKit integration, use replaceState from $app/navigation in the component
  */
 export function clearUrlFragment(): void {
   if (typeof window === 'undefined') return;
   
   const url = window.location.href.split('#')[0];
+  // Use native API here since this is a utility function
+  // Component should use SvelteKit's replaceState if needed
   window.history.replaceState(null, '', url);
 }
 

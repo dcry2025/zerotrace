@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { goto, replaceState } from '$app/navigation';
   import { onMount } from 'svelte';
   import { toast } from '@zerodevx/svelte-toast';
   import DOMPurify from 'dompurify';
@@ -10,7 +11,7 @@
   import { notesService } from '$lib/services';
   
   // Crypto
-  import { extractKeyFromUrl, clearUrlFragment, isValidKey } from '$lib/crypto';
+  import { extractKeyFromUrl, isValidKey } from '$lib/crypto';
 
   // Components
   import { Header, Footer } from '$lib/components';
@@ -58,28 +59,16 @@
     // Load translations for this route
     await loadTranslations(getInitialLocale(), window.location.pathname);
     
-    // Extract uniqueLink from pathname as primary method (more reliable)
-    const pathParts = window.location.pathname.split('/');
-    const pathUniqueLink = pathParts[pathParts.length - 1];
-    
-    // Fallback to SvelteKit params
-    const paramUniqueLink = $page.params.uniqueLink;
-    
-    // Use the one that looks like a valid note ID (not a full URL)
-    if (pathUniqueLink && !pathUniqueLink.includes('http') && !pathUniqueLink.includes('localhost')) {
-      uniqueLink = pathUniqueLink;
-    } else if (paramUniqueLink && !paramUniqueLink.includes('http') && !paramUniqueLink.includes('localhost')) {
-      uniqueLink = paramUniqueLink;
-    } else {
-      // Both contain full URLs, extract note ID from pathname
-      uniqueLink = pathUniqueLink;
-    }
+    // Get uniqueLink from server data (most reliable)
+    uniqueLink = data.uniqueLink;
     
     // 1. Extract noteKey from URL fragment (#key)
     noteKey = extractKeyFromUrl() || '';
     
     // 2. Immediately clear fragment from URL (security: don't leave key in browser history)
-    clearUrlFragment();
+    // Use SvelteKit's replaceState instead of native history API
+    const urlWithoutFragment = window.location.href.split('#')[0];
+    replaceState(urlWithoutFragment, {});
     
     // 3. Validate noteKey
     if (!noteKey || !isValidKey(noteKey)) {
@@ -88,33 +77,41 @@
       return;
     }
     
-    // 4. Check server-loaded note status first
-    const serverStatus = data.noteStatus;
-    if (serverStatus.error || !serverStatus.exists) {
-      loading = false;
-      if (serverStatus.error === 'not_found' || !serverStatus.exists) {
-        error = sanitizeErrorMessage('Note not found or expired');
-      } else {
-        error = sanitizeErrorMessage('Failed to load note. Please try again.');
-      }
-      return;
-    }
-    
-    if (serverStatus.isRead) {
-      loading = false;
-      error = sanitizeErrorMessage('This note has already been read and is no longer available');
-      return;
-    }
-    
-    // 5. Continue with normal flow
-    if (serverStatus.hasPassword) {
-      requiresPassword = true;
-      loading = false;
-    } else {
-      showConfirmation = true;
-      loading = false;
-    }
+    // 4. Check note status (client-side for fresh data)
+    await checkNoteStatus();
   });
+
+  async function checkNoteStatus() {
+    try {
+      loading = true;
+      
+      const status = await notesService.checkNoteStatus(uniqueLink);
+      
+      if (!status.exists) {
+        error = sanitizeErrorMessage('Note not found or expired');
+        loading = false;
+        return;
+      }
+      
+      if (status.isRead) {
+        error = sanitizeErrorMessage('This note has already been read and is no longer available');
+        loading = false;
+        return;
+      }
+      
+      // Note is available - show appropriate screen
+      if (status.hasPassword) {
+        requiresPassword = true;
+      } else {
+        showConfirmation = true;
+      }
+    } catch (err: any) {
+      console.error('Error checking note status:', err);
+      error = sanitizeErrorMessage('Failed to load note. Please try again.');
+    } finally {
+      loading = false;
+    }
+  }
 
   async function loadNote() {
     try {
@@ -129,6 +126,7 @@
       noteContent = sanitizeText(rawContent);
       noteRead = true;
       requiresPassword = false;
+      showConfirmation = false;
       error = '';
     } catch (err: any) {
       console.error('Error loading note:', err);
@@ -142,7 +140,9 @@
           // Check for incorrect password FIRST (before generic 401 check)
           // Only show toast if user actually attempted to enter a password
           if (errorMessage.includes('Incorrect password') && passwordAttempted) {
+            // Reset to password form and hide confirmation
             requiresPassword = true;
+            showConfirmation = false;
             error = ''; // Don't set error to keep password form visible
             toast.push('Incorrect password', {
               theme: {
@@ -154,14 +154,22 @@
           } else if (err.response.status === 401 || errorMessage.includes('Password required')) {
             // Password is required but not provided yet
             requiresPassword = true;
+            showConfirmation = false;
             error = '';
           } else {
+            // Other errors - show error screen
+            showConfirmation = false;
+            requiresPassword = false;
             error = sanitizeErrorMessage(errorMessage || 'Note not found or expired');
           }
         } catch {
+          showConfirmation = false;
+          requiresPassword = false;
           error = sanitizeErrorMessage('Failed to load note. Please try again.');
         }
       } else {
+        showConfirmation = false;
+        requiresPassword = false;
         error = sanitizeErrorMessage('Failed to load note. Please check your connection.');
       }
     } finally {
@@ -171,9 +179,9 @@
 
   async function handlePasswordSubmit() {
     passwordAttempted = true; // Mark that user has attempted password entry
-    // After entering password, show confirmation screen
+    // After entering password, read note directly (no confirmation needed)
     requiresPassword = false;
-    showConfirmation = true;
+    await loadNote();
   }
 
   function handleConfirmRead() {
@@ -181,8 +189,12 @@
     loadNote();
   }
 
-  function handleCancelRead() {
-    window.location.href = '/';
+  async function handleCancelRead() {
+    // Clear sensitive data before leaving
+    password = '';
+    passwordAttempted = false;
+    // Use SvelteKit navigation to go back to home
+    await goto('/');
   }
 </script>
 
