@@ -205,12 +205,12 @@
   <title>{$t('created.success.title')} - zerotrace</title>
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-blue-900 flex flex-col">
+<div class="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-blue-900 flex flex-col overflow-x-hidden max-w-full">
   <!-- Header -->
   <Header subtitle={$t('created.success.subtitle')}/>
 
   <!-- Main Content -->
-  <main class="flex-1 max-w-4xl mx-auto px-4  lg:px-8 pt-6 lg:pt-8">
+  <main class="flex-1 max-w-4xl mx-auto px-4 lg:px-8 pt-6 lg:pt-8 w-full overflow-x-hidden">
     <!-- Success Message Component -->
     <SuccessMessage 
       title={$t('created.success.title')} 

@@ -14,7 +14,7 @@
 
 <!-- Link Display Card -->
 <div
-  class="bg-slate-800/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-slate-700/50 overflow-hidden mb-6">
+  class="bg-slate-800/50 backdrop-blur-sm rounded-3xl shadow-2xl border border-slate-700/50 overflow-hidden mb-6 max-w-full">
   <!-- Card Header -->
   <div
     class="bg-gradient-to-r from-green-500/20 to-cyan-500/20 backdrop-blur-sm px-4 sm:px-8 py-4 sm:py-6 border-b border-slate-700/50">
@@ -42,18 +42,18 @@
             <span>{$t('created.link.label')}</span>
           </div>
         </label>
-        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 w-full">
           <input
             id="note-link"
             type="text"
             readonly
             value={link}
-            class="flex-1 px-3 sm:px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white font-mono text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 break-all"
+            class="flex-1 min-w-0 px-3 sm:px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white font-mono text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 overflow-hidden text-ellipsis"
             onclick={(e: MouseEvent) => (e.target as HTMLInputElement).select()}
           />
           <button
             onclick={onCopy}
-            class="px-4 sm:px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 whitespace-nowrap"
+            class="px-4 sm:px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl sm:transform sm:hover:-translate-y-0.5 flex items-center justify-center space-x-2 whitespace-nowrap flex-shrink-0"
           >
             {#if copied}
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,18 +84,18 @@
               <span>{$t('created.deleteLink.label')}</span>
             </div>
           </label>
-          <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+          <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 w-full">
             <input
               id="delete-link"
               type="text"
               readonly
               value={deleteLink}
-              class="flex-1 px-3 sm:px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white font-mono text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-red-500 break-all"
+              class="flex-1 min-w-0 px-3 sm:px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white font-mono text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-red-500 overflow-hidden text-ellipsis"
               onclick={(e: MouseEvent) => (e.target as HTMLInputElement).select()}
             />
             <button
               onclick={onCopyDelete}
-              class="px-4 sm:px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 whitespace-nowrap"
+              class="px-4 sm:px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl sm:transform sm:hover:-translate-y-0.5 flex items-center justify-center space-x-2 whitespace-nowrap flex-shrink-0"
             >
               {#if deleteCopied}
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

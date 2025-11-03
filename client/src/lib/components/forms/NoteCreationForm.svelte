@@ -86,6 +86,11 @@
     }
   });
 
+  async function handleSubmit(e: Event) {
+    e.preventDefault();
+    await handleCreateNote();
+  }
+
   async function handleCreateNote() {
     if (!content.trim()) {
       toast.push($t('home.form.errors.emptyContent'), {
@@ -201,7 +206,7 @@
   </div>
 
   <!-- Form Content -->
-  <div class="space-y-6">
+  <form onsubmit={handleSubmit} class="space-y-6">
     <!-- Note Content -->
     <div>
       <label for="content" class="block text-sm font-semibold text-gray-700 mb-2">
@@ -209,6 +214,7 @@
       </label>
       <textarea
         id="content"
+        name="content"
         bind:value={content}
         rows="8"
         class="input-field resize-y"
@@ -238,6 +244,8 @@
             <input
               id="password"
               type="password"
+              name="password"
+              autocomplete="new-password"
               bind:value={password}
               placeholder={$t('home.form.password.placeholder')}
               class="input-field {passwordError && password ? 'border-red-500 focus:ring-red-500' : ''}"
@@ -275,6 +283,8 @@
                 <input
                   id="password-confirm"
                   type="password"
+                  name="password-confirm"
+                  autocomplete="new-password"
                   bind:value={passwordConfirm}
                   placeholder={$t('home.form.password.confirm')}
                   class="input-field {passwordError && passwordConfirm ? 'border-red-500 focus:ring-red-500' : ''}"
@@ -330,6 +340,7 @@
           <div class="relative">
             <select
               id="expires"
+              name="expires"
               bind:value={expiresInHours}
               class="w-full px-4 py-3 pr-10 text-gray-900 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none cursor-pointer hover:border-gray-400 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={loading}
@@ -352,6 +363,7 @@
           <div class="flex items-start space-x-3">
             <input
               id="notify"
+              name="notify"
               type="checkbox"
               bind:checked={notifyOnRead}
               class="w-5 h-5 mt-0.5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
@@ -372,7 +384,7 @@
 
     <!-- Create Button -->
     <button
-      onclick={handleCreateNote}
+      type="submit"
       disabled={loading || !content.trim()}
       class="w-full btn-primary py-3 text-lg font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
     >
@@ -387,5 +399,5 @@
         <span>{$t('common.actions.create')}</span>
       {/if}
     </button>
-  </div>
+  </form>
 </div>
