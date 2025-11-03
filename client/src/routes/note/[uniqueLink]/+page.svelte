@@ -4,6 +4,7 @@
   import { toast } from '@zerodevx/svelte-toast';
   import DOMPurify from 'dompurify';
   import { t, loadTranslations, getInitialLocale } from '$lib/i18n/i18n';
+  import type { PageData } from './$types';
 
   // Services
   import { notesService } from '$lib/services';
@@ -14,12 +15,16 @@
   // Components
   import { Header, Footer } from '$lib/components';
 
+  // Get server data
+  let { data }: { data: PageData } = $props();
+
   let noteContent = $state('');
   let password = $state('');
   let loading = $state(true);
   let error = $state('');
   let requiresPassword = $state(false);
   let noteRead = $state(false);
+  let showConfirmation = $state(false);
   let uniqueLink = $state('');
   let noteKey = $state('');
   let passwordAttempted = $state(false);
@@ -83,51 +88,33 @@
       return;
     }
     
-    // 4. Check note status and load if available
-    await checkNoteStatus();
-  });
-
-  async function checkNoteStatus() {
-    try {
-      loading = true;
-      
-      // Final safety check: ensure uniqueLink is just the note ID
-      let finalUniqueLink = uniqueLink;
-      if (finalUniqueLink && (finalUniqueLink.includes('http') || finalUniqueLink.includes('localhost'))) {
-        console.error('uniqueLink still contains full URL in checkNoteStatus!');
-        // Extract from current pathname as last resort
-        const pathParts = window.location.pathname.split('/');
-        finalUniqueLink = pathParts[pathParts.length - 1];
-      }
-      
-      const status = await notesService.checkNoteStatus(finalUniqueLink);
-      
-      if (!status.exists) {
+    // 4. Check server-loaded note status first
+    const serverStatus = data.noteStatus;
+    if (serverStatus.error || !serverStatus.exists) {
+      loading = false;
+      if (serverStatus.error === 'not_found' || !serverStatus.exists) {
         error = sanitizeErrorMessage('Note not found or expired');
-        return;
-      }
-      
-      if (status.isRead) {
-        error = sanitizeErrorMessage('This note has already been read and is no longer available');
-        return;
-      }
-      
-      
-      if (status.hasPassword) {
-        // Note requires password - show password form
-        requiresPassword = true;
-        error = '';
       } else {
-        // Note doesn't require password - try to read it directly
-        await loadNote();
+        error = sanitizeErrorMessage('Failed to load note. Please try again.');
       }
-    } catch (err: any) {
-      console.error('Error checking note status:', err);
-      error = sanitizeErrorMessage('Failed to load note. Please try again.');
-    } finally {
+      return;
+    }
+    
+    if (serverStatus.isRead) {
+      loading = false;
+      error = sanitizeErrorMessage('This note has already been read and is no longer available');
+      return;
+    }
+    
+    // 5. Continue with normal flow
+    if (serverStatus.hasPassword) {
+      requiresPassword = true;
+      loading = false;
+    } else {
+      showConfirmation = true;
       loading = false;
     }
-  }
+  });
 
   async function loadNote() {
     try {
@@ -184,7 +171,18 @@
 
   async function handlePasswordSubmit() {
     passwordAttempted = true; // Mark that user has attempted password entry
-    await loadNote();
+    // After entering password, show confirmation screen
+    requiresPassword = false;
+    showConfirmation = true;
+  }
+
+  function handleConfirmRead() {
+    showConfirmation = false;
+    loadNote();
+  }
+
+  function handleCancelRead() {
+    window.location.href = '/';
   }
 </script>
 
@@ -249,6 +247,63 @@
           >
             {$t('note.error.createNew')}
           </a>
+        </div>
+      </div>
+
+    {:else if showConfirmation}
+      <!-- Confirmation Screen -->
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <div class="w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">{$t('note.confirm.title')}</h2>
+          <p class="text-lg text-gray-600">{$t('note.confirm.subtitle')}</p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden mb-8">
+          <!-- Warning Section -->
+          <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-b border-orange-200 px-8 py-6">
+            <div class="flex items-start space-x-3">
+              <div class="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">{$t('note.confirm.warning')}</h4>
+                <p class="text-gray-700">
+                  {$t('note.confirm.warningText')}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="p-8 space-y-4">
+            <button
+              onclick={handleConfirmRead}
+              class="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-3"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+              <span>{$t('note.confirm.readButton')}</span>
+            </button>
+
+            <button
+              onclick={handleCancelRead}
+              class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center space-x-3"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+              <span>{$t('note.confirm.cancelButton')}</span>
+            </button>
+          </div>
         </div>
       </div>
 

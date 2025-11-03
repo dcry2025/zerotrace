@@ -3,6 +3,14 @@
     "title": "加载安全笔记...",
     "subtitle": "正在解密您的消息"
   },
+  "confirm": {
+    "title": "准备阅读笔记",
+    "subtitle": "您确定要阅读此笔记吗？",
+    "warning": "⚠️ 重要",
+    "warningText": "一旦阅读此笔记，它将从我们的服务器中永久删除。即使使用相同的链接，您也无法再次访问它。",
+    "readButton": "是的，阅读笔记",
+    "cancelButton": "取消"
+  },
   "error": {
     "title": "笔记不可用",
     "subtitle": "为了您的安全，zerotrace笔记只能读取一次。",

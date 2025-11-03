@@ -3,6 +3,14 @@
     "title": "Sichere Notiz Wird Geladen...",
     "subtitle": "Ihre Nachricht wird entschlüsselt"
   },
+  "confirm": {
+    "title": "Bereit zum Lesen der Notiz",
+    "subtitle": "Sind Sie sicher, dass Sie diese Notiz lesen möchten?",
+    "warning": "⚠️ Wichtig",
+    "warningText": "Sobald Sie diese Notiz lesen, wird sie dauerhaft von unseren Servern gelöscht. Sie können auch mit demselben Link nicht mehr darauf zugreifen.",
+    "readButton": "Ja, Notiz Lesen",
+    "cancelButton": "Abbrechen"
+  },
   "error": {
     "title": "Notiz Nicht Verfügbar",
     "subtitle": "zerotrace-Notizen können zu Ihrer Sicherheit nur einmal gelesen werden.",

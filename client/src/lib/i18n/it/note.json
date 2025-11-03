@@ -3,6 +3,14 @@
     "title": "Caricamento Nota Sicura...",
     "subtitle": "Decrittazione del tuo messaggio"
   },
+  "confirm": {
+    "title": "Pronto a Leggere la Nota",
+    "subtitle": "Sei sicuro di voler leggere questa nota?",
+    "warning": "⚠️ Importante",
+    "warningText": "Una volta letta questa nota, sarà eliminata permanentemente dai nostri server. Non potrai più accedervi, nemmeno con lo stesso link.",
+    "readButton": "Sì, Leggi Nota",
+    "cancelButton": "Annulla"
+  },
   "error": {
     "title": "Nota Non Disponibile",
     "subtitle": "Le note zerotrace possono essere lette solo una volta per la tua sicurezza.",

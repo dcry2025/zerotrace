@@ -3,6 +3,14 @@
     "title": "Chargement de la Note Sécurisée...",
     "subtitle": "Déchiffrement de votre message"
   },
+  "confirm": {
+    "title": "Prêt à Lire la Note",
+    "subtitle": "Êtes-vous sûr de vouloir lire cette note ?",
+    "warning": "⚠️ Important",
+    "warningText": "Une fois que vous aurez lu cette note, elle sera définitivement supprimée de nos serveurs. Vous ne pourrez plus y accéder, même avec le même lien.",
+    "readButton": "Oui, Lire la Note",
+    "cancelButton": "Annuler"
+  },
   "error": {
     "title": "Note Non Disponible",
     "subtitle": "Les notes zerotrace ne peuvent être lues qu'une seule fois pour votre sécurité.",

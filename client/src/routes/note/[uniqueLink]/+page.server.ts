@@ -1,4 +1,3 @@
-import { error, type RequestHandler } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types.js';
 
 export const load: PageServerLoad = async ({ params, fetch }) => {
@@ -9,39 +8,38 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     const response = await fetch(`/api/notes/${uniqueLink}/status`);
     
     if (!response.ok) {
-      if (response.status === 404) {
-        throw error(404, 'Note not found');
-      }
-      throw error(response.status, 'Failed to load note');
+      // Don't throw error - return status for client-side handling
+      return {
+        noteStatus: {
+          exists: false,
+          hasPassword: false,
+          error: response.status === 404 ? 'not_found' : 'failed_to_load',
+        },
+        uniqueLink,
+      };
     }
 
     const status = await response.json();
     
-    // Check if note exists
-    if (!status.exists) {
-      throw error(404, 'Note not found');
-    }
-
-    // Check if already read
-    if (status.isRead) {
-      throw error(410, 'This note has already been read and is no longer available');
-    }
-
-    // Return note status to the page component
+    // Return note status to the page component (including error states)
     return {
       noteStatus: {
         exists: status.exists,
         hasPassword: status.hasPassword,
+        isRead: status.isRead,
       },
       uniqueLink,
     };
   } catch (err: any) {
-    // Re-throw SvelteKit errors
-    if (err.status) {
-      throw err;
-    }
-    
     console.error('Error loading note:', err);
-    throw error(500, 'Failed to load note');
+    // Return error status instead of throwing
+    return {
+      noteStatus: {
+        exists: false,
+        hasPassword: false,
+        error: 'failed_to_load',
+      },
+      uniqueLink,
+    };
   }
 };

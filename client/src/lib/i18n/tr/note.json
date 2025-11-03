@@ -3,6 +3,14 @@
     "title": "Güvenli Not Yükleniyor...",
     "subtitle": "Mesajınız şifresi çözülüyor"
   },
+  "confirm": {
+    "title": "Notu Okumaya Hazır",
+    "subtitle": "Bu notu okumak istediğinizden emin misiniz?",
+    "warning": "⚠️ Önemli",
+    "warningText": "Bu notu okuduktan sonra, sunucularımızdan kalıcı olarak silinecektir. Aynı bağlantı ile bile bir daha erişemezsiniz.",
+    "readButton": "Evet, Notu Oku",
+    "cancelButton": "İptal"
+  },
   "error": {
     "title": "Not Kullanılamıyor",
     "subtitle": "Güvenliğiniz için zerotrace notları sadece bir kez okunabilir.",

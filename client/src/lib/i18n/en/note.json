@@ -3,6 +3,14 @@
     "title": "Loading Secure Note...",
     "subtitle": "Decrypting your message"
   },
+  "confirm": {
+    "title": "Ready to Read Note",
+    "subtitle": "Are you sure you want to read this note?",
+    "warning": "⚠️ Important",
+    "warningText": "Once you read this note, it will be permanently deleted from our servers. You will not be able to access it again, even with the same link.",
+    "readButton": "Yes, Read Note",
+    "cancelButton": "Cancel"
+  },
   "error": {
     "title": "Note Not Available",
     "subtitle": "zerotrace notes can only be read once for your security.",
