@@ -14,6 +14,9 @@ RUN bun install
 # Copy source files
 COPY . .
 
+# Copy .env file if it exists
+COPY .env* ./
+
 # Build the application with Bun
 RUN bun run build
 
