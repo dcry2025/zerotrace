@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 import { TelegramService } from './telegram.service';
 import { OwnerService } from '../owner/owner.service';
 import { NotesService } from '../notes/notes.service';
-import { TELEGRAM_MESSAGES, TELEGRAM_CONFIG } from './telegram.constants';
+import { TELEGRAM_CONFIG } from './telegram.constants';
 
 describe('TelegramService', () => {
   let service: TelegramService;
@@ -106,7 +106,7 @@ describe('TelegramService', () => {
 
     it('should handle initialization errors gracefully', async () => {
       mockConfigService.get.mockReturnValue('test-bot-token');
-      const loggerErrorSpy = jest.spyOn(service['logger'], 'error');
+      jest.spyOn(service['logger'], 'error');
 
       // The actual initialization will fail in test environment
       // but error should be caught and logged
@@ -507,4 +507,3 @@ describe('TelegramService', () => {
     });
   });
 });
-

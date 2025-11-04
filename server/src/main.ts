@@ -44,7 +44,7 @@ async function bootstrap() {
 
   // Global prefix
   app.setGlobalPrefix('/api/v11337', {
-  //  exclude: ['/metrics'],
+    //  exclude: ['/metrics'],
   });
 
   // Register Fastify helmet plugin for security headers
@@ -88,6 +88,10 @@ async function bootstrap() {
     }),
   );
 
+  // Enable graceful shutdown hooks to properly cleanup resources
+  // This ensures OnModuleDestroy lifecycle hooks are called
+  app.enableShutdownHooks();
+
   // App starts - Fastify listen accepts host as second parameter
   await app.listen(PORT, '0.0.0.0', () => {
     console.log(
@@ -96,6 +100,27 @@ async function bootstrap() {
     logger.log(
       `Server started on port ${PORT} in ${NODE_ENV} regime at ${new Date()}`,
     );
+  });
+
+  // Handle shutdown signals for proper cleanup
+  const signals = ['SIGINT', 'SIGTERM'];
+  signals.forEach(signal => {
+    process.on(signal, async () => {
+      logger.log(`Received ${signal}, gracefully shutting down...`);
+      await app.close();
+      process.exit(0);
+    });
+  });
+
+  // Handle unhandled rejections and exceptions
+  process.on('unhandledRejection', (err: Error) => {
+    logger.error('Unhandled Rejection:', err);
+  });
+
+  process.on('uncaughtException', (err: Error) => {
+    logger.error('Uncaught Exception:', err);
+    // Give time to log before exiting
+    setTimeout(() => process.exit(1), 1000);
   });
 }
 

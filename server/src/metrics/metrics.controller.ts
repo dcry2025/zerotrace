@@ -2,10 +2,10 @@
 
 /**
  * Metrics Controller
- * 
+ *
  * Provides system metrics endpoint
  * Protected by API key authentication
- * 
+ *
  * Usage:
  * GET /api/v1/metrics
  * Headers: X-API-Key: <your-api-key>
@@ -24,7 +24,7 @@ export class MetricsController {
 
   /**
    * Get system metrics
-   * 
+   *
    * @returns Comprehensive system statistics
    */
   @Get()
@@ -32,4 +32,3 @@ export class MetricsController {
     return this.metricsService.getMetrics();
   }
 }
-

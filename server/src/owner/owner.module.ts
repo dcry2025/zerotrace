@@ -16,4 +16,3 @@ import { Owner } from './models/owner-model';
   exports: [OwnerService],
 })
 export class OwnerModule {}
-

@@ -20,12 +20,15 @@ export const SequelizeConfig = {
     configService: ConfigService,
   ): Promise<SequelizeModuleOptions> => {
     const mysqlHost = configService.get<string>('MYSQL_HOST', 'localhost');
-    const mysqlPort = parseInt(configService.get<string>('MYSQL_PORT', '3306'), 10);
+    const mysqlPort = parseInt(
+      configService.get<string>('MYSQL_PORT', '3306'),
+      10,
+    );
     const mysqlUsername = configService.get<string>('MYSQL_USERNAME');
     const mysqlPassword = configService.get<string>('MYSQL_PASSWORD');
     const mysqlName = configService.get<string>('MYSQL_NAME');
     const dbLogging = configService.get<string>('DB_LOGGING');
-    
+
     console.log('🔍 Sequelize Config Debug:');
     console.log('  MYSQL_HOST:', mysqlHost);
     console.log('  MYSQL_PORT:', mysqlPort);
@@ -33,7 +36,7 @@ export const SequelizeConfig = {
     console.log('  MYSQL_PASSWORD:', mysqlPassword);
     console.log('  MYSQL_NAME:', mysqlName);
     console.log('  DB_LOGGING:', dbLogging);
-    
+
     return {
       dialect: 'mysql',
       host: configService.get<string>('MYSQL_HOST', '127.0.0.1'),
@@ -95,4 +98,3 @@ export const SequelizeConfig = {
   },
   inject: [ConfigService],
 };
-

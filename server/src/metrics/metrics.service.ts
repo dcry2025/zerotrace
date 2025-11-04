@@ -4,7 +4,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { InjectQueue } from '@nestjs/bullmq';
-import { Queue } from 'bullmq'
+import { Queue } from 'bullmq';
 
 // Models
 import { Note } from '../notes/models/note-model';
@@ -35,12 +35,13 @@ export class MetricsService {
    * Get comprehensive system metrics
    */
   async getMetrics() {
-    const [serverStats, databaseStats, queueStats, redisStats] = await Promise.all([
-      this.getServerStats(),
-      this.getDatabaseStats(),
-      this.getQueueStats(),
-      this.getRedisStats(),
-    ]);
+    const [serverStats, databaseStats, queueStats, redisStats] =
+      await Promise.all([
+        this.getServerStats(),
+        this.getDatabaseStats(),
+        this.getQueueStats(),
+        this.getRedisStats(),
+      ]);
 
     return {
       timestamp: new Date().toISOString(),
@@ -72,8 +73,14 @@ export class MetricsService {
         total: this.formatBytes(memoryUsage.heapTotal),
         totalBytes: memoryUsage.heapTotal,
         rss: this.formatBytes(memoryUsage.rss),
+        rssBytes: memoryUsage.rss,
         external: this.formatBytes(memoryUsage.external),
-        percentUsed: ((memoryUsage.heapUsed / memoryUsage.heapTotal) * 100).toFixed(2) + '%',
+        externalBytes: memoryUsage.external,
+        arrayBuffers: this.formatBytes(memoryUsage.arrayBuffers),
+        arrayBuffersBytes: memoryUsage.arrayBuffers,
+        percentUsed:
+          ((memoryUsage.heapUsed / memoryUsage.heapTotal) * 100).toFixed(2) +
+          '%',
       },
       nodeVersion: process.version,
       platform: process.platform,
@@ -86,7 +93,11 @@ export class MetricsService {
    */
   private async getDatabaseStats() {
     const now = new Date();
-    const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const todayStart = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+    );
 
     const [
       totalNotes,
@@ -190,7 +201,7 @@ export class MetricsService {
       const info = await this.redisClient.info('memory');
       const infoLines = info.split('\r\n');
       const memoryStats: any = {};
-      
+
       infoLines.forEach(line => {
         const [key, value] = line.split(':');
         if (key && value) {
@@ -212,7 +223,8 @@ export class MetricsService {
         memory: {
           used: usedMemoryHuman,
           usedBytes: usedMemoryBytes,
-          max: maxMemoryBytes > 0 ? this.formatBytes(maxMemoryBytes) : 'unlimited',
+          max:
+            maxMemoryBytes > 0 ? this.formatBytes(maxMemoryBytes) : 'unlimited',
           maxBytes: maxMemoryBytes,
           fragmentation: memoryStats.mem_fragmentation_ratio || 'N/A',
         },
@@ -236,7 +248,7 @@ export class MetricsService {
 
     // Calculate total CPU time in microseconds
     const totalCpuTime = currentCpuUsage.user + currentCpuUsage.system;
-    
+
     // Calculate percentage (time diff is in ms, cpu time is in microseconds)
     const cpuPercent = (totalCpuTime / (timeDiff * 1000)) * 100;
 

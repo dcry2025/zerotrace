@@ -64,8 +64,12 @@ describe('TelegramNotificationProcessor', () => {
 
       await processor.process(job as Job);
 
-      expect(mockTelegramService.sendNoteReadNotification).not.toHaveBeenCalled();
-      expect(mockTelegramService.sendNoteAccessFailedNotification).not.toHaveBeenCalled();
+      expect(
+        mockTelegramService.sendNoteReadNotification,
+      ).not.toHaveBeenCalled();
+      expect(
+        mockTelegramService.sendNoteAccessFailedNotification,
+      ).not.toHaveBeenCalled();
     });
 
     it('should process NOTE_READ action successfully', async () => {
@@ -381,10 +385,7 @@ describe('TelegramNotificationProcessor', () => {
 
       await processor.onActive(job as Job);
 
-      expect(logSpy).toHaveBeenCalledWith(
-        expect.stringContaining('attempt 2'),
-      );
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining('attempt 2'));
     });
   });
 });
-

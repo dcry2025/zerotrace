@@ -2,13 +2,13 @@
 
 /**
  * Metrics Module
- * 
+ *
  * Provides system metrics endpoint for monitoring:
  * - Server health (uptime, memory, CPU)
  * - Database statistics (notes count, active, etc.)
  * - Queue statistics (waiting, active, completed, failed)
  * - Telegram notifications stats
- * 
+ *
  * Protected by API key authentication
  */
 

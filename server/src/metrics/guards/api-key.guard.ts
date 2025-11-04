@@ -2,7 +2,7 @@
 
 /**
  * API Key Guard
- * 
+ *
  * Protects endpoints with API key authentication
  * API key should be passed in X-API-Key header
  * and match METRICS_API_KEY from .env
@@ -22,14 +22,16 @@ export class ApiKeyGuard implements CanActivate {
 
   canActivate(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest();
-    
+
     // Support both header and query parameter for API key
     // Header: X-API-Key (more secure)
     // Query: ?key=xxx (convenient for browser, but less secure)
     const apiKey = request.headers['x-api-key'] || request.query?.key;
 
     if (!apiKey) {
-      throw new UnauthorizedException('API key is missing. Provide via X-API-Key header or ?key= query parameter');
+      throw new UnauthorizedException(
+        'API key is missing. Provide via X-API-Key header or ?key= query parameter',
+      );
     }
 
     const validApiKey = this.configService.get<string>('METRICS_API_KEY');
@@ -45,4 +47,3 @@ export class ApiKeyGuard implements CanActivate {
     return true;
   }
 }
-

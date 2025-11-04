@@ -10,8 +10,6 @@ import {
   Param,
   HttpCode,
   HttpStatus,
-  Query,
-  ParseIntPipe,
 } from '@nestjs/common';
 
 // Services
@@ -145,5 +143,4 @@ export class NotesController {
         : 'Note not found or already destroyed',
     };
   }
-
 }

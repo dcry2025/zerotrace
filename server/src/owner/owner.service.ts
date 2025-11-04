@@ -94,17 +94,12 @@ export class OwnerService {
    * @param telegramUsername - New Telegram username
    * @returns Promise<Owner> - Updated Owner
    */
-  async updateUsername(
-    id: number,
-    telegramUsername: string,
-  ): Promise<Owner> {
+  async updateUsername(id: number, telegramUsername: string): Promise<Owner> {
     const owner = await this.findById(id);
     owner.telegramUsername = telegramUsername;
     await owner.save();
 
-    this.logger.log(
-      `Updated username for Owner ${id} to @${telegramUsername}`,
-    );
+    this.logger.log(`Updated username for Owner ${id} to @${telegramUsername}`);
 
     return owner;
   }
@@ -133,4 +128,3 @@ export class OwnerService {
     };
   }
 }
-

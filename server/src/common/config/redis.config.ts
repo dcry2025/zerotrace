@@ -16,7 +16,7 @@ export const RedisConfig: CacheModuleAsyncOptions = {
     const redisUsername = configService.get<string>('REDIS_USERNAME');
     const redisPassword = configService.get<string>('REDIS_PASSWORD');
     const redisTtl = configService.get<number>('REDIS_TTL');
-     
+
     const store = await redisStore({
       socket: {
         host: redisHost,
@@ -26,9 +26,9 @@ export const RedisConfig: CacheModuleAsyncOptions = {
       password: redisPassword,
       ttl: redisTtl,
     });
-    
+
     console.log('✅ Redis store created successfully');
-    
+
     return {
       store: () => store,
     };

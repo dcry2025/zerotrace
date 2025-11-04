@@ -37,4 +37,3 @@ export class Owner extends Model<Owner> {
   @HasMany(() => Note)
   notes: Note[];
 }
-

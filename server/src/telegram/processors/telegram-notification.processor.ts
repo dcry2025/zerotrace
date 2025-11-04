@@ -33,9 +33,7 @@ import {
 export class TelegramNotificationProcessor extends WorkerHost {
   private readonly logger = new Logger(TelegramNotificationProcessor.name);
 
-  constructor(
-    private readonly telegramService: TelegramService,
-  ) {
+  constructor(private readonly telegramService: TelegramService) {
     super();
   }
 
@@ -52,7 +50,6 @@ export class TelegramNotificationProcessor extends WorkerHost {
     }
 
     const telegramJob = data as TelegramNotificationJob;
-    const startTime = Date.now();
 
     this.logger.log(
       `Processing Telegram job ${job.id} (attempt ${job.attemptsMade + 1}/${job.opts.attempts}): ${telegramJob.action}`,

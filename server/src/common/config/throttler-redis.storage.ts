@@ -16,7 +16,7 @@ export class ThrottlerRedisStorage implements ThrottlerStorage {
     ttl: number,
     limit: number,
     blockDuration: number,
-    throttlerName: string,
+    _throttlerName: string,
   ): Promise<ThrottlerStorageRecord> {
     const blockKey = `${key}:block`;
     const ttlSeconds = Math.ceil(ttl / 1000);

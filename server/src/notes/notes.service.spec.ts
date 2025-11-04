@@ -3,13 +3,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
 import { getQueueToken } from '@nestjs/bullmq';
-import {
-  NotFoundException,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { NotFoundException, UnauthorizedException } from '@nestjs/common';
 import { NotesService } from './notes.service';
 import { Note } from './models/note-model';
-import { Owner } from '../owner/models/owner-model';
 import { NOTIFICATIONS_QUEUE_NAME } from '../queue/queues/notifications.queue';
 import { NOTES_ERRORS } from './notes.constants';
 
@@ -28,9 +24,9 @@ describe('NotesService', () => {
       findAndCountAll: jest.fn(),
       destroy: jest.fn(),
       sequelize: {
-        fn: jest.fn((func, col) => `fn:${func}`),
-        col: jest.fn((name) => `col:${name}`),
-        literal: jest.fn((sql) => `literal:${sql}`),
+        fn: jest.fn((func, _col) => `fn:${func}`),
+        col: jest.fn(name => `col:${name}`),
+        literal: jest.fn(sql => `literal:${sql}`),
       },
     };
 
@@ -144,7 +140,7 @@ describe('NotesService', () => {
 
       mockNoteModel.create.mockResolvedValue(mockNote);
 
-      const result = await service.createNote(createNoteDto);
+      await service.createNote(createNoteDto);
 
       expect(mockNoteModel.create).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -489,7 +485,6 @@ describe('NotesService', () => {
       await expect(service.logNotesStatistics()).resolves.toBeUndefined();
     });
   });
-
 
   describe('findNoteWithOwner', () => {
     it('should find note with owner', async () => {
@@ -939,9 +934,7 @@ describe('NotesService', () => {
       };
 
       mockNoteModel.findOne.mockResolvedValue(mockNote);
-      mockNotificationsQueue.add.mockRejectedValue(
-        new Error('Queue error'),
-      );
+      mockNotificationsQueue.add.mockRejectedValue(new Error('Queue error'));
 
       // Should not throw - notification failure should not block reading
       await expect(service.readNote('test123', {})).resolves.toBeDefined();
@@ -964,14 +957,12 @@ describe('NotesService', () => {
       };
 
       mockNoteModel.findOne.mockResolvedValue(mockNote);
-      mockNotificationsQueue.add.mockRejectedValue(
-        new Error('Queue error'),
-      );
+      mockNotificationsQueue.add.mockRejectedValue(new Error('Queue error'));
 
       // Should still throw UnauthorizedException even if notification fails
-      await expect(
-        service.readNote('test123', {}),
-      ).rejects.toThrow(UnauthorizedException);
+      await expect(service.readNote('test123', {})).rejects.toThrow(
+        UnauthorizedException,
+      );
     });
   });
 });

@@ -14,7 +14,6 @@ import { Cron, CronExpression } from '@nestjs/schedule';
 // Other packages
 import { v4 as uuidv4 } from 'uuid';
 import { Queue } from 'bullmq';
-import { Op } from 'sequelize';
 
 // Models
 import { Note } from './models/note-model';
@@ -46,7 +45,6 @@ import {
 
 // Constants
 import {
-  NOTES_CONFIG,
   NOTES_ERRORS,
   NOTES_LOGS,
   FAILED_ACCESS_REASONS,
@@ -71,13 +69,8 @@ export class NotesService {
     ipAddress?: string,
     userAgent?: string,
   ): Promise<CreateNoteResponseDto> {
-    const {
-      content,
-      metadataHash,
-      password,
-      expiresInDays,
-      notifyOnRead,
-    } = createNoteDto;
+    const { content, metadataHash, password, expiresInDays, notifyOnRead } =
+      createNoteDto;
 
     // Validate content length (but don't sanitize - content is already encrypted!)
     if (!validateContentLength(content)) {
@@ -104,7 +97,7 @@ export class NotesService {
       : null;
 
     // Create note - password will be auto-hashed by model hook using argon2
-    const note = await this.noteModel.create({
+    await this.noteModel.create({
       content: content, // Store encrypted content AS-IS (already encrypted on client)
       metadataHash: metadataHash || null, // Additional metadata for integrity verification
       uniqueLink,
@@ -138,7 +131,6 @@ export class NotesService {
     ipAddress?: string,
     userAgent?: string,
   ): Promise<ReadNoteResponseDto> {
-    const startTime = Date.now();
     const note = await this.noteModel.findOne({
       where: {
         uniqueLink,
@@ -395,7 +387,6 @@ export class NotesService {
   //   }
   // }
 
-
   /**
    * Find note with owner by unique link (for Telegram integration)
    * Returns note with owner information or null if not found
@@ -419,10 +410,7 @@ export class NotesService {
    * Link note to owner (for Telegram activation)
    * Returns true if linked successfully
    */
-  async linkNoteToOwner(
-    uniqueLink: string,
-    ownerId: number,
-  ): Promise<boolean> {
+  async linkNoteToOwner(uniqueLink: string, ownerId: number): Promise<boolean> {
     const note = await this.noteModel.findOne({
       where: { uniqueLink },
     });
@@ -538,7 +526,9 @@ export class NotesService {
     note.readAt = new Date();
     await note.save();
 
-    this.logger.log(`Note destroyed via delete link: ${deleteLink} (uniqueLink: ${note.uniqueLink})`);
+    this.logger.log(
+      `Note destroyed via delete link: ${deleteLink} (uniqueLink: ${note.uniqueLink})`,
+    );
 
     return true;
   }

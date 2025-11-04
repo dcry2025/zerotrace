@@ -1,7 +1,7 @@
 // src/cache/cache.service.ts
 
 // Nest js
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, OnModuleDestroy, Logger } from '@nestjs/common';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 
 // Other packages
@@ -21,7 +21,9 @@ import Redis from 'ioredis';
  * but serve different architectural purposes.
  */
 @Injectable()
-export class RedisCacheService {
+export class RedisCacheService implements OnModuleDestroy {
+  private readonly logger = new Logger(RedisCacheService.name);
+
   constructor(
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
     @Inject('REAL_REDIS') private readonly redis: Redis,
@@ -166,5 +168,27 @@ export class RedisCacheService {
   generateCacheKey(userId: number, url: string): string {
     const encodedUrl = encodeURIComponent(url);
     return `cache:module:user_${userId}_${encodedUrl}`;
+  }
+
+  /**
+   * Cleanup on module destroy - prevents memory leaks
+   * Properly closes Redis connection and removes all event listeners
+   */
+  async onModuleDestroy() {
+    this.logger.log('RedisCacheService shutting down...');
+    
+    try {
+      // Remove all event listeners to prevent memory leaks
+      this.redis.removeAllListeners();
+      
+      // Gracefully disconnect from Redis
+      await this.redis.quit();
+      
+      this.logger.log('✅ RedisCacheService cleanup completed');
+    } catch (error) {
+      this.logger.error('Error during Redis cleanup:', error);
+      // Force disconnect if graceful shutdown fails
+      this.redis.disconnect();
+    }
   }
 }

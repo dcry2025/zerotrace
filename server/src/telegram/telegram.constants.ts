@@ -3,11 +3,11 @@
  */
 export const TELEGRAM_MESSAGES = {
   // Start command messages
-  START_WITH_NOTE: (noteId: string) =>
+  START_WITH_NOTE: (_noteId: string) =>
     `🔔 *Notification Activated!*\n\n` +
     `Your note is now connected to this chat. You'll receive notifications when someone reads your note.`,
 
-  START_ALREADY_ACTIVATED: (noteId: string) =>
+  START_ALREADY_ACTIVATED: (_noteId: string) =>
     `✅ *Already Activated*\n\n` +
     `This note is already connected to your chat.`,
 

@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { RedisCacheService } from './redis-cache.service';
-import Redis from 'ioredis';
 
 describe('RedisCacheService', () => {
   let service: RedisCacheService;
@@ -90,7 +89,12 @@ describe('RedisCacheService', () => {
 
       await service.setBuffer(key, buffer, ttl);
 
-      expect(mockRedis.set).toHaveBeenCalledWith(key, buffer.toString('base64'), 'EX', ttl);
+      expect(mockRedis.set).toHaveBeenCalledWith(
+        key,
+        buffer.toString('base64'),
+        'EX',
+        ttl,
+      );
     });
   });
 
@@ -197,7 +201,7 @@ describe('RedisCacheService', () => {
       const userId = 123;
       const keys1 = [`photo:${userId}:1`, `photo:${userId}:2`];
       const keys2 = [`filetype:${userId}:1`, `filetype:${userId}:2`];
-      
+
       mockRedis.scan
         .mockResolvedValueOnce(['0', keys1])
         .mockResolvedValueOnce(['0', keys2])

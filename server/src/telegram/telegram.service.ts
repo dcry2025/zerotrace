@@ -6,6 +6,7 @@ import {
   Logger,
   OnModuleInit,
   OnApplicationBootstrap,
+  OnModuleDestroy,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
@@ -20,12 +21,15 @@ import { NotesService } from '../notes/notes.service';
 import { TELEGRAM_MESSAGES, TELEGRAM_CONFIG } from './telegram.constants';
 
 @Injectable()
-export class TelegramService implements OnModuleInit, OnApplicationBootstrap {
+export class TelegramService implements OnModuleInit, OnApplicationBootstrap, OnModuleDestroy {
   private readonly logger = new Logger(TelegramService.name);
   private bot: Bot;
   private isInitialized = false;
-  // Store username -> chat_id mapping in memory
-  private userMapping: Map<string, string> = new Map();
+  
+  // Store username -> chat_id mapping in memory with metadata for cleanup
+  private userMapping: Map<string, { chatId: string; lastAccess: number }> = new Map();
+  private readonly MAX_MAPPING_SIZE = 10000; // Prevent unlimited growth
+  private cleanupInterval: NodeJS.Timeout | null = null;
 
   constructor(
     private configService: ConfigService,
@@ -86,7 +90,7 @@ export class TelegramService implements OnModuleInit, OnApplicationBootstrap {
                     this.logger.warn(
                       `⚠️ Security: User with chat_id ${chatId} attempted to access note ${uniqueLink} owned by chat_id ${note.owner.telegramChatId}`,
                     );
-                    
+
                     // Send security alert to the owner
                     try {
                       await this.bot.api.sendMessage(
@@ -94,18 +98,18 @@ export class TelegramService implements OnModuleInit, OnApplicationBootstrap {
                         TELEGRAM_MESSAGES.SECURITY_ALERT_UNAUTHORIZED_ACTIVATION(
                           uniqueLink,
                         ),
-                        { parse_mode: 'HTML' }
+                        { parse_mode: 'HTML' },
                       );
                       this.logger.log(
-                        `📧 Security alert sent to owner ${note.owner.telegramChatId} about unauthorized activation attempt by ${username ? `@${username}` : 'unknown user'}`
+                        `📧 Security alert sent to owner ${note.owner.telegramChatId} about unauthorized activation attempt by ${username ? `@${username}` : 'unknown user'}`,
                       );
                     } catch (error) {
                       this.logger.error(
                         `Failed to send security alert to owner ${note.owner.telegramChatId}:`,
-                        error.message
+                        error.message,
                       );
                     }
-                    
+
                     // Don't reveal note existence to unauthorized users
                     noteLinked = false;
                   }
@@ -143,7 +147,7 @@ export class TelegramService implements OnModuleInit, OnApplicationBootstrap {
 
         // SECONDARY: Also save username mapping (for backwards compatibility)
         if (username) {
-          this.userMapping.set(username.toLowerCase(), chatId);
+          this.addUserMapping(username.toLowerCase(), chatId);
           this.logger.log(
             `Registered user @${username} with chat_id: ${chatId}`,
           );
@@ -291,6 +295,10 @@ export class TelegramService implements OnModuleInit, OnApplicationBootstrap {
         'Application bootstrap complete. Starting Telegram bot polling...',
       );
       this.startPolling();
+      
+      // Start periodic cleanup of old user mappings
+      this.startPeriodicCleanup();
+      this.logger.log('Started periodic cleanup of user mappings');
     } else {
       this.logger.warn(
         'Telegram bot not ready at application bootstrap. Polling will not start.',
@@ -331,14 +339,14 @@ export class TelegramService implements OnModuleInit, OnApplicationBootstrap {
       this.logger.log(
         `✅ Notification sent to chat_id ${chatId} for note ${noteId}`,
       );
-      
+
       return true;
     } catch (error) {
       this.logger.error(
         `❌ Failed to send notification for note ${noteId}:`,
         error.message,
       );
-      
+
       return false;
     }
   }
@@ -385,14 +393,14 @@ export class TelegramService implements OnModuleInit, OnApplicationBootstrap {
       this.logger.log(
         `✅ Failed access notification sent to chat_id ${chatId} for note ${noteId} (Reason: ${reason})`,
       );
-      
+
       return true;
     } catch (error) {
       this.logger.error(
         `❌ Failed to send access failed notification for note ${noteId}:`,
         error.message,
       );
-      
+
       return false;
     }
   }
@@ -496,5 +504,82 @@ export class TelegramService implements OnModuleInit, OnApplicationBootstrap {
       await this.bot.stop();
       this.logger.log('Telegram bot stopped');
     }
+  }
+
+  /**
+   * Add user mapping with automatic cleanup of old entries
+   */
+  private addUserMapping(username: string, chatId: string): void {
+    // Clean up if map is too large
+    if (this.userMapping.size >= this.MAX_MAPPING_SIZE) {
+      this.cleanupOldMappings();
+    }
+
+    this.userMapping.set(username, {
+      chatId,
+      lastAccess: Date.now(),
+    });
+  }
+
+  /**
+   * Remove oldest 20% of entries when map reaches max size
+   */
+  private cleanupOldMappings(): void {
+    const entries = Array.from(this.userMapping.entries());
+    
+    // Sort by lastAccess (oldest first)
+    entries.sort((a, b) => a[1].lastAccess - b[1].lastAccess);
+    
+    // Remove oldest 20%
+    const toRemove = Math.floor(entries.length * 0.2);
+    for (let i = 0; i < toRemove; i++) {
+      this.userMapping.delete(entries[i][0]);
+    }
+    
+    this.logger.log(`Cleaned up ${toRemove} old user mappings. Current size: ${this.userMapping.size}`);
+  }
+
+  /**
+   * Periodic cleanup of old mappings (entries older than 30 days)
+   */
+  private startPeriodicCleanup(): void {
+    // Run cleanup every 24 hours
+    this.cleanupInterval = setInterval(() => {
+      const now = Date.now();
+      const thirtyDaysAgo = now - 30 * 24 * 60 * 60 * 1000;
+      let removed = 0;
+
+      for (const [username, data] of this.userMapping.entries()) {
+        if (data.lastAccess < thirtyDaysAgo) {
+          this.userMapping.delete(username);
+          removed++;
+        }
+      }
+
+      if (removed > 0) {
+        this.logger.log(`Periodic cleanup: removed ${removed} old user mappings`);
+      }
+    }, 24 * 60 * 60 * 1000); // 24 hours
+  }
+
+  /**
+   * Cleanup on module destroy - prevents memory leaks
+   */
+  async onModuleDestroy() {
+    this.logger.log('TelegramService shutting down...');
+    
+    // Clear cleanup interval
+    if (this.cleanupInterval) {
+      clearInterval(this.cleanupInterval);
+      this.cleanupInterval = null;
+    }
+    
+    // Stop bot polling to remove event listeners
+    await this.stop();
+    
+    // Clear userMapping to free memory
+    this.userMapping.clear();
+    
+    this.logger.log('✅ TelegramService cleanup completed');
   }
 }
