@@ -216,10 +216,10 @@
       </div>
       <button
         onclick={() => showOptions = !showOptions}
-        class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium"
+        class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-transform duration-200"
         aria-label={$t('common.actions.options')}
       >
-        <span>⚙️</span>
+        <span class="transition-transform duration-200">{showOptions ? '🔽' : '⚙️'}</span>
         <span>{$t('common.actions.options')}</span>
       </button>
     </div>
