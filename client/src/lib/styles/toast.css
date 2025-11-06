@@ -1,0 +1,39 @@
+/* Toast styles - ensure toasts appear above banner (z-index: 9999) */
+
+/* Container for all toasts - MUST be fixed to appear above everything */
+:global(._toastContainer),
+:global(.toastContainer),
+:global([class*='toast'][class*='container']) {
+	position: fixed !important;
+	top: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
+	max-width: 500px !important;
+	padding: 1rem !important;
+	z-index: 10000 !important;
+	pointer-events: none !important;
+	margin: 0 !important;
+}
+
+/* Individual toast messages */
+:global(._toastItem),
+:global(.toastItem),
+:global([class*='toast'][class*='item']) {
+	position: relative !important;
+	z-index: 10001 !important;
+	pointer-events: auto !important;
+	margin-bottom: 0.5rem !important;
+}
+
+/* Ensure toast wrapper has proper positioning */
+:global(._toastMsg),
+:global(.toastMsg),
+:global([class*='toast'][class*='msg']) {
+	z-index: 10002 !important;
+}
+
+/* Additional fallback for any div containing toast class */
+:global(div[class*='toast']) {
+	z-index: 10000 !important;
+}
+

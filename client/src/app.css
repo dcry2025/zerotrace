@@ -13,6 +13,27 @@
 		overflow-x: hidden;
 		max-width: 100vw;
 	}
+
+	/* Toast notifications should be above banner (z-index: 9999) */
+	:global(._toastContainer),
+	:global(.toastContainer),
+	:global([data-toast-container]) {
+		position: fixed !important;
+		z-index: 10000 !important;
+	}
+
+	/* Individual toast items should also have high z-index */
+	:global(._toastItem),
+	:global(.toastItem),
+	:global([data-toast-item]) {
+		z-index: 10001 !important;
+	}
+
+	/* Ensure toast wrapper is always fixed and visible */
+	:global([class*='toast-wrapper']) {
+		position: fixed !important;
+		z-index: 10000 !important;
+	}
 }
 
 @layer components {
