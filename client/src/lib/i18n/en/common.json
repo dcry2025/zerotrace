@@ -1,38 +1,40 @@
 {
-  "app": {
-    "name": "zerotrace",
-    "tagline": "Secure Private Notes"
-  },
-  "nav": {
-    "home": "Home",
-    "faq": "FAQ",
-    "privacy": "Privacy",
-    "back": "Back"
-  },
-  "actions": {
-    "create": "Create Secure Note",
-    "copy": "Copy",
-    "copied": "Copied!",
-    "submit": "Submit",
-    "cancel": "Cancel",
-    "close": "Close",
-    "destroy": "Destroy Note Now",
-    "options": "Options"
-  },
-  "language": {
-    "select": "Language",
-    "en": "English",
-    "ru": "Russian"
-  },
-  "footer": {
-    "brandTag": "Secure Notes",
-    "brandDesc": "Send encrypted messages that self-destruct after being read. Your privacy is our priority.",
-    "support": "Support",
-    "connect": "Connect",
-    "donate": "Donate",
-    "donateInfo": "This project exists thanks to donations and personal funds. Your support helps keep the service free and secure for everyone. Please consider helping us!",
-    "translate": "Translate into your language!",
-    "copyright": "© {year} zerotrace. All rights reserved. | Your privacy is our priority."
-  }
+	"app": {
+		"name": "zerotrace",
+		"tagline": "Secure Private Notes"
+	},
+	"nav": {
+		"home": "Home",
+		"faq": "FAQ",
+		"privacy": "Privacy",
+		"back": "Back"
+	},
+	"actions": {
+		"create": "Create Secure Note",
+		"copy": "Copy",
+		"copied": "Copied!",
+		"submit": "Submit",
+		"cancel": "Cancel",
+		"close": "Close",
+		"destroy": "Destroy Note Now",
+		"options": "Options"
+	},
+	"language": {
+		"select": "Language",
+		"en": "English",
+		"ru": "Russian"
+	},
+	"footer": {
+		"brandTag": "Secure Notes",
+		"brandDesc": "Send encrypted messages that self-destruct after being read. Your privacy is our priority.",
+		"support": "Support",
+		"connect": "Connect",
+		"donate": "Donate",
+		"donateInfo": "This project exists thanks to donations and personal funds. Your support helps keep the service free and secure for everyone. Please consider helping us!",
+		"translate": "Translate into your language!",
+		"copyright": "© {year} zerotrace. All rights reserved. | Your privacy is our priority."
+	},
+	"banner": {
+		"ad": "Here could be your ad!"
+	}
 }
-

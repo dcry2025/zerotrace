@@ -1,13 +1,8 @@
 // src/api/userService.ts
 
-
 // import { userApi } from '$lib/api';
 
-
 const userService = {
-
-
-
 	/**
 	 * Get template translations by language
 	 */
@@ -19,10 +14,7 @@ const userService = {
 			console.error('getAllTemplates error:', error);
 			throw error;
 		}
-	},
-
-
+	}
 };
-
 
 export default userService;

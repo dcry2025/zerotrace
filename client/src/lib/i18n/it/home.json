@@ -1,87 +1,87 @@
 {
-  "hero": {
-    "title": "Crea Note Sicure",
-    "subtitle": "Messaggi crittografati end-to-end che si autodistruggono, garantendo la tua privacy e sicurezza.",
-    "description": "Invia messaggi crittografati, imposta tempi di autodistruzione, proteggi la tua privacy. Solo chi conosce la password può visualizzare il contenuto."
-  },
-  "form": {
-    "title": "Crea Nuova Nota",
-    "content": {
-      "label": "Contenuto del Messaggio",
-      "placeholder": "Inserisci il tuo messaggio...",
-      "counter": "Caratteri: {count}/1000"
-    },
-    "password": {
-      "label": "Password",
-      "placeholder": "Inserisci password",
-      "confirm": "Conferma Password",
-      "confirmPlaceholder": "Reinserisci la password",
-      "strength": {
-        "weak": "Debole",
-        "medium": "Media",
-        "strong": "Forte"
-      },
-      "requirements": {
-        "title": "Requisiti Password",
-        "minLength": "Almeno 8 caratteri",
-        "special": "Contiene caratteri speciali",
-        "match": "Le password corrispondono"
-      },
-      "errors": {
-        "minLength": "La password deve essere di almeno 8 caratteri",
-        "maxLength": "La password può essere al massimo di 128 caratteri",
-        "specialChar": "La password deve contenere almeno un carattere speciale",
-        "mismatch": "Le password non corrispondono"
-      }
-    },
-    "expiration": {
-      "label": "Tempo di Scadenza",
-      "1h": "1 ora da ora",
-      "24h": "24 ore da ora",
-      "7d": "7 giorni da ora",
-      "30d": "30 giorni da ora"
-    },
-    "telegram": {
-      "label": "Ricevi Notifiche Telegram",
-      "description": "Riceverai notifiche Telegram quando qualcuno tenta di accedere alla tua nota. Questo include tentativi di password errati, tentativi di riattivazione o operazioni di eliminazione remota.",
-      "placeholder": "Inserisci il tuo username Telegram (opzionale)"
-    },
-    "submit": "Crea Nota",
-    "creating": "Creazione Nota Sicura...",
-    "errors": {
-      "emptyContent": "Inserisci una nota da inviare",
-      "passwordMismatch": "Le password non corrispondono",
-      "createFailed": "Impossibile creare la nota. Riprova."
-    }
-  },
-  "features": {
-    "encryption": {
-      "title": "Crittografia End-to-End",
-      "description": "I tuoi messaggi vengono crittografati nel browser prima di essere inviati ai nostri server, solo chi conosce la password può decrittarli."
-    },
-    "destruct": {
-      "title": "Autodistruzione Automatica",
-      "description": "Le note vengono eliminate automaticamente dopo essere state lette o dopo la scadenza."
-    },
-    "notifications": {
-      "title": "Notifiche Telegram",
-      "description": "Ricevi notifiche istantanee quando le tue note vengono aperte."
-    }
-  },
-  "options": {
-    "title": "Opzioni",
-    "expiration": "Tempo di Scadenza",
-    "telegram": "Ricevi Notifiche Telegram"
-  },
-  "howItWorks": {
-    "title": "Come Funziona zerotrace",
-    "description": "Invia note crittografate che si autodistruggono dopo essere state lette!",
-    "steps": {
-      "1": "Scrivi il tuo messaggio privato sopra e crittografalo",
-      "2": "Ottieni un link sicuro da condividere con chiunque",
-      "3": "La nota si elimina automaticamente dopo essere stata letta",
-      "4": "Ricevi notifiche via Telegram quando viene aperta (opzionale)"
-    },
-    "links": "Scopri di più nelle nostre sezioni {faq} o {privacy}."
-  }
+	"hero": {
+		"title": "Crea Note Sicure",
+		"subtitle": "Messaggi crittografati end-to-end che si autodistruggono, garantendo la tua privacy e sicurezza.",
+		"description": "Invia messaggi crittografati, imposta tempi di autodistruzione, proteggi la tua privacy. Solo chi conosce la password può visualizzare il contenuto."
+	},
+	"form": {
+		"title": "Crea Nuova Nota",
+		"content": {
+			"label": "Contenuto del Messaggio",
+			"placeholder": "Inserisci il tuo messaggio...",
+			"counter": "Caratteri: {count}/1000"
+		},
+		"password": {
+			"label": "Password",
+			"placeholder": "Inserisci password",
+			"confirm": "Conferma Password",
+			"confirmPlaceholder": "Reinserisci la password",
+			"strength": {
+				"weak": "Debole",
+				"medium": "Media",
+				"strong": "Forte"
+			},
+			"requirements": {
+				"title": "Requisiti Password",
+				"minLength": "Almeno 8 caratteri",
+				"special": "Contiene caratteri speciali",
+				"match": "Le password corrispondono"
+			},
+			"errors": {
+				"minLength": "La password deve essere di almeno 8 caratteri",
+				"maxLength": "La password può essere al massimo di 128 caratteri",
+				"specialChar": "La password deve contenere almeno un carattere speciale",
+				"mismatch": "Le password non corrispondono"
+			}
+		},
+		"expiration": {
+			"label": "Tempo di Scadenza",
+			"1h": "1 ora da ora",
+			"24h": "24 ore da ora",
+			"7d": "7 giorni da ora",
+			"30d": "30 giorni da ora"
+		},
+		"telegram": {
+			"label": "Ricevi Notifiche Telegram",
+			"description": "Riceverai notifiche Telegram quando qualcuno tenta di accedere alla tua nota. Questo include tentativi di password errati, tentativi di riattivazione o operazioni di eliminazione remota.",
+			"placeholder": "Inserisci il tuo username Telegram (opzionale)"
+		},
+		"submit": "Crea Nota",
+		"creating": "Creazione Nota Sicura...",
+		"errors": {
+			"emptyContent": "Inserisci una nota da inviare",
+			"passwordMismatch": "Le password non corrispondono",
+			"createFailed": "Impossibile creare la nota. Riprova."
+		}
+	},
+	"features": {
+		"encryption": {
+			"title": "Crittografia End-to-End",
+			"description": "I tuoi messaggi vengono crittografati nel browser prima di essere inviati ai nostri server, solo chi conosce la password può decrittarli."
+		},
+		"destruct": {
+			"title": "Autodistruzione Automatica",
+			"description": "Le note vengono eliminate automaticamente dopo essere state lette o dopo la scadenza."
+		},
+		"notifications": {
+			"title": "Notifiche Telegram",
+			"description": "Ricevi notifiche istantanee quando le tue note vengono aperte."
+		}
+	},
+	"options": {
+		"title": "Opzioni",
+		"expiration": "Tempo di Scadenza",
+		"telegram": "Ricevi Notifiche Telegram"
+	},
+	"howItWorks": {
+		"title": "Come Funziona zerotrace",
+		"description": "Invia note crittografate che si autodistruggono dopo essere state lette!",
+		"steps": {
+			"1": "Scrivi il tuo messaggio privato sopra e crittografalo",
+			"2": "Ottieni un link sicuro da condividere con chiunque",
+			"3": "La nota si elimina automaticamente dopo essere stata letta",
+			"4": "Ricevi notifiche via Telegram quando viene aperta (opzionale)"
+		},
+		"links": "Scopri di più nelle nostre sezioni {faq} o {privacy}."
+	}
 }

@@ -1,38 +1,38 @@
 {
-  "loading": {
-    "title": "加载安全笔记...",
-    "subtitle": "正在解密您的消息"
-  },
-  "confirm": {
-    "title": "准备阅读笔记",
-    "subtitle": "您确定要阅读此笔记吗？",
-    "warning": "⚠️ 重要",
-    "warningText": "一旦阅读此笔记，它将从我们的服务器中永久删除。即使使用相同的链接，您也无法再次访问它。",
-    "readButton": "是的，阅读笔记",
-    "cancelButton": "取消"
-  },
-  "error": {
-    "title": "笔记不可用",
-    "subtitle": "为了您的安全，zerotrace笔记只能读取一次。",
-    "whatHappened": "发生了什么？",
-    "reason1": "笔记可能已被读取并删除",
-    "reason2": "笔记可能已过期（30天限制）",
-    "reason3": "链接可能不正确或已损坏",
-    "createNew": "创建新的安全笔记"
-  },
-  "password": {
-    "title": "需要密码",
-    "subtitle": "此笔记受密码保护",
-    "label": "笔记密码",
-    "placeholder": "输入此笔记的密码",
-    "unlock": "解锁笔记"
-  },
-  "success": {
-    "title": "笔记读取成功",
-    "subtitle": "为了您的安全，此笔记已自动删除",
-    "messageTitle": "您的安全消息",
-    "deleted": "笔记已删除",
-    "deletedText": "此笔记已从我们的服务器中永久删除。即使使用相同的链接，也无法再次访问。",
-    "createNew": "创建新的安全笔记"
-  }
+	"loading": {
+		"title": "加载安全笔记...",
+		"subtitle": "正在解密您的消息"
+	},
+	"confirm": {
+		"title": "准备阅读笔记",
+		"subtitle": "您确定要阅读此笔记吗？",
+		"warning": "⚠️ 重要",
+		"warningText": "一旦阅读此笔记，它将从我们的服务器中永久删除。即使使用相同的链接，您也无法再次访问它。",
+		"readButton": "是的，阅读笔记",
+		"cancelButton": "取消"
+	},
+	"error": {
+		"title": "笔记不可用",
+		"subtitle": "为了您的安全，zerotrace笔记只能读取一次。",
+		"whatHappened": "发生了什么？",
+		"reason1": "笔记可能已被读取并删除",
+		"reason2": "笔记可能已过期（30天限制）",
+		"reason3": "链接可能不正确或已损坏",
+		"createNew": "创建新的安全笔记"
+	},
+	"password": {
+		"title": "需要密码",
+		"subtitle": "此笔记受密码保护",
+		"label": "笔记密码",
+		"placeholder": "输入此笔记的密码",
+		"unlock": "解锁笔记"
+	},
+	"success": {
+		"title": "笔记读取成功",
+		"subtitle": "为了您的安全，此笔记已自动删除",
+		"messageTitle": "您的安全消息",
+		"deleted": "笔记已删除",
+		"deletedText": "此笔记已从我们的服务器中永久删除。即使使用相同的链接，也无法再次访问。",
+		"createNew": "创建新的安全笔记"
+	}
 }

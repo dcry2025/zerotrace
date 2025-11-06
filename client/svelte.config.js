@@ -11,18 +11,17 @@ const config = {
 		// adapter-node for production deployments with Node.js/Docker
 		adapter: adapter({
 			out: 'build',
-			precompress: false,
+			precompress: false
 			//envPrefix: 'VITE_'
 		})
 	},
-  prerender: {
-    default: false,
-  },
+	prerender: {
+		default: false
+	},
 	compilerOptions: {
 		customElement: true
 	},
-  trailingSlash: 'ignore'
+	trailingSlash: 'ignore'
 };
-
 
 export default config;

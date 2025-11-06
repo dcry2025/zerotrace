@@ -30,6 +30,7 @@ A secure, private note-sharing application built with Svelte 5 that allows you t
 ### Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -37,11 +38,13 @@ bun install
 ```
 
 2. Create a `.env` file:
+
 ```bash
 cp env.example .env
 ```
 
 3. Update the `.env` file with your configuration:
+
 ```env
 VITE_API_HOST=http://localhost:3001
 ```
@@ -116,13 +119,14 @@ client/
 
 ## Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
+| Variable        | Description     | Default                 |
+| --------------- | --------------- | ----------------------- |
 | `VITE_API_HOST` | Backend API URL | `http://localhost:3001` |
 
 ## Security Features
 
 1. **Client-Side Security**:
+
    - HTTPS only in production
    - No note content stored in browser
    - Secure password transmission
@@ -155,4 +159,3 @@ client/
 ## Support
 
 For issues or questions, please open an issue on the repository.
-

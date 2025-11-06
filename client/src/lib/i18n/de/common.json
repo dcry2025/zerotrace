@@ -1,38 +1,40 @@
 {
-  "app": {
-    "name": "zerotrace",
-    "tagline": "Sichere Private Notizen"
-  },
-  "nav": {
-    "home": "Startseite",
-    "faq": "FAQ",
-    "privacy": "Datenschutz",
-    "back": "Zurück"
-  },
-  "actions": {
-    "create": "Sichere Notiz Erstellen",
-    "copy": "Kopieren",
-    "copied": "Kopiert!",
-    "submit": "Absenden",
-    "cancel": "Abbrechen",
-    "close": "Schließen",
-    "destroy": "Notiz Jetzt Vernichten",
-    "options": "Optionen"
-  },
-  "language": {
-    "select": "Sprache",
-    "en": "Englisch",
-    "ru": "Russisch"
-  },
-  "footer": {
-    "brandTag": "Sichere Notizen",
-    "brandDesc": "Senden Sie verschlüsselte Nachrichten, die sich nach dem Lesen selbst zerstören. Ihre Privatsphäre ist unsere Priorität.",
-    "support": "Unterstützung",
-    "connect": "Verbinden",
-    "donate": "Spenden",
-    "donateInfo": "Dieses Projekt existiert dank Spenden und persönlichen Mitteln. Ihre Unterstützung hilft, den Service kostenlos und sicher für alle zu halten. Bitte helfen Sie uns!",
-    "translate": "In Ihre Sprache übersetzen!",
-    "copyright": "© {year} zerotrace. Alle Rechte vorbehalten. | Ihre Privatsphäre ist unsere Priorität."
-  }
+	"app": {
+		"name": "zerotrace",
+		"tagline": "Sichere Private Notizen"
+	},
+	"nav": {
+		"home": "Startseite",
+		"faq": "FAQ",
+		"privacy": "Datenschutz",
+		"back": "Zurück"
+	},
+	"actions": {
+		"create": "Sichere Notiz Erstellen",
+		"copy": "Kopieren",
+		"copied": "Kopiert!",
+		"submit": "Absenden",
+		"cancel": "Abbrechen",
+		"close": "Schließen",
+		"destroy": "Notiz Jetzt Vernichten",
+		"options": "Optionen"
+	},
+	"language": {
+		"select": "Sprache",
+		"en": "Englisch",
+		"ru": "Russisch"
+	},
+	"footer": {
+		"brandTag": "Sichere Notizen",
+		"brandDesc": "Senden Sie verschlüsselte Nachrichten, die sich nach dem Lesen selbst zerstören. Ihre Privatsphäre ist unsere Priorität.",
+		"support": "Unterstützung",
+		"connect": "Verbinden",
+		"donate": "Spenden",
+		"donateInfo": "Dieses Projekt existiert dank Spenden und persönlichen Mitteln. Ihre Unterstützung hilft, den Service kostenlos und sicher für alle zu halten. Bitte helfen Sie uns!",
+		"translate": "In Ihre Sprache übersetzen!",
+		"copyright": "© {year} zerotrace. Alle Rechte vorbehalten. | Ihre Privatsphäre ist unsere Priorität."
+	},
+	"banner": {
+		"ad": "Hier könnte Ihre Werbung stehen!"
+	}
 }
-

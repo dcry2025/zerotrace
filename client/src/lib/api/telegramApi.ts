@@ -5,17 +5,17 @@ import ky from 'ky';
 const BASE_URL = '/api';
 
 const api = ky.create({
-  prefixUrl: BASE_URL,
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+	prefixUrl: BASE_URL,
+	timeout: 10000,
+	headers: {
+		'Content-Type': 'application/json'
+	}
 });
 
 export interface TelegramBotInfo {
-  username: string | null;
-  link: string | null;
-  ready: boolean;
+	username: string | null;
+	link: string | null;
+	ready: boolean;
 }
 
 /**
@@ -23,11 +23,10 @@ export interface TelegramBotInfo {
  * @param username - Telegram username to include in deep link
  */
 async function getBotInfo(username?: string): Promise<TelegramBotInfo> {
-  const searchParams = username ? { username } : undefined;
-  return await api.get('telegram/bot-info', { searchParams }).json<TelegramBotInfo>();
+	const searchParams = username ? { username } : undefined;
+	return await api.get('telegram/bot-info', { searchParams }).json<TelegramBotInfo>();
 }
 
 export default {
-  getBotInfo,
+	getBotInfo
 };
-

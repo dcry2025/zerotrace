@@ -1,49 +1,48 @@
 {
-  "success": {
-    "title": "Note Créée avec Succès !",
-    "subtitle": "Votre note sécurisée est prête à être partagée. Le lien s'autodétruira après avoir été lu."
-  },
-  "link": {
-    "title": "Votre Lien de Note Sécurisée",
-    "label": "Copiez et partagez ce lien",
-    "copy": "Copier",
-    "copied": "Copié !"
-  },
-  "deleteLink": {
-    "label": "Lien de suppression d'urgence",
-    "copy": "Copier le Lien de Suppression",
-    "copied": "Lien de Suppression Copié !"
-  },
-  "security": {
-    "title": "Avis de Sécurité Important",
-    "warning1": "Ce lien ne peut être utilisé qu'une seule fois - après avoir été ouvert, il sera définitivement supprimé",
-    "warning2": "Partagez ce lien uniquement via des canaux sécurisés (messagerie chiffrée, telegram)",
-    "warning3": "Ne partagez jamais ce lien dans des lieux publics ou des canaux non sécurisés",
-    "warning4": "La note expirera automatiquement si elle n'est pas ouverte dans le délai spécifié"
-  },
-  "destroy": {
-    "button": "🔥 Détruire la Note Maintenant",
-    "description": "Vous avez changé d'avis ? Détruisez cette note immédiatement pour empêcher quiconque de la lire.",
-    "confirm": "Êtes-vous sûr de vouloir détruire cette note ? Cette action ne peut pas être annulée.",
-    "destroying": "Destruction en cours...",
-    "success": "Note Détruite avec Succès",
-    "redirect": "Redirection vers la page d'accueil..."
-  },
-  "telegram": {
-    "title": "Notifications Telegram Activées",
-    "subtitle": "Restez informé lorsque votre note est lue",
-    "status": "ACTIF",
-    "activate": "Activer les Notifications Telegram",
-    "description": "Cliquez sur le bouton ci-dessous pour lier cette note à votre compte Telegram. Vous recevrez une notification instantanée lorsque quelqu'un lit votre note !",
-    "bot": "Bot :",
-    "noteId": "ID de la Note :",
-    "setup": "Configuration Rapide (5 secondes) :",
-    "step1": "Cliquez sur le bouton \"Ouvrir le Bot Telegram\" ci-dessous",
-    "step2": "Telegram s'ouvrira automatiquement. Appuyez sur START ou envoyez /start",
-    "step3": "C'est tout ! Le bot liera cette note à votre compte. Vous serez notifié lorsque quelqu'un la lit.",
-    "openBot": "Ouvrir le Bot Telegram & Envoyer /start",
-    "privacy": "Confidentialité d'abord : Seul vous recevrez les notifications. Votre compte Telegram reste privé.",
-    "emergency": "Sécurité : Si quelqu'un entre un mauvais mot de passe ou essaie de réactiver une note que vous avez déjà liée, vous recevrez une alerte instantanée et vous pourrez SUPPRIMER la note à distance."
-  }
+	"success": {
+		"title": "Note Créée avec Succès !",
+		"subtitle": "Votre note sécurisée est prête à être partagée. Le lien s'autodétruira après avoir été lu."
+	},
+	"link": {
+		"title": "Votre Lien de Note Sécurisée",
+		"label": "Copiez et partagez ce lien",
+		"copy": "Copier",
+		"copied": "Copié !"
+	},
+	"deleteLink": {
+		"label": "Lien de suppression d'urgence",
+		"copy": "Copier le Lien de Suppression",
+		"copied": "Lien de Suppression Copié !"
+	},
+	"security": {
+		"title": "Avis de Sécurité Important",
+		"warning1": "Ce lien ne peut être utilisé qu'une seule fois - après avoir été ouvert, il sera définitivement supprimé",
+		"warning2": "Partagez ce lien uniquement via des canaux sécurisés (messagerie chiffrée, telegram)",
+		"warning3": "Ne partagez jamais ce lien dans des lieux publics ou des canaux non sécurisés",
+		"warning4": "La note expirera automatiquement si elle n'est pas ouverte dans le délai spécifié"
+	},
+	"destroy": {
+		"button": "🔥 Détruire la Note Maintenant",
+		"description": "Vous avez changé d'avis ? Détruisez cette note immédiatement pour empêcher quiconque de la lire.",
+		"confirm": "Êtes-vous sûr de vouloir détruire cette note ? Cette action ne peut pas être annulée.",
+		"destroying": "Destruction en cours...",
+		"success": "Note Détruite avec Succès",
+		"redirect": "Redirection vers la page d'accueil..."
+	},
+	"telegram": {
+		"title": "Notifications Telegram Activées",
+		"subtitle": "Restez informé lorsque votre note est lue",
+		"status": "ACTIF",
+		"activate": "Activer les Notifications Telegram",
+		"description": "Cliquez sur le bouton ci-dessous pour lier cette note à votre compte Telegram. Vous recevrez une notification instantanée lorsque quelqu'un lit votre note !",
+		"bot": "Bot :",
+		"noteId": "ID de la Note :",
+		"setup": "Configuration Rapide (5 secondes) :",
+		"step1": "Cliquez sur le bouton \"Ouvrir le Bot Telegram\" ci-dessous",
+		"step2": "Telegram s'ouvrira automatiquement. Appuyez sur START ou envoyez /start",
+		"step3": "C'est tout ! Le bot liera cette note à votre compte. Vous serez notifié lorsque quelqu'un la lit.",
+		"openBot": "Ouvrir le Bot Telegram & Envoyer /start",
+		"privacy": "Confidentialité d'abord : Seul vous recevrez les notifications. Votre compte Telegram reste privé.",
+		"emergency": "Sécurité : Si quelqu'un entre un mauvais mot de passe ou essaie de réactiver une note que vous avez déjà liée, vous recevrez une alerte instantanée et vous pourrez SUPPRIMER la note à distance."
+	}
 }
-

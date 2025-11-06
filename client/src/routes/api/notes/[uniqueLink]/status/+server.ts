@@ -7,28 +7,21 @@ const API_BASE_URL = env.API_BASE_URL || env.VITE_API_BASE_URL || 'http://localh
 const API_PREFIX = '/api/v11337';
 
 export const GET: RequestHandler = async ({ params, fetch }) => {
-  try {
-    const { uniqueLink } = params;
-    
-    const response = await fetch(
-      `${API_BASE_URL}${API_PREFIX}/notes/${uniqueLink}/status`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
-    
-    const data = await response.json();
-    
-    return json(data, { status: response.status });
-  } catch (error) {
-    console.error('Error checking note status:', error);
-    return json(
-      { message: 'Failed to check note status' },
-      { status: 500 }
-    );
-  }
-};
+	try {
+		const { uniqueLink } = params;
 
+		const response = await fetch(`${API_BASE_URL}${API_PREFIX}/notes/${uniqueLink}/status`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+
+		const data = await response.json();
+
+		return json(data, { status: response.status });
+	} catch (error) {
+		console.error('Error checking note status:', error);
+		return json({ message: 'Failed to check note status' }, { status: 500 });
+	}
+};

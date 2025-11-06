@@ -1,38 +1,38 @@
 {
-  "loading": {
-    "title": "Güvenli Not Yükleniyor...",
-    "subtitle": "Mesajınız şifresi çözülüyor"
-  },
-  "confirm": {
-    "title": "Notu Okumaya Hazır",
-    "subtitle": "Bu notu okumak istediğinizden emin misiniz?",
-    "warning": "⚠️ Önemli",
-    "warningText": "Bu notu okuduktan sonra, sunucularımızdan kalıcı olarak silinecektir. Aynı bağlantı ile bile bir daha erişemezsiniz.",
-    "readButton": "Evet, Notu Oku",
-    "cancelButton": "İptal"
-  },
-  "error": {
-    "title": "Not Kullanılamıyor",
-    "subtitle": "Güvenliğiniz için zerotrace notları sadece bir kez okunabilir.",
-    "whatHappened": "Ne oldu?",
-    "reason1": "Not zaten okunmuş ve silinmiş olabilir",
-    "reason2": "Not süresi dolmuş olabilir (30 gün sınırı)",
-    "reason3": "Bağlantı yanlış veya bozuk olabilir",
-    "createNew": "Yeni Güvenli Not Oluştur"
-  },
-  "password": {
-    "title": "Şifre Gerekli",
-    "subtitle": "Bu not şifre ile korunuyor",
-    "label": "Not Şifresi",
-    "placeholder": "Bu not için şifreyi girin",
-    "unlock": "Notu Aç"
-  },
-  "success": {
-    "title": "Not Başarıyla Okundu",
-    "subtitle": "Güvenliğiniz için bu not otomatik olarak silindi",
-    "messageTitle": "Güvenli Mesajınız",
-    "deleted": "Not Silindi",
-    "deletedText": "Bu not sunucularımızdan kalıcı olarak silindi. Aynı bağlantı ile bile bir daha erişilemez.",
-    "createNew": "Yeni Güvenli Not Oluştur"
-  }
+	"loading": {
+		"title": "Güvenli Not Yükleniyor...",
+		"subtitle": "Mesajınız şifresi çözülüyor"
+	},
+	"confirm": {
+		"title": "Notu Okumaya Hazır",
+		"subtitle": "Bu notu okumak istediğinizden emin misiniz?",
+		"warning": "⚠️ Önemli",
+		"warningText": "Bu notu okuduktan sonra, sunucularımızdan kalıcı olarak silinecektir. Aynı bağlantı ile bile bir daha erişemezsiniz.",
+		"readButton": "Evet, Notu Oku",
+		"cancelButton": "İptal"
+	},
+	"error": {
+		"title": "Not Kullanılamıyor",
+		"subtitle": "Güvenliğiniz için zerotrace notları sadece bir kez okunabilir.",
+		"whatHappened": "Ne oldu?",
+		"reason1": "Not zaten okunmuş ve silinmiş olabilir",
+		"reason2": "Not süresi dolmuş olabilir (30 gün sınırı)",
+		"reason3": "Bağlantı yanlış veya bozuk olabilir",
+		"createNew": "Yeni Güvenli Not Oluştur"
+	},
+	"password": {
+		"title": "Şifre Gerekli",
+		"subtitle": "Bu not şifre ile korunuyor",
+		"label": "Not Şifresi",
+		"placeholder": "Bu not için şifreyi girin",
+		"unlock": "Notu Aç"
+	},
+	"success": {
+		"title": "Not Başarıyla Okundu",
+		"subtitle": "Güvenliğiniz için bu not otomatik olarak silindi",
+		"messageTitle": "Güvenli Mesajınız",
+		"deleted": "Not Silindi",
+		"deletedText": "Bu not sunucularımızdan kalıcı olarak silindi. Aynı bağlantı ile bile bir daha erişilemez.",
+		"createNew": "Yeni Güvenli Not Oluştur"
+	}
 }

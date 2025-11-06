@@ -1,38 +1,38 @@
 {
-  "loading": {
-    "title": "Cargando Nota Segura...",
-    "subtitle": "Desencriptando tu mensaje"
-  },
-  "confirm": {
-    "title": "Listo para Leer la Nota",
-    "subtitle": "¿Estás seguro de que quieres leer esta nota?",
-    "warning": "⚠️ Importante",
-    "warningText": "Una vez que leas esta nota, será eliminada permanentemente de nuestros servidores. No podrás acceder a ella nuevamente, ni siquiera con el mismo enlace.",
-    "readButton": "Sí, Leer Nota",
-    "cancelButton": "Cancelar"
-  },
-  "error": {
-    "title": "Nota No Disponible",
-    "subtitle": "Las notas de zerotrace solo pueden leerse una vez para tu seguridad.",
-    "whatHappened": "¿Qué pasó?",
-    "reason1": "La nota puede haber sido ya leída y eliminada",
-    "reason2": "La nota puede haber expirado (límite de 30 días)",
-    "reason3": "El enlace puede ser incorrecto o estar corrupto",
-    "createNew": "Crear Nueva Nota Segura"
-  },
-  "password": {
-    "title": "Contraseña Requerida",
-    "subtitle": "Esta nota está protegida con una contraseña",
-    "label": "Contraseña de la Nota",
-    "placeholder": "Ingresa la contraseña para esta nota",
-    "unlock": "Desbloquear Nota"
-  },
-  "success": {
-    "title": "Nota Leída Exitosamente",
-    "subtitle": "Esta nota ha sido eliminada automáticamente para tu seguridad",
-    "messageTitle": "Tu Mensaje Seguro",
-    "deleted": "Nota Eliminada",
-    "deletedText": "Esta nota ha sido eliminada permanentemente de nuestros servidores. Nunca más se podrá acceder a ella, ni siquiera con el mismo enlace.",
-    "createNew": "Crear Nueva Nota Segura"
-  }
+	"loading": {
+		"title": "Cargando Nota Segura...",
+		"subtitle": "Desencriptando tu mensaje"
+	},
+	"confirm": {
+		"title": "Listo para Leer la Nota",
+		"subtitle": "¿Estás seguro de que quieres leer esta nota?",
+		"warning": "⚠️ Importante",
+		"warningText": "Una vez que leas esta nota, será eliminada permanentemente de nuestros servidores. No podrás acceder a ella nuevamente, ni siquiera con el mismo enlace.",
+		"readButton": "Sí, Leer Nota",
+		"cancelButton": "Cancelar"
+	},
+	"error": {
+		"title": "Nota No Disponible",
+		"subtitle": "Las notas de zerotrace solo pueden leerse una vez para tu seguridad.",
+		"whatHappened": "¿Qué pasó?",
+		"reason1": "La nota puede haber sido ya leída y eliminada",
+		"reason2": "La nota puede haber expirado (límite de 30 días)",
+		"reason3": "El enlace puede ser incorrecto o estar corrupto",
+		"createNew": "Crear Nueva Nota Segura"
+	},
+	"password": {
+		"title": "Contraseña Requerida",
+		"subtitle": "Esta nota está protegida con una contraseña",
+		"label": "Contraseña de la Nota",
+		"placeholder": "Ingresa la contraseña para esta nota",
+		"unlock": "Desbloquear Nota"
+	},
+	"success": {
+		"title": "Nota Leída Exitosamente",
+		"subtitle": "Esta nota ha sido eliminada automáticamente para tu seguridad",
+		"messageTitle": "Tu Mensaje Seguro",
+		"deleted": "Nota Eliminada",
+		"deletedText": "Esta nota ha sido eliminada permanentemente de nuestros servidores. Nunca más se podrá acceder a ella, ni siquiera con el mismo enlace.",
+		"createNew": "Crear Nueva Nota Segura"
+	}
 }

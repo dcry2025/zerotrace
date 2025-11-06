@@ -1,24 +1,24 @@
 {
-  "title": "删除笔记",
-  "confirm": {
-    "title": "确认删除",
-    "subtitle": "您确定要删除此笔记吗？此操作无法撤销。",
-    "cancel": "取消",
-    "delete": "删除笔记"
-  },
-  "deleting": {
-    "title": "正在删除笔记...",
-    "subtitle": "请稍候，我们正在安全地删除您的笔记。"
-  },
-  "success": {
-    "title": "笔记删除成功！",
-    "subtitle": "您的笔记已被永久删除，无法再访问。",
-    "redirect": "几秒钟后您将被重定向到主页。",
-    "button": "前往主页"
-  },
-  "error": {
-    "title": "删除失败",
-    "subtitle": "尝试删除您的笔记时发生错误。",
-    "button": "前往主页"
-  }
+	"title": "删除笔记",
+	"confirm": {
+		"title": "确认删除",
+		"subtitle": "您确定要删除此笔记吗？此操作无法撤销。",
+		"cancel": "取消",
+		"delete": "删除笔记"
+	},
+	"deleting": {
+		"title": "正在删除笔记...",
+		"subtitle": "请稍候，我们正在安全地删除您的笔记。"
+	},
+	"success": {
+		"title": "笔记删除成功！",
+		"subtitle": "您的笔记已被永久删除，无法再访问。",
+		"redirect": "几秒钟后您将被重定向到主页。",
+		"button": "前往主页"
+	},
+	"error": {
+		"title": "删除失败",
+		"subtitle": "尝试删除您的笔记时发生错误。",
+		"button": "前往主页"
+	}
 }

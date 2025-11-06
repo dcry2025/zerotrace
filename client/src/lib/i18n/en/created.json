@@ -1,49 +1,48 @@
 {
-  "success": {
-    "title": "Note Created Successfully!",
-    "subtitle": "Your secure note is ready to share. The link will self-destruct after being read."
-  },
-  "link": {
-    "title": "Your Secure Note Link",
-    "label": "Copy and share this link",
-    "copy": "Copy",
-    "copied": "Copied!"
-  },
-  "deleteLink": {
-    "label": "Emergency delete link",
-    "copy": "Copy Delete Link",
-    "copied": "Delete Link Copied!"
-  },
-  "security": {
-    "title": "Important Security Notice",
-    "warning1": "This link can only be used once - after being opened, it will be permanently deleted",
-    "warning2": "Share this link only through secure channels (encrypted messaging, telegram)",
-    "warning3": "Never share this link in public places or unsecured channels",
-    "warning4": "The note will automatically expire if not opened within the specified time"
-  },
-  "destroy": {
-    "button": "🔥 Destroy Note Now",
-    "description": "Changed your mind? Destroy this note immediately to prevent anyone from reading it.",
-    "confirm": "Are you sure you want to destroy this note? This action cannot be undone.",
-    "destroying": "Destroying...",
-    "success": "Note Destroyed Successfully",
-    "redirect": "Redirecting you to home page..."
-  },
-  "telegram": {
-    "title": "Telegram Notifications Enabled",
-    "subtitle": "Stay updated when your note is read",
-    "status": "ACTIVE",
-    "activate": "Activate Telegram Notifications",
-    "description": "Click the button below to link this note to your Telegram account. You'll receive an instant notification when someone reads your note!",
-    "bot": "Bot:",
-    "noteId": "Note ID:",
-    "setup": "Quick Setup (5 seconds):",
-    "step1": "Click \"Open Telegram Bot\" button below",
-    "step2": "Telegram will open automatically. Press START or send /start",
-    "step3": "That's it! The bot will link this note to your account. You'll get notified when someone reads it.",
-    "openBot": "Open Telegram Bot & Send /start",
-    "privacy": "Privacy first: Only you will receive notifications. Your Telegram account stays private.",
-    "emergency": "Security: If someone enters a wrong password or tries to re-activate a note you've already linked, you'll receive an instant alert and you can remotely DELETE the note."
-  }
+	"success": {
+		"title": "Note Created Successfully!",
+		"subtitle": "Your secure note is ready to share. The link will self-destruct after being read."
+	},
+	"link": {
+		"title": "Your Secure Note Link",
+		"label": "Copy and share this link",
+		"copy": "Copy",
+		"copied": "Copied!"
+	},
+	"deleteLink": {
+		"label": "Emergency delete link",
+		"copy": "Copy Delete Link",
+		"copied": "Delete Link Copied!"
+	},
+	"security": {
+		"title": "Important Security Notice",
+		"warning1": "This link can only be used once - after being opened, it will be permanently deleted",
+		"warning2": "Share this link only through secure channels (encrypted messaging, telegram)",
+		"warning3": "Never share this link in public places or unsecured channels",
+		"warning4": "The note will automatically expire if not opened within the specified time"
+	},
+	"destroy": {
+		"button": "🔥 Destroy Note Now",
+		"description": "Changed your mind? Destroy this note immediately to prevent anyone from reading it.",
+		"confirm": "Are you sure you want to destroy this note? This action cannot be undone.",
+		"destroying": "Destroying...",
+		"success": "Note Destroyed Successfully",
+		"redirect": "Redirecting you to home page..."
+	},
+	"telegram": {
+		"title": "Telegram Notifications Enabled",
+		"subtitle": "Stay updated when your note is read",
+		"status": "ACTIVE",
+		"activate": "Activate Telegram Notifications",
+		"description": "Click the button below to link this note to your Telegram account. You'll receive an instant notification when someone reads your note!",
+		"bot": "Bot:",
+		"noteId": "Note ID:",
+		"setup": "Quick Setup (5 seconds):",
+		"step1": "Click \"Open Telegram Bot\" button below",
+		"step2": "Telegram will open automatically. Press START or send /start",
+		"step3": "That's it! The bot will link this note to your account. You'll get notified when someone reads it.",
+		"openBot": "Open Telegram Bot & Send /start",
+		"privacy": "Privacy first: Only you will receive notifications. Your Telegram account stays private.",
+		"emergency": "Security: If someone enters a wrong password or tries to re-activate a note you've already linked, you'll receive an instant alert and you can remotely DELETE the note."
+	}
 }
-

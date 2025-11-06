@@ -1,7 +1,5 @@
 {
-  "title": "Something went wrong",
-  "description": "An unexpected error occurred. Please try again or go back to the homepage.",
-  "back": "Back to Home"
+	"title": "Something went wrong",
+	"description": "An unexpected error occurred. Please try again or go back to the homepage.",
+	"back": "Back to Home"
 }
-
-

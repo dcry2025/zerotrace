@@ -1,86 +1,86 @@
 {
-  "hero": {
-    "title": "创建安全私密笔记",
-    "subtitle": "端到端加密的自毁消息，确保您的隐私和安全。",
-    "description": "发送加密消息，设置自毁时间，保护您的隐私。只有知道密码的人才能查看内容。"
-  },
-  "form": {
-    "title": "创建新笔记",
-    "content": {
-      "label": "消息内容",
-      "placeholder": "输入您的消息...",
-      "counter": "字符数: {count}/1000"
-    },
-    "password": {
-      "label": "密码",
-      "placeholder": "输入密码",
-      "confirm": "确认密码",
-      "confirmPlaceholder": "再次输入密码",
-      "strength": {
-        "weak": "弱",
-        "medium": "中等",
-        "strong": "强"
-      },
-      "requirements": {
-        "title": "密码要求",
-        "minLength": "至少8个字符",
-        "special": "包含特殊字符",
-        "match": "密码匹配"
-      },
-      "errors": {
-        "minLength": "密码至少需要8个字符",
-        "maxLength": "密码最多128个字符",
-        "specialChar": "密码必须包含至少一个特殊字符",
-        "mismatch": "密码不匹配"
-      }
-    },
-    "expiration": {
-      "label": "过期时间",
-      "1h": "1小时后",
-      "24h": "24小时后",
-      "7d": "7天后",
-      "30d": "30天后"
-    },
-    "telegram": {
-      "label": "获取Telegram通知",
-      "description": "当有人尝试访问您的笔记时，您将收到Telegram通知。这包括错误的密码尝试、重复激活尝试或远程删除操作。",
-      "placeholder": "输入您的Telegram用户名（可选）"
-    },
-    "submit": "创建笔记",
-    "errors": {
-      "emptyContent": "请输入要发送的笔记",
-      "passwordMismatch": "密码不匹配",
-      "createFailed": "创建笔记失败，请重试。"
-    }
-  },
-  "features": {
-    "encryption": {
-      "title": "端到端加密",
-      "description": "您的消息在发送前在浏览器中加密，只有知道密码的人才能解密。"
-    },
-    "destruct": {
-      "title": "自动自毁",
-      "description": "笔记在读取后或过期后自动删除。"
-    },
-    "notifications": {
-      "title": "Telegram通知",
-      "description": "当您的笔记被打开时获得即时通知。"
-    }
-  },
-  "options": {
-    "title": "选项",
-    "expiration": "过期时间",
-    "telegram": "获取Telegram通知"
-  },
-  "howItWorks": {
-    "title": "zerotrace如何工作",
-    "description": "发送加密笔记，读取后自动销毁！",
-    "steps": {
-      "1": "在上方编写您的私人消息并加密",
-      "2": "获取安全链接与任何人分享",
-      "3": "笔记在读取后自动删除",
-      "4": "打开时通过Telegram获取通知（可选）"
-    },
-    "links": "在我们的{faq}或{privacy}部分了解更多。"
-  }
+	"hero": {
+		"title": "创建安全私密笔记",
+		"subtitle": "端到端加密的自毁消息，确保您的隐私和安全。",
+		"description": "发送加密消息，设置自毁时间，保护您的隐私。只有知道密码的人才能查看内容。"
+	},
+	"form": {
+		"title": "创建新笔记",
+		"content": {
+			"label": "消息内容",
+			"placeholder": "输入您的消息...",
+			"counter": "字符数: {count}/1000"
+		},
+		"password": {
+			"label": "密码",
+			"placeholder": "输入密码",
+			"confirm": "确认密码",
+			"confirmPlaceholder": "再次输入密码",
+			"strength": {
+				"weak": "弱",
+				"medium": "中等",
+				"strong": "强"
+			},
+			"requirements": {
+				"title": "密码要求",
+				"minLength": "至少8个字符",
+				"special": "包含特殊字符",
+				"match": "密码匹配"
+			},
+			"errors": {
+				"minLength": "密码至少需要8个字符",
+				"maxLength": "密码最多128个字符",
+				"specialChar": "密码必须包含至少一个特殊字符",
+				"mismatch": "密码不匹配"
+			}
+		},
+		"expiration": {
+			"label": "过期时间",
+			"1h": "1小时后",
+			"24h": "24小时后",
+			"7d": "7天后",
+			"30d": "30天后"
+		},
+		"telegram": {
+			"label": "获取Telegram通知",
+			"description": "当有人尝试访问您的笔记时，您将收到Telegram通知。这包括错误的密码尝试、重复激活尝试或远程删除操作。",
+			"placeholder": "输入您的Telegram用户名（可选）"
+		},
+		"submit": "创建笔记",
+		"errors": {
+			"emptyContent": "请输入要发送的笔记",
+			"passwordMismatch": "密码不匹配",
+			"createFailed": "创建笔记失败，请重试。"
+		}
+	},
+	"features": {
+		"encryption": {
+			"title": "端到端加密",
+			"description": "您的消息在发送前在浏览器中加密，只有知道密码的人才能解密。"
+		},
+		"destruct": {
+			"title": "自动自毁",
+			"description": "笔记在读取后或过期后自动删除。"
+		},
+		"notifications": {
+			"title": "Telegram通知",
+			"description": "当您的笔记被打开时获得即时通知。"
+		}
+	},
+	"options": {
+		"title": "选项",
+		"expiration": "过期时间",
+		"telegram": "获取Telegram通知"
+	},
+	"howItWorks": {
+		"title": "zerotrace如何工作",
+		"description": "发送加密笔记，读取后自动销毁！",
+		"steps": {
+			"1": "在上方编写您的私人消息并加密",
+			"2": "获取安全链接与任何人分享",
+			"3": "笔记在读取后自动删除",
+			"4": "打开时通过Telegram获取通知（可选）"
+		},
+		"links": "在我们的{faq}或{privacy}部分了解更多。"
+	}
 }

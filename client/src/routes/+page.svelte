@@ -1,21 +1,28 @@
 <script lang="ts">
-  import { Header, Footer, HeroSection, FeaturesSection, HowItWorksSection, NoteCreationForm } from '$lib';
+	import {
+		Header,
+		Footer,
+		HeroSection,
+		FeaturesSection,
+		HowItWorksSection,
+		NoteCreationForm
+	} from '$lib';
 </script>
 
 <svelte:head>
-  <title>zerotrace - Secure Private Notes</title>
+	<title>zerotrace - Secure Private Notes</title>
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
-  <Header />
+<div class="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100">
+	<Header />
 
-  <!-- Main Content -->
-  <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
-    <HeroSection />
-    <NoteCreationForm />
-    <FeaturesSection />
-    <HowItWorksSection />
-  </main>
+	<!-- Main Content -->
+	<main class="mx-auto max-w-4xl flex-1 px-4 py-6 sm:px-6 md:py-12 lg:px-8">
+		<HeroSection />
+		<NoteCreationForm />
+		<FeaturesSection />
+		<HowItWorksSection />
+	</main>
 
-  <Footer />
+	<Footer />
 </div>

@@ -7,10 +7,10 @@ export const prerender = false;
 export const csr = true;
 
 export const load: LayoutLoad = async ({ url }) => {
-  const { pathname } = url;
-  
-  // Load translations for the current route
-  await loadTranslations(getInitialLocale(), pathname);
-  
-  return {};
+	const { pathname } = url;
+
+	// Load translations for the current route
+	await loadTranslations(getInitialLocale(), pathname);
+
+	return {};
 };

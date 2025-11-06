@@ -14,10 +14,11 @@ export { default as LanguageSwitcher } from './common/LanguageSwitcher.svelte';
 // Form components
 export { default as NoteCreationForm } from './forms/NoteCreationForm.svelte';
 
-// UI components (Svelte 5 components for /created page)
+// UI components (Svelte 5 components)
 export { default as SuccessMessage } from './ui/SuccessMessage.svelte';
 export { default as LinkDisplayCard } from './ui/LinkDisplayCard.svelte';
 export { default as DestroyNoteButton } from './ui/DestroyNoteButton.svelte';
+export { default as Banner } from './ui/Banner.svelte';
 
 // Feature components
 export { default as TelegramBotCard } from './features/TelegramBotCard.svelte';

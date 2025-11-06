@@ -1,48 +1,48 @@
 {
-  "success": {
-    "title": "¡Nota Creada Exitosamente!",
-    "subtitle": "Tu nota segura está lista para compartir. El enlace se autodestruirá después de ser leído."
-  },
-  "link": {
-    "title": "Tu Enlace de Nota Segura",
-    "label": "Copia y comparte este enlace",
-    "copy": "Copiar",
-    "copied": "¡Copiado!"
-  },
-  "deleteLink": {
-    "label": "Enlace de eliminación de emergencia",
-    "copy": "Copiar Enlace de Eliminación",
-    "copied": "¡Enlace de Eliminación Copiado!"
-  },
-  "security": {
-    "title": "Aviso de Seguridad Importante",
-    "warning1": "Este enlace solo puede usarse una vez - después de ser abierto, será eliminado permanentemente",
-    "warning2": "Comparte este enlace solo a través de canales seguros (mensajería encriptada, telegram)",
-    "warning3": "Nunca compartas este enlace en lugares públicos o canales no seguros",
-    "warning4": "La nota expirará automáticamente si no se abre dentro del tiempo especificado"
-  },
-  "destroy": {
-    "button": "🔥 Destruir Nota Ahora",
-    "description": "¿Cambiaste de opinión? Destruye esta nota inmediatamente para evitar que alguien la lea.",
-    "confirm": "¿Estás seguro de que quieres destruir esta nota? Esta acción no se puede deshacer.",
-    "destroying": "Destruyendo...",
-    "success": "Nota Destruida Exitosamente",
-    "redirect": "Redirigiendo a la página principal..."
-  },
-  "telegram": {
-    "title": "Notificaciones de Telegram Habilitadas",
-    "subtitle": "Mantente actualizado cuando tu nota sea leída",
-    "status": "ACTIVO",
-    "activate": "Activar Notificaciones de Telegram",
-    "description": "Haz clic en el botón de abajo para vincular esta nota a tu cuenta de Telegram. ¡Recibirás una notificación instantánea cuando alguien lea tu nota!",
-    "bot": "Bot:",
-    "noteId": "ID de Nota:",
-    "setup": "Configuración Rápida (5 segundos):",
-    "step1": "Haz clic en el botón \"Abrir Bot de Telegram\" de abajo",
-    "step2": "Telegram se abrirá automáticamente. Presiona START o envía /start",
-    "step3": "¡Eso es todo! El bot vinculará esta nota a tu cuenta. Recibirás notificación cuando alguien la lea.",
-    "openBot": "Abrir Bot de Telegram y Enviar /start",
-    "privacy": "Privacidad primero: Solo tú recibirás notificaciones. Tu cuenta de Telegram permanece privada.",
-    "emergency": "Seguridad: Si alguien ingresa una contraseña incorrecta o intenta reactivar una nota que ya has vinculado, recibirás una alerta instantánea y podrás eliminar la nota REMOTAMENTE."
-  }
+	"success": {
+		"title": "¡Nota Creada Exitosamente!",
+		"subtitle": "Tu nota segura está lista para compartir. El enlace se autodestruirá después de ser leído."
+	},
+	"link": {
+		"title": "Tu Enlace de Nota Segura",
+		"label": "Copia y comparte este enlace",
+		"copy": "Copiar",
+		"copied": "¡Copiado!"
+	},
+	"deleteLink": {
+		"label": "Enlace de eliminación de emergencia",
+		"copy": "Copiar Enlace de Eliminación",
+		"copied": "¡Enlace de Eliminación Copiado!"
+	},
+	"security": {
+		"title": "Aviso de Seguridad Importante",
+		"warning1": "Este enlace solo puede usarse una vez - después de ser abierto, será eliminado permanentemente",
+		"warning2": "Comparte este enlace solo a través de canales seguros (mensajería encriptada, telegram)",
+		"warning3": "Nunca compartas este enlace en lugares públicos o canales no seguros",
+		"warning4": "La nota expirará automáticamente si no se abre dentro del tiempo especificado"
+	},
+	"destroy": {
+		"button": "🔥 Destruir Nota Ahora",
+		"description": "¿Cambiaste de opinión? Destruye esta nota inmediatamente para evitar que alguien la lea.",
+		"confirm": "¿Estás seguro de que quieres destruir esta nota? Esta acción no se puede deshacer.",
+		"destroying": "Destruyendo...",
+		"success": "Nota Destruida Exitosamente",
+		"redirect": "Redirigiendo a la página principal..."
+	},
+	"telegram": {
+		"title": "Notificaciones de Telegram Habilitadas",
+		"subtitle": "Mantente actualizado cuando tu nota sea leída",
+		"status": "ACTIVO",
+		"activate": "Activar Notificaciones de Telegram",
+		"description": "Haz clic en el botón de abajo para vincular esta nota a tu cuenta de Telegram. ¡Recibirás una notificación instantánea cuando alguien lea tu nota!",
+		"bot": "Bot:",
+		"noteId": "ID de Nota:",
+		"setup": "Configuración Rápida (5 segundos):",
+		"step1": "Haz clic en el botón \"Abrir Bot de Telegram\" de abajo",
+		"step2": "Telegram se abrirá automáticamente. Presiona START o envía /start",
+		"step3": "¡Eso es todo! El bot vinculará esta nota a tu cuenta. Recibirás notificación cuando alguien la lea.",
+		"openBot": "Abrir Bot de Telegram y Enviar /start",
+		"privacy": "Privacidad primero: Solo tú recibirás notificaciones. Tu cuenta de Telegram permanece privada.",
+		"emergency": "Seguridad: Si alguien ingresa una contraseña incorrecta o intenta reactivar una nota que ya has vinculado, recibirás una alerta instantánea y podrás eliminar la nota REMOTAMENTE."
+	}
 }

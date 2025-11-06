@@ -1,49 +1,48 @@
 {
-  "success": {
-    "title": "Notiz Erfolgreich Erstellt!",
-    "subtitle": "Ihre sichere Notiz ist bereit zum Teilen. Der Link wird sich nach dem Lesen selbst zerstören."
-  },
-  "link": {
-    "title": "Ihr Sicherer Notiz-Link",
-    "label": "Kopieren und teilen Sie diesen Link",
-    "copy": "Kopieren",
-    "copied": "Kopiert!"
-  },
-  "deleteLink": {
-    "label": "Notfall-Löschlink",
-    "copy": "Löschlink Kopieren",
-    "copied": "Löschlink Kopiert!"
-  },
-  "security": {
-    "title": "Wichtiger Sicherheitshinweis",
-    "warning1": "Dieser Link kann nur einmal verwendet werden - nach dem Öffnen wird er dauerhaft gelöscht",
-    "warning2": "Teilen Sie diesen Link nur über sichere Kanäle (verschlüsselte Nachrichten, Telegram)",
-    "warning3": "Teilen Sie diesen Link niemals an öffentlichen Orten oder unsicheren Kanälen",
-    "warning4": "Die Notiz läuft automatisch ab, wenn sie nicht innerhalb der angegebenen Zeit geöffnet wird"
-  },
-  "destroy": {
-    "button": "🔥 Notiz Jetzt Vernichten",
-    "description": "Haben Sie Ihre Meinung geändert? Vernichten Sie diese Notiz sofort, um zu verhindern, dass sie jemand liest.",
-    "confirm": "Sind Sie sicher, dass Sie diese Notiz vernichten möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
-    "destroying": "Wird vernichtet...",
-    "success": "Notiz Erfolgreich Vernichtet",
-    "redirect": "Sie werden zur Startseite weitergeleitet..."
-  },
-  "telegram": {
-    "title": "Telegram-Benachrichtigungen Aktiviert",
-    "subtitle": "Bleiben Sie auf dem Laufenden, wenn Ihre Notiz gelesen wird",
-    "status": "AKTIV",
-    "activate": "Telegram-Benachrichtigungen Aktivieren",
-    "description": "Klicken Sie auf die Schaltfläche unten, um diese Notiz mit Ihrem Telegram-Konto zu verknüpfen. Sie erhalten eine sofortige Benachrichtigung, wenn jemand Ihre Notiz liest!",
-    "bot": "Bot:",
-    "noteId": "Notiz-ID:",
-    "setup": "Schnelle Einrichtung (5 Sekunden):",
-    "step1": "Klicken Sie unten auf die Schaltfläche \"Telegram Bot Öffnen\"",
-    "step2": "Telegram wird automatisch geöffnet. Drücken Sie START oder senden Sie /start",
-    "step3": "Das war's! Der Bot verknüpft diese Notiz mit Ihrem Konto. Sie werden benachrichtigt, wenn sie jemand liest.",
-    "openBot": "Telegram Bot Öffnen & /start Senden",
-    "privacy": "Datenschutz zuerst: Nur Sie erhalten Benachrichtigungen. Ihr Telegram-Konto bleibt privat.",
-    "emergency": "Sicherheit: Wenn jemand ein falsches Passwort eingibt oder versucht, eine bereits verknüpfte Notiz erneut zu aktivieren, erhalten Sie eine sofortige Warnung und können die Notiz remote LÖSCHEN."
-  }
+	"success": {
+		"title": "Notiz Erfolgreich Erstellt!",
+		"subtitle": "Ihre sichere Notiz ist bereit zum Teilen. Der Link wird sich nach dem Lesen selbst zerstören."
+	},
+	"link": {
+		"title": "Ihr Sicherer Notiz-Link",
+		"label": "Kopieren und teilen Sie diesen Link",
+		"copy": "Kopieren",
+		"copied": "Kopiert!"
+	},
+	"deleteLink": {
+		"label": "Notfall-Löschlink",
+		"copy": "Löschlink Kopieren",
+		"copied": "Löschlink Kopiert!"
+	},
+	"security": {
+		"title": "Wichtiger Sicherheitshinweis",
+		"warning1": "Dieser Link kann nur einmal verwendet werden - nach dem Öffnen wird er dauerhaft gelöscht",
+		"warning2": "Teilen Sie diesen Link nur über sichere Kanäle (verschlüsselte Nachrichten, Telegram)",
+		"warning3": "Teilen Sie diesen Link niemals an öffentlichen Orten oder unsicheren Kanälen",
+		"warning4": "Die Notiz läuft automatisch ab, wenn sie nicht innerhalb der angegebenen Zeit geöffnet wird"
+	},
+	"destroy": {
+		"button": "🔥 Notiz Jetzt Vernichten",
+		"description": "Haben Sie Ihre Meinung geändert? Vernichten Sie diese Notiz sofort, um zu verhindern, dass sie jemand liest.",
+		"confirm": "Sind Sie sicher, dass Sie diese Notiz vernichten möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+		"destroying": "Wird vernichtet...",
+		"success": "Notiz Erfolgreich Vernichtet",
+		"redirect": "Sie werden zur Startseite weitergeleitet..."
+	},
+	"telegram": {
+		"title": "Telegram-Benachrichtigungen Aktiviert",
+		"subtitle": "Bleiben Sie auf dem Laufenden, wenn Ihre Notiz gelesen wird",
+		"status": "AKTIV",
+		"activate": "Telegram-Benachrichtigungen Aktivieren",
+		"description": "Klicken Sie auf die Schaltfläche unten, um diese Notiz mit Ihrem Telegram-Konto zu verknüpfen. Sie erhalten eine sofortige Benachrichtigung, wenn jemand Ihre Notiz liest!",
+		"bot": "Bot:",
+		"noteId": "Notiz-ID:",
+		"setup": "Schnelle Einrichtung (5 Sekunden):",
+		"step1": "Klicken Sie unten auf die Schaltfläche \"Telegram Bot Öffnen\"",
+		"step2": "Telegram wird automatisch geöffnet. Drücken Sie START oder senden Sie /start",
+		"step3": "Das war's! Der Bot verknüpft diese Notiz mit Ihrem Konto. Sie werden benachrichtigt, wenn sie jemand liest.",
+		"openBot": "Telegram Bot Öffnen & /start Senden",
+		"privacy": "Datenschutz zuerst: Nur Sie erhalten Benachrichtigungen. Ihr Telegram-Konto bleibt privat.",
+		"emergency": "Sicherheit: Wenn jemand ein falsches Passwort eingibt oder versucht, eine bereits verknüpfte Notiz erneut zu aktivieren, erhalten Sie eine sofortige Warnung und können die Notiz remote LÖSCHEN."
+	}
 }
-

@@ -1,24 +1,24 @@
 {
-  "title": "Not Silme",
-  "confirm": {
-    "title": "Silme İşlemini Onayla",
-    "subtitle": "Bu notu silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
-    "cancel": "İptal",
-    "delete": "Notu Sil"
-  },
-  "deleting": {
-    "title": "Not Siliniyor...",
-    "subtitle": "Notunuzu güvenli bir şekilde silerken lütfen bekleyin."
-  },
-  "success": {
-    "title": "Not Başarıyla Silindi!",
-    "subtitle": "Notunuz kalıcı olarak silindi ve artık erişilemez.",
-    "redirect": "Birkaç saniye içinde ana sayfaya yönlendirileceksiniz.",
-    "button": "Ana Sayfaya Git"
-  },
-  "error": {
-    "title": "Silme Başarısız",
-    "subtitle": "Notunuzu silmeye çalışırken bir hata oluştu.",
-    "button": "Ana Sayfaya Git"
-  }
+	"title": "Not Silme",
+	"confirm": {
+		"title": "Silme İşlemini Onayla",
+		"subtitle": "Bu notu silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+		"cancel": "İptal",
+		"delete": "Notu Sil"
+	},
+	"deleting": {
+		"title": "Not Siliniyor...",
+		"subtitle": "Notunuzu güvenli bir şekilde silerken lütfen bekleyin."
+	},
+	"success": {
+		"title": "Not Başarıyla Silindi!",
+		"subtitle": "Notunuz kalıcı olarak silindi ve artık erişilemez.",
+		"redirect": "Birkaç saniye içinde ana sayfaya yönlendirileceksiniz.",
+		"button": "Ana Sayfaya Git"
+	},
+	"error": {
+		"title": "Silme Başarısız",
+		"subtitle": "Notunuzu silmeye çalışırken bir hata oluştu.",
+		"button": "Ana Sayfaya Git"
+	}
 }
