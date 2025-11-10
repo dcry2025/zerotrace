@@ -82,8 +82,6 @@
 						<li>{$t('faq.q14.point1')}</li>
 						<li>{$t('faq.q14.point2')}</li>
 						<li>{$t('faq.q14.point3')}</li>
-						<!-- <li>@{CONTACTS.TWITTER.username} / @{CONTACTS.TELEGRAM.username}</li> -->
-						<li>@{CONTACTS.TELEGRAM.username}</li>
 					</ul>
 
 					<h2 class="mb-4 mt-8 text-xl font-semibold text-gray-900">{$t('faq.q15.question')}</h2>
