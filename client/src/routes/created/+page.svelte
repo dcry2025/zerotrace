@@ -148,7 +148,7 @@
 		} catch (error: any) {
 			console.error('[destroyNote] Exception:', error);
 
-			// Более детальная обработка ошибок
+		
 			let errorMessage = 'Failed to destroy note. Please try again.';
 			if (error?.response) {
 				try {

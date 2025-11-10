@@ -43,7 +43,7 @@ export const PASSWORD_VALIDATION = {
 /**
  * Public URL configuration
  */
-export const PUBLIC_URL = 'http://zerotrace.work';
+export const PUBLIC_URL = 'https://zerotrace.work';
 
 /**
  * Cryptocurrency donation addresses
